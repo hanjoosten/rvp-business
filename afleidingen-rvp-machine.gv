@@ -1,0 +1,100 @@
+digraph mygraph {
+    rankdir = "BT";
+    fontname = "Helvetica,Arial,sans-serif";
+    concentrate = true;
+    graph [charset = "UTF-8"; fontsize = 30; labelloc = "t"; label = "Afleidingen RVP machine"; layout = "dot"; splines = true; overlap = false; rankdir = "BT";];
+    
+    node [fontname = "Helvetica,Arial,sans-serif"; shape = Mrecord; fontsize = 12;];
+    edge [fontname = "Helvetica,Arial,sans-serif";];
+    
+    leeftijd [label = "Leeftijd in dagen";];
+    geboortedatum [label = "geboortedatum";];
+    nu [label = "huidige datum";];
+    geboortedatum -> leeftijd;
+    nu -> leeftijd;
+    geldige [label = "geldige vaccinaties";];
+    schema [label = "toe te passen\n schema";];
+    volgende [label = "wanneer volgende vaccinaties?";];
+    leeftijd -> volgende;
+    schema -> volgende;
+    geldige -> volgende;
+    indicaties -> schema;
+    
+    geldige -> vaccinatieToestand;
+    leeftijd -> schema;
+    
+    
+    vaccinSoort -> schema;
+    vaccinaties -> geldige;
+    leeftijd -> geldige;
+    vaccinaties -> schema;
+    
+    isGeldig [label = "Is de vaccinatie (medisch) geldig?";];
+    vaccinSoort -> isGeldig;
+    uitvoerdatum -> isGeldig;
+    product -> isGeldig;
+    product -> vaccinSoort;
+    vaccinaties -> isGeldig;
+    geboortedatum -> isGeldig;
+    indicaties -> isGeldig;
+    isGeldigRVP [label = "Is de vaccinatie (RVP) geldig?";];
+    isGeldig -> isGeldigRVP;
+    indicaties -> isGeldigRVP;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // subgraph cluster_0 {
+    // label = "hpa (hielprik algemeen)";
+    // // hielprik algemeen
+    // node [fontsize = 8;];
+    // labelloc = t;
+    // labeljust = c;
+    
+    // isTweedeHielprik [shape = box;];
+    // hielprikType -> isTweedeHielprik;
+    
+    // isPrematuur [shape = box;];
+    // "afnametermijn\nPrematuur" -> isPrematuur;
+    // zwangerschapsduur -> isPrematuur;
+    // geboortegewicht -> isPrematuur;
+    
+    // "status BT" [shape = box;];
+    // bloedtransfusie -> "status BT";
+    // bloedtransfusieMoment -> "status BT";
+    // voldoendeTijdVerstrekenBT -> "status BT";
+    // bloedtransfusieType -> "status BT";
+    
+    // isTevroegGeprikt [shape = box;];
+    // geboorteMoment -> isTevroegGeprikt;
+    // afnameMoment -> isTevroegGeprikt;
+    
+    // voldoendeTijdVerstrekenBT [shape = box;];
+    //     afnameMoment -> voldoendeTijdVerstrekenBT;
+    //     bloedtransfusieMoment -> voldoendeTijdVerstrekenBT;
+    // }
+    
+    // ConclusieEA [shape = box;label = "ConclusieEA\n (specifiek per aandoening)";];
+    // Actiecode2 -> ConclusieEA;
+    
+    // Actiecode2 [shape = box;label = "Actiecode2\n (specifiek per aandoening)";];
+    // Actiecode1 -> Actiecode2;
+    // "status BT" -> Actiecode2;
+    // isTevroegGeprikt -> Actiecode2;
+    // isTweedeHielprik -> Actiecode2;
+    
+    // // Interpretatie [shape = box;label = "Interpretatie\n (specifiek per aandoening)";];
+    // // Actiecode1 -> Interpretatie;
+    // Actiecode1 [shape = box;label = "Actiecode1\n (specifiek per aandoening)";];
+    // isPrematuur -> Actiecode1 [style = dashed; arrowhead = open;];
+    // isTweedeHielprik -> Actiecode1 [style = dashed; arrowhead = open;];
+    // peildatum -> Actiecode1;
+    // testresultaten -> Actiecode1;
+    
+    // testresultaten;
+}
