@@ -31,17 +31,18 @@ digraph mygraph {
     
     isGeldig [label = "Is de vaccinatie (medisch) geldig?";];
     vaccinSoort -> isGeldig;
-    uitvoerdatum -> isGeldig;
+    leeftijdBijUitvoer -> isGeldig;
+    uitvoerdatum -> leeftijdBijUitvoer;
     product -> isGeldig;
     product -> vaccinSoort;
     vaccinaties -> isGeldig;
-    geboortedatum -> isGeldig;
+    geboortedatum -> leeftijdBijUitvoer;
     indicaties -> isGeldig;
     isGeldigRVP [label = "Is de vaccinatie (RVP) geldig?";];
     isGeldig -> isGeldigRVP;
     indicaties -> isGeldigRVP;
     
-    
+    vaccinatieToestand -> volgende;
     
     
     
