@@ -2,7 +2,6 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -10,14 +9,13 @@
     <relativePath/>
     <!-- lookup parent from repository -->
   </parent>
-
   <groupId>nl.rivm.dvp.rvp.business</groupId>
   <artifactId>rvp-business</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-
   <description>Generated project rvp-business</description>
 
   <properties>
+    <cucumber.version>7.8.1</cucumber.version>
     <java.version>17</java.version>
     <kogito.version>1.34.0.Final</kogito.version>
   </properties>
@@ -37,37 +35,79 @@
   <dependencies>
     <dependency>
       <groupId>org.kie.kogito</groupId>
-      <artifactId>kogito-rules-spring-boot-starter</artifactId>
+      <artifactId>kogito-decisions-spring-boot-starter</artifactId>
+    </dependency>
+    <!-- <dependency>
+      <groupId>org.kie.kogito</groupId>
+      <artifactId>kogito-processes-spring-boot-starter</artifactId>
+    </dependency> -->
+    <dependency>
+      <groupId>org.kie.kogito</groupId>
+      <artifactId>kogito-dmn</artifactId>
     </dependency>
     <dependency>
       <groupId>org.kie.kogito</groupId>
-      <artifactId>kogito-decisions-spring-boot-starter</artifactId>
+      <artifactId>kogito-rules-spring-boot-starter</artifactId>
     </dependency>
-
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
-
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
-
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java8</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit-platform-engine</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-spring</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-suite</artifactId>
+      <version>1.8.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.kie.kogito</groupId>
+      <artifactId>kogito-scenario-simulation</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <plugin>
@@ -77,8 +117,80 @@
         <extensions>true</extensions>
       </plugin>
       <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>2.22.8</version>
+        <configuration>
+          <formats>
+            <format>
+              <includes>
+                <include>.gitignore</include>
+                <include>*.properties</include>
+              </includes>
+              <trimTrailingWhitespace/>
+              <endWithNewline/>
+              <indent>
+                <tabs>true</tabs>
+                <spacesPerTab>2</spacesPerTab>
+              </indent>
+            </format>
+            <format>
+              <includes>
+                <include>src/*/resources/**/*.json</include>
+                <include>src/*/resources/**/*.yaml</include>
+              </includes>
+              <prettier>
+                <prettierVersion>2.7.1</prettierVersion>
+                <config>
+                  <printWidth>80</printWidth>
+                  <tabWidth>2</tabWidth>
+                  <useTabs>false</useTabs>
+                </config>
+              </prettier>
+            </format>
+          </formats>
+          <java>
+            <palantirJavaFormat/>
+          </java>
+          <markdown>
+            <includes>
+              <include>**/*.md</include>
+            </includes>
+            <flexmark/>
+          </markdown>
+          <pom>
+            <sortPom>
+              <encoding>UTF-8</encoding>
+              <lineSeparator>\n</lineSeparator>
+              <expandEmptyElements>false</expandEmptyElements>
+              <spaceBeforeCloseEmptyElement>false</spaceBeforeCloseEmptyElement>
+              <keepBlankLines>false</keepBlankLines>
+              <nrOfIndentSpace>2</nrOfIndentSpace>
+              <indentBlankLines>false</indentBlankLines>
+              <indentSchemaLocation>false</indentSchemaLocation>
+              <predefinedSortOrder>recommended_2008_06</predefinedSortOrder>
+              <sortOrderFile/>
+              <sortDependencies>scope,artifactId,groupId</sortDependencies>
+              <sortDependencyExclusions>scope,artifactId,groupId</sortDependencyExclusions>
+              <sortPlugins>scope,artifactId,groupId</sortPlugins>
+              <sortProperties>true</sortProperties>
+              <sortModules>true</sortModules>
+              <sortExecutions>true</sortExecutions>
+            </sortPom>
+          </pom>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+            </exclude>
+          </excludes>
+        </configuration>
       </plugin>
     </plugins>
   </build>
