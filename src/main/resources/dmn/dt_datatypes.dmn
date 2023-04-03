@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_59043E18-A171-4E19-A232-AB176D22FBD1" name="dt_datatypes" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_2554DE12-E03D-47F1-A82F-3DF1F86FAAEF" name="Client" isCollection="false">
+    <dmn:itemComponent id="_C23CECF7-1A49-4517-8FF1-954BA6D0466C" name="onbeschermdDatum" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_C395179A-371C-4634-AFEC-FCBE641C9A70" name="indicaties" isCollection="false">
+      <dmn:typeRef>Indicaties</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_E610A31A-54CB-4DF9-A8EF-2538523F8C90" name="geboortedatum" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_A6306E4A-FFCA-443C-A25E-2BDBB13855C1" name="Indicaties" isCollection="false">
+    <dmn:itemComponent id="_AD4A7509-9A02-45D3-9C1C-E614E90B3801" name="hepbWHOCode" isCollection="false">
+      <dmn:typeRef>boolean</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_55BD4E4F-4794-404D-A4F2-D086F5BE2CC1" name="hepbVCode" isCollection="false">
+      <dmn:typeRef>boolean</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_32E1493A-88FD-4E17-A791-C566C72D26DA" name="hepbECode" isCollection="false">
+      <dmn:typeRef>boolean</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_C4BF5D6A-8CD9-4898-B46A-427E79C85DE8" name="hepbDownCode" isCollection="false">
+      <dmn:typeRef>boolean</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_4598FEDD-B072-45DF-986A-649609FECA17" name="hepbDCode" isCollection="false">
+      <dmn:typeRef>boolean</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_8EA25759-8957-486C-ADAE-6F8AFB5C4C89" name="dKTP3_5_11" isCollection="false">
+      <dmn:typeRef>boolean</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_792914EE-64F2-4CF6-BFB5-BCBB5898C340" name="dKTP2_3_5_11" isCollection="false">
+      <dmn:typeRef>boolean</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_80C00E4F-15E1-4DE8-A96B-C04ECBAB533A" name="Dossier" isCollection="false">
+    <dmn:itemComponent id="_3CFBFBA5-516D-4186-BFDE-0EA966472C6D" name="vaccinaties" isCollection="true">
+      <dmn:typeRef>Vaccinatie</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_0AF00904-CA1C-4672-9122-F44BB1639C27" name="peildatum" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_0C991125-6D28-4548-82B7-7A6E58343578" name="client" isCollection="false">
+      <dmn:typeRef>Client</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_F68E8648-6373-4C8A-8858-71ADC147E626" name="VaccinSoort" isCollection="false"/>
+  <dmn:itemDefinition id="_E153E23F-0419-4127-9BB7-8E56ABD5B37D" name="Vaccinatie" isCollection="false">
+    <dmn:itemComponent id="_03C4E4C0-D5E8-4014-84C3-7933376C2F3D" name="vaccinSoort" isCollection="false">
+      <dmn:typeRef>VaccinSoort</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_C65FD050-53FE-41CE-AC27-5D70D19FAAD2" name="uitvoerdatum" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_522B8656-A19B-4D08-B5A5-34FAB7D9997F" name="product" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_8343A01F-58B9-4FA3-A9D3-2A35EAD12A9A" name="expiratiedatum" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_DB99F0E6-07DA-45A9-9C5A-9C5A2B4262BF" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension/>
+      </di:extension>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
