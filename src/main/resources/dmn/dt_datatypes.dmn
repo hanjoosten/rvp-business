@@ -61,6 +61,26 @@
       <dmn:typeRef>date</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
+  <dmn:itemDefinition id="_E141A931-221E-4A36-960F-4457E64969D0" name="Vaccinaties" isCollection="true">
+    <dmn:typeRef>Vaccinatie</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_BA8DD5E9-1451-4A74-9497-10ED84CF2F2E" name="BeoordeeldeVaccinatie" isCollection="false">
+    <dmn:itemComponent id="_ECF4C339-6DF1-4547-81E0-2734FEFEAB09" name="vaccinatie" isCollection="false">
+      <dmn:typeRef>Vaccinatie</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_B597F94A-BBBF-4F42-8A41-F3B1FE9AFB89" name="rangnummer" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_56F76FE7-C3A2-4229-A046-3BA55D865785" name="isGeldig" isCollection="false">
+      <dmn:typeRef>boolean</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_F348FE07-0E0F-4B7A-A5C4-EA01ABF64CEA" name="beoordelingsDatum" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_282C0B25-A28A-4EBF-A7DE-43E099105261" name="BeoordeeldeVaccinaties" isCollection="true">
+    <dmn:typeRef>BeoordeeldeVaccinatie</dmn:typeRef>
+  </dmn:itemDefinition>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_DB99F0E6-07DA-45A9-9C5A-9C5A2B4262BF" name="DRG">
       <di:extension>
