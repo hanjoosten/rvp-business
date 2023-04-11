@@ -81,6 +81,9 @@
   <dmn:itemDefinition id="_282C0B25-A28A-4EBF-A7DE-43E099105261" name="BeoordeeldeVaccinaties" isCollection="true">
     <dmn:typeRef>BeoordeeldeVaccinatie</dmn:typeRef>
   </dmn:itemDefinition>
+  <dmn:itemDefinition id="_2BDC50E4-405A-43CA-BBE8-D72AC9777C80" name="VaccinSoorten" isCollection="true">
+    <dmn:typeRef>VaccinSoort</dmn:typeRef>
+  </dmn:itemDefinition>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_DB99F0E6-07DA-45A9-9C5A-9C5A2B4262BF" name="DRG">
       <di:extension>
