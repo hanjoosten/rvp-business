@@ -91,7 +91,7 @@
     <dmn:informationRequirement id="_B4115176-DA41-410A-AF54-AFA8CBAC406E">
       <dmn:requiredDecision href="#_58353E5B-4561-43D3-8D45-DA3BCBD24566"/>
     </dmn:informationRequirement>
-    <dmn:decisionTable id="_5408909D-81E5-4FF7-B3EC-660F54FFB537" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+    <dmn:decisionTable id="_5408909D-81E5-4FF7-B3EC-660F54FFB537" hitPolicy="ANY" preferredOrientation="Rule-as-Row">
       <dmn:input id="_7D4058D9-1B78-4FFB-9395-576587880CA8">
         <dmn:inputExpression id="_1D660CCA-E03A-4F83-A83B-4B8D0ECE5CF4" typeRef="boolean">
           <dmn:text>is vaccin verlopen</dmn:text>
@@ -123,9 +123,32 @@
         </dmn:defaultOutputEntry>
       </dmn:output>
       <dmn:annotation name="toelichting"/>
+      <dmn:rule id="_13344C59-412E-46B8-875A-EDF073278E5F">
+        <dmn:inputEntry id="_A53E9210-E42D-4BD4-8916-E11F9F06EC2E">
+          <dmn:text>true</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_D578ED4F-677B-4911-915F-1E6D3B6887BB">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_B4527986-435A-4284-9884-6BD4D01D22C5">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_B1DC09F7-DE72-43C2-ACDC-28B7C35B9D5E">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_CCEEFD40-5672-4632-BCE7-208960212DC3">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_E4F76015-3733-487C-9A60-7D386F13BB2E">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>expiratiedatum was verlopen op uitvoerdatum</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
       <dmn:rule id="_95F42020-101E-46F4-88F1-2940C8561104">
         <dmn:inputEntry id="_6047E5D1-C3D3-40AE-9F55-A5AAB73B57DD">
-          <dmn:text>true</dmn:text>
+          <dmn:text>false</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_2901A470-7C65-4A73-AD4F-0640216C3183">
           <dmn:text>-</dmn:text>
@@ -137,13 +160,13 @@
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_BC73DC49-8EEC-4D18-96EA-801BA7B9F89E">
-          <dmn:text>-</dmn:text>
+          <dmn:text>0</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_5B3CA78A-0608-47F4-B364-6819383461E4">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text>expiratiedatum was verlopen op uitvoerdatum</dmn:text>
+          <dmn:text>dubbele registratie</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
       <dmn:rule id="_440DDEDB-C073-4B49-8091-93EE0B83F69A">
@@ -261,29 +284,6 @@
           <dmn:text/>
         </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule id="_B8B3D811-5058-4EEA-8DA9-B4A83E431861">
-        <dmn:inputEntry id="_9420188C-BC23-40F2-BD39-367ADC2D8F3D">
-          <dmn:text>false</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="_C443AFC2-6E8B-461B-88D6-0FC3B000FDB5">
-          <dmn:text>"BMR"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="_77652A00-C75F-455F-B72F-4181CD3882FF">
-          <dmn:text>&gt;= 365</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="_29A7C66B-64B1-4889-8CE7-862EB4CE7271">
-          <dmn:text>0</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="_C45EA8C5-CB23-483F-980C-F4F06ABECF40">
-          <dmn:text>&gt;= 28</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_48764632-25C4-4114-BB78-C3E9F325C04E">
-          <dmn:text>1</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
       <dmn:rule id="_CA8DD276-1545-44D6-94EE-0C4498538C97">
         <dmn:inputEntry id="_A01E212B-AE26-4EE1-BF71-DD6B20A863FF">
           <dmn:text>false</dmn:text>
@@ -304,27 +304,27 @@
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text>te vroeg gevaccineerd</dmn:text>
+          <dmn:text>te kort interval</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule id="_8BD24CE1-0F74-4AC1-82B0-B0FE4D42C329">
-        <dmn:inputEntry id="_3D956F72-02C1-4B0B-BE51-E64A8645A632">
+      <dmn:rule id="_B8B3D811-5058-4EEA-8DA9-B4A83E431861">
+        <dmn:inputEntry id="_9420188C-BC23-40F2-BD39-367ADC2D8F3D">
           <dmn:text>false</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_FDC6DF38-9442-4296-913D-953D802D4FF8">
+        <dmn:inputEntry id="_C443AFC2-6E8B-461B-88D6-0FC3B000FDB5">
           <dmn:text>"BMR"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_71876E7E-BE32-47E2-9621-7E4782118752">
+        <dmn:inputEntry id="_77652A00-C75F-455F-B72F-4181CD3882FF">
           <dmn:text>&gt;= 365</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_F58FB09E-4E89-401F-94D3-BFAC444556DA">
-          <dmn:text>1</dmn:text>
+        <dmn:inputEntry id="_29A7C66B-64B1-4889-8CE7-862EB4CE7271">
+          <dmn:text>0</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_12B8A30D-3251-4CDE-AF0E-A7AC9AA85F09">
+        <dmn:inputEntry id="_C45EA8C5-CB23-483F-980C-F4F06ABECF40">
           <dmn:text>&gt;= 28</dmn:text>
         </dmn:inputEntry>
-        <dmn:outputEntry id="_F9250F5E-BBD0-4044-BDC1-9D7514B9CA7C">
-          <dmn:text>2</dmn:text>
+        <dmn:outputEntry id="_48764632-25C4-4114-BB78-C3E9F325C04E">
+          <dmn:text>1</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -350,7 +350,30 @@
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text>te vroeg gevaccineerd</dmn:text>
+          <dmn:text>te kort interval</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_8BD24CE1-0F74-4AC1-82B0-B0FE4D42C329">
+        <dmn:inputEntry id="_3D956F72-02C1-4B0B-BE51-E64A8645A632">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_FDC6DF38-9442-4296-913D-953D802D4FF8">
+          <dmn:text>"BMR"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_71876E7E-BE32-47E2-9621-7E4782118752">
+          <dmn:text>&gt;= 365</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_F58FB09E-4E89-401F-94D3-BFAC444556DA">
+          <dmn:text>1</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_12B8A30D-3251-4CDE-AF0E-A7AC9AA85F09">
+          <dmn:text>&gt;= 28</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_F9250F5E-BBD0-4044-BDC1-9D7514B9CA7C">
+          <dmn:text>2</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
         </dmn:annotationEntry>
       </dmn:rule>
       <dmn:rule id="_0B659CA1-ABD8-4457-874E-C1532A448238">
@@ -373,7 +396,7 @@
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text>Eindstation al bereikt</dmn:text>
+          <dmn:text>reeds volledig afgesloten</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
     </dmn:decisionTable>
