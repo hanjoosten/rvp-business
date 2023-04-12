@@ -17,4 +17,15 @@ public class Indicaties {
     Boolean HepbWHOCode; // (kind heeft in buitenland WHO schema gevolgd voor HepB)
     Boolean DKTP3_5_11; // (Kind volgt 3-5-11 schema voor zuigelingen voor DKTP en HepB)
     Boolean DKTP2_3_5_11; // (Kind volgt 2-3-5-11 schema voor zuigelingen voor DKTP en HepB)
+
+    public Indicaties() {
+        HepbDCode = false;
+        HepbECode = false;
+        HepbVCode = false;
+        HepbDownCode = false;
+        HepbWHOCode = false;
+        DKTP3_5_11 = false;
+        DKTP2_3_5_11 = false;
+
+    }
 }

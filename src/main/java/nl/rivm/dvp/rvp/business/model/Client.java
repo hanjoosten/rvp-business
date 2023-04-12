@@ -14,7 +14,13 @@ import lombok.Setter;
 public class Client {
     LocalDate geboortedatum;
     Indicaties indicaties;
-    LocalDate onbeschermdDatum; //datum waarop is gebleken dat er onvoldoende bescherming is opgebouwd voor HepB
-    
-}
+    LocalDate onbeschermdDatum; // datum waarop is gebleken dat er onvoldoende bescherming is opgebouwd voor
+                                // HepB
 
+    public Client(LocalDate geboortedatum) {
+        this.geboortedatum = geboortedatum;
+        this.indicaties = new Indicaties();
+        this.onbeschermdDatum = null;
+    };
+
+}

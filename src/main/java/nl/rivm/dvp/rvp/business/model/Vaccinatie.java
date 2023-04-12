@@ -3,6 +3,7 @@ package nl.rivm.dvp.rvp.business.model;
 import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
+@Builder
 public class Vaccinatie {
     VaccinSoort vaccinSoort;
     LocalDate uitvoerdatum;

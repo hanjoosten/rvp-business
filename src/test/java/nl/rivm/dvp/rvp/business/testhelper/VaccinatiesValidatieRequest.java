@@ -20,9 +20,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Slf4j
 public class VaccinatiesValidatieRequest {
+    private Client client;
     private List<Vaccinatie> vaccinaties;
     private LocalDate peildatum;
-    private Client client;
 
     public String toJSON() {
         try {
