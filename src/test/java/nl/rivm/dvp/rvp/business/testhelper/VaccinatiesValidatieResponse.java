@@ -17,13 +17,14 @@ public class VaccinatiesValidatieResponse {
     public String toString() {
         StringBuilder result = new StringBuilder();
 
-        result.append("testresultaten: [");
+        result.append("beoordeeldeVaccinaties: [");
         for (int i = 0; i < beoordeeldeVaccinaties.size(); i++) {
             result.append(beoordeeldeVaccinaties.get(i).toString());
             if (i < beoordeeldeVaccinaties.size() - 1) {
                 result.append(", ");
             }
         }
+        ;
         result.append("]");
         return result.toString();
     }
