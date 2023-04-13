@@ -77,6 +77,9 @@
     <dmn:itemComponent id="_BAA86F3A-5FE0-4C23-8051-670BFB293770" name="vaccinatieToestand" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
+    <dmn:itemComponent id="_5F2595B9-A8DD-409F-BA33-A0D5936130C6" name="leeftijdInDagen" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_282C0B25-A28A-4EBF-A7DE-43E099105261" name="BeoordeeldeVaccinaties" isCollection="true">
     <dmn:typeRef>BeoordeeldeVaccinatie</dmn:typeRef>

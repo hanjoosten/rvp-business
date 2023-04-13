@@ -14,5 +14,6 @@ public class BeoordeeldeVaccinatie {
     Integer rangnummer;
     Boolean isGeldig;
     String vaccinatieToestand;
+    Integer leeftijdInDagen;
 
 }
