@@ -35,15 +35,9 @@
           </dmn:literalExpression>
         </dmn:contextEntry>
         <dmn:contextEntry>
-          <dmn:variable id="_30CF225A-8644-4026-879D-57BB8DC58AB6" name="leeftijd ten tijde jongste vaccinatie" typeRef="number"/>
-          <dmn:literalExpression id="_59B155E2-B7DA-4A36-A583-95A0A2525A24">
-            <dmn:text>if jongste = null then null else ((jongste.uitvoerdatum - client.geboortedatum).days)</dmn:text>
-          </dmn:literalExpression>
-        </dmn:contextEntry>
-        <dmn:contextEntry>
           <dmn:variable id="_E90B33B4-6415-45E1-BC49-760516A61468" name="beoordeeldeJongste" typeRef="dt.BeoordeeldeVaccinatie"/>
           <dmn:literalExpression id="_A5E3C71F-B81F-4831-8683-79BFB07B310C">
-            <dmn:text>if jongste = null then null else beoordeelVaccinatie(BeoordeeldeOverigen,leeftijd ten tijde jongste vaccinatie,jongste)</dmn:text>
+            <dmn:text>if jongste = null then null else beoordeelVaccinatie(BeoordeeldeOverigen,client,jongste)</dmn:text>
           </dmn:literalExpression>
         </dmn:contextEntry>
         <dmn:contextEntry>
@@ -96,10 +90,10 @@
     <dmn:variable id="_A947D00F-CD36-4307-AEA5-419D978F0E56" name="beoordeelVaccinatie" typeRef="dt.BeoordeeldeVaccinatie"/>
     <dmn:encapsulatedLogic id="_44EE0BD9-92A7-4148-B18A-81AEC6E706D0" kind="FEEL">
       <dmn:formalParameter id="_DC7817F6-4B06-4C9F-9823-25C52D1FFB1C" name="eerdere" typeRef="dt.BeoordeeldeVaccinaties"/>
-      <dmn:formalParameter id="_42FE5DC4-6E54-45AE-921E-210741D897B7" name="leeftijdInDagen" typeRef="number"/>
+      <dmn:formalParameter id="_42FE5DC4-6E54-45AE-921E-210741D897B7" name="client" typeRef="dt.Client"/>
       <dmn:formalParameter id="_8D33945F-B032-4A9D-9E80-B0F373562D4E" name="vaccinatie" typeRef="dt.Vaccinatie"/>
       <dmn:literalExpression id="_16631E06-AD97-4AB2-8753-4E551B1C8F3D">
-        <dmn:text>bv.BeoordelenVaccinatieService(eerdere,leeftijdInDagen,vaccinatie)</dmn:text>
+        <dmn:text>bv.BeoordelenVaccinatieService(eerdere,client,vaccinatie)</dmn:text>
       </dmn:literalExpression>
     </dmn:encapsulatedLogic>
     <dmn:knowledgeRequirement id="_67C4BB67-1B29-48D7-A000-3FC1892ACCF3">
@@ -149,9 +143,6 @@
             <kie:width>1005</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_D3CEBD76-3B05-4A56-9345-512D59BFA422">
-            <kie:width>1005</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_59B155E2-B7DA-4A36-A583-95A0A2525A24">
             <kie:width>1005</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_A5E3C71F-B81F-4831-8683-79BFB07B310C">
