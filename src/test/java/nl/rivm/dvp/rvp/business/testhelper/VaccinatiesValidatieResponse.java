@@ -1,6 +1,7 @@
 package nl.rivm.dvp.rvp.business.testhelper;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VaccinatiesValidatieResponse {
 
+    @JsonProperty("BeoordeeldeVaccinaties")
     private List<BeoordeeldeVaccinatie> beoordeeldeVaccinaties;
 
     public String toString() {
