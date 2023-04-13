@@ -24,10 +24,12 @@
     <dmn:inputData href="#_ACC3C659-43CA-427B-A397-98790B5CE418"/>
   </dmn:decisionService>
   <dmn:inputData id="_DAC028AE-A180-4F42-9675-EFA17BA9D7AB" name="client">
+    <dmn:description>De client waarbij de te beoordelen vaccinatie is uitgevoerd.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_40174642-329B-4438-BDC7-28E051BAF83D" name="client" typeRef="dt.Client"/>
   </dmn:inputData>
   <dmn:decision id="_BC75F0F2-57CE-447C-A7DF-D858D2B9F677" name="is vaccin verlopen">
+    <dmn:description>Een vaccinatie moet worden uitgevoerd met een vaccin waarvan de werking nog wordt gegarandeerd. De werking kan niet meer worden gegarandeerd vanaf de expiratiedatum. Vanaf die datum is het vaccin verlopen. </dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_B728B178-5EC3-41F1-A096-70E8B0C1E345" name="is vaccin verlopen" typeRef="boolean"/>
     <dmn:informationRequirement id="_606E8DE4-20C8-4053-8BD3-FBF77AE82688">
@@ -38,14 +40,17 @@
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:inputData id="_ACC3C659-43CA-427B-A397-98790B5CE418" name="Vaccinatie">
+    <dmn:description>De vaccinatie die moet worden beoordeeld.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_840226A8-01BA-45E3-AF55-9F25996D3E13" name="Vaccinatie" typeRef="dt.Vaccinatie"/>
   </dmn:inputData>
   <dmn:inputData id="_6626FA35-4B6C-4F07-A7FC-291EED03CD64" name="Beoordeelde vaccinaties">
+    <dmn:description>Vaccinaties bij de client uitgevoerd voorafgaand aan de te beoordelen vaccinatie.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_18530391-B130-4136-BE63-F139255C5BCB" name="Beoordeelde vaccinaties" typeRef="dt.BeoordeeldeVaccinaties"/>
   </dmn:inputData>
   <dmn:decision id="_6D8ADFAB-908F-41D9-ADA7-B169DC08B940" name="Beoordeeld vaccinatie">
+    <dmn:description>De gegevens van de te beoordelen vaccinatie inclusief het resultaat van de beoordeling.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_E105FE2F-23D0-48FD-A049-D73EDAC15ED8" name="Beoordeeld vaccinatie" typeRef="dt.BeoordeeldeVaccinatie"/>
     <dmn:informationRequirement id="_AEBF596B-C69E-4006-83EB-C573019EF0C7">
@@ -100,6 +105,7 @@
     </dmn:context>
   </dmn:decision>
   <dmn:decision id="_452B0A50-BCC9-4D8F-B09F-BA9DFC4FED2A" name="rangnummer">
+    <dmn:description>Een vaccinatie die voldoet aan alle voorwaarden voor geldigheid krijgt een rangnummer. </dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_619F5C43-9BCE-440F-A852-F434AC9F3B71" name="rangnummer" typeRef="number"/>
     <dmn:informationRequirement id="_CFAD0F2A-3720-4961-BF5D-24E5B45B1FD9">
@@ -132,7 +138,7 @@
         </dmn:inputExpression>
       </dmn:input>
       <dmn:input id="_204640BE-71E8-4C44-A833-07CD4A1F433E">
-        <dmn:inputExpression id="_E2B0814C-EE66-47D8-9007-964E38B16317">
+        <dmn:inputExpression id="_E2B0814C-EE66-47D8-9007-964E38B16317" typeRef="string">
           <dmn:text>vaccinSoort</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
@@ -468,6 +474,7 @@
     </dmn:decisionTable>
   </dmn:decision>
   <dmn:decision id="_3F147A94-7AE4-4E7C-A407-7941A321147E" name="is geldig">
+    <dmn:description>Is de te beoordelen vaccinatie geldig?</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_58C4BC11-8D94-4F31-A757-3B762003225B" name="is geldig" typeRef="boolean"/>
     <dmn:informationRequirement id="_AB7DF50C-D042-470A-A5B0-47748DC5CF12">
@@ -506,6 +513,7 @@
     </dmn:decisionTable>
   </dmn:decision>
   <dmn:decision id="_3D5A9726-9E89-4464-8FA4-3CA6FF09A54C" name="Laatst geldige beoordeelde vaccinatie">
+    <dmn:description>De meest recent uitgevoerde geldige vaccinatie bij de client, waarvan de vaccinsoort voorkomt in dezelfde vaccinsoortgroep als de te beoordelen vaccinatie.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_4AAEFE4F-DE0E-4079-9DA4-5C4EE89AB216" name="Laatst geldige beoordeelde vaccinatie" typeRef="dt.BeoordeeldeVaccinatie"/>
     <dmn:informationRequirement id="_9615EC1C-AC95-49FC-B9E1-F5097BC86F2E">
@@ -532,6 +540,7 @@
     </dmn:context>
   </dmn:decision>
   <dmn:decision id="_65119BE3-54F8-4611-9D3C-DDD67D9D1518" name="Interval">
+    <dmn:description>Met het interval wordt het aantal dagen aangegeven dat is verlopen tussen de uitvoerdatum van de te beoordelen vaccinatie en de meest recente eerdere vaccinatie van dezelfde vaccin soort groep, die geldig is verklaard.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_F2826BEF-D1BC-430A-94D7-6FCF9A05285C" name="Interval" typeRef="number"/>
     <dmn:informationRequirement id="_35EB8B1D-1CB0-4638-B7F2-210909B00752">
@@ -545,6 +554,7 @@
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_58353E5B-4561-43D3-8D45-DA3BCBD24566" name="hoogste rang">
+    <dmn:description>Het hoogste rangnummer van de eerder bij de client uitgevoerde geldige vaccinaties in dezelfde vaccinsoortgroep als de vaccinsoortgroep waartoe de te beoordelen vaccinatie behoort.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_1793A63B-2BE6-4888-89C1-49F0832E8061" name="hoogste rang" typeRef="number"/>
     <dmn:informationRequirement id="_96277E7F-7918-4156-B9C6-DE3C468356C6">
@@ -555,6 +565,7 @@
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_164EF57F-03AD-474C-99C7-587E91DCCCB8" name="vaccinSoort">
+    <dmn:description>Elke vaccinatie is van een bepaald soort.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_F282509B-CDBE-439B-8DF5-A3EB7B0635AD" name="vaccinSoort" typeRef="dt.VaccinSoort"/>
     <dmn:informationRequirement id="_891B14ED-1342-4F04-9114-286E37A330DF">
@@ -616,17 +627,8 @@
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
-  <dmn:decision id="_3CB0A1A7-EFD4-4A03-87F5-F37ACE913A1F" name="FOR_DEBUG">
-    <dmn:extensionElements/>
-    <dmn:variable id="_E051CC35-2B16-447D-8F9F-782243BCF956" name="FOR_DEBUG" typeRef="Any"/>
-    <dmn:informationRequirement id="_0D5E1A2B-ADC9-40D4-8FF5-167964027A87">
-      <dmn:requiredDecision href="#_6D8ADFAB-908F-41D9-ADA7-B169DC08B940"/>
-    </dmn:informationRequirement>
-    <dmn:literalExpression id="_221199DE-7D62-4A0C-B9D4-49CD25F4E374">
-      <dmn:text>Beoordeeld vaccinatie</dmn:text>
-    </dmn:literalExpression>
-  </dmn:decision>
   <dmn:decision id="_1559071A-37C7-49FD-953C-3E82C380E589" name="vaccinSoortGroep">
+    <dmn:description>Elk vaccin behoort tot een specifieke groep.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_22BD330A-27B1-4946-B5CA-78895F95F251" name="vaccinSoortGroep" typeRef="dt.VaccinSoorten"/>
     <dmn:informationRequirement id="_9B7E825B-3EA7-458A-95D5-1E780E217C5E">
@@ -654,6 +656,7 @@
     </dmn:decisionTable>
   </dmn:decision>
   <dmn:decision id="_A66B07EB-072F-485F-804D-AE38D5C30308" name="geldige vaccinaties">
+    <dmn:description>De vaccinaties die eerder zijn uitgevoerd bij de client, en die geldig zijn verklaard.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_EE303CC1-8431-477C-B19C-C31787C237A8" name="geldige vaccinaties" typeRef="dt.BeoordeeldeVaccinaties"/>
     <dmn:informationRequirement id="_795890BA-5F72-48A7-B64E-405109A2908B">
@@ -664,6 +667,7 @@
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_4F4ADF42-0739-43CA-9B3E-7A7322D4BFD8" name="geldige vaccinaties in vaccinSoortGroep">
+    <dmn:description>De vaccinaties die eerder zijn uitgevoerd bij de client, die geldig zijn verklaard en waarvan de vaccinsoort voorkomt in dezelfde vaccinsoortgroep als van de te beoordelen vaccinatie.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_8255D5F7-95B7-495E-90FB-48013FA27D51" name="geldige vaccinaties in vaccinSoortGroep" typeRef="dt.BeoordeeldeVaccinaties"/>
     <dmn:informationRequirement id="_58045AA4-8D3B-40C8-8D9D-227B36F31850">
@@ -677,6 +681,7 @@
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_AE8A396E-8EA0-4505-AC26-52E1DE05C50E" name="uitvoerdatum">
+    <dmn:description>De uitvoerdatum van een vaccinatie is de datum waarop de vaccinatie is gezet bij de client.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_1D1FA2B6-EF04-45EF-81C1-73412527FAAD" name="uitvoerdatum" typeRef="date"/>
     <dmn:informationRequirement id="_BB293DCA-7BC5-4D48-8E16-7A185841DB8B">
@@ -687,6 +692,7 @@
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_3C4067A6-C009-49FE-8E38-B715892A2DFA" name="Leeftijd in dagen">
+    <dmn:description>De leeftijd van de client op het moment van uitvoeren van de te beoordelen vaccinatie. De leeftijd wordt gemeten in hele dagen. </dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_0415F958-4A37-4D3F-B834-5D4C13D4A7E4" name="Leeftijd in dagen" typeRef="number"/>
     <dmn:informationRequirement id="_92C14858-7A28-46F0-8867-64AC6C150983">
@@ -726,7 +732,17 @@
           <kie:ComponentWidths dmnElementRef="_16BA9D58-FCB6-4AE4-B35D-74A44B6E9B10">
             <kie:width>846</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_5408909D-81E5-4FF7-B3EC-660F54FFB537"/>
+          <kie:ComponentWidths dmnElementRef="_5408909D-81E5-4FF7-B3EC-660F54FFB537">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>428</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_EA5D1B28-B36E-4641-A66A-0F884CE2E12E">
             <kie:width>50</kie:width>
             <kie:width>100</kie:width>
@@ -762,9 +778,6 @@
             <kie:width>100</kie:width>
             <kie:width>223</kie:width>
             <kie:width>100</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_221199DE-7D62-4A0C-B9D4-49CD25F4E374">
-            <kie:width>300</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_94FF2E42-F10F-41FC-90AB-C3FA9034F655">
             <kie:width>50</kie:width>
@@ -907,15 +920,6 @@
         <dc:Bounds x="610" y="468" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-drg-_3CB0A1A7-EFD4-4A03-87F5-F37ACE913A1F" dmnElementRef="_3CB0A1A7-EFD4-4A03-87F5-F37ACE913A1F" isCollapsed="false">
-        <dmndi:DMNStyle>
-          <dmndi:FillColor red="255" green="255" blue="255"/>
-          <dmndi:StrokeColor red="0" green="0" blue="0"/>
-          <dmndi:FontColor red="0" green="0" blue="0"/>
-        </dmndi:DMNStyle>
-        <dc:Bounds x="181" y="100" width="100" height="50"/>
-        <dmndi:DMNLabel/>
-      </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_1559071A-37C7-49FD-953C-3E82C380E589" dmnElementRef="_1559071A-37C7-49FD-953C-3E82C380E589" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
@@ -949,7 +953,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="341" y="533" width="100" height="50"/>
+        <dc:Bounds x="338" y="533" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_3C4067A6-C009-49FE-8E38-B715892A2DFA" dmnElementRef="_3C4067A6-C009-49FE-8E38-B715892A2DFA" isCollapsed="false">
@@ -1006,7 +1010,7 @@
         <di:waypoint x="748" y="380"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_D56BFFB2-2922-47D2-846C-D4F0EFF7B8EC" dmnElementRef="_D56BFFB2-2922-47D2-846C-D4F0EFF7B8EC">
-        <di:waypoint x="391" y="558"/>
+        <di:waypoint x="388" y="558"/>
         <di:waypoint x="748" y="380"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_A9D455CF-7178-44CD-ACB9-51E33569A28E" dmnElementRef="_A9D455CF-7178-44CD-ACB9-51E33569A28E">
@@ -1045,10 +1049,6 @@
         <di:waypoint x="462" y="469"/>
         <di:waypoint x="660" y="493"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="dmnedge-drg-_0D5E1A2B-ADC9-40D4-8FF5-167964027A87" dmnElementRef="_0D5E1A2B-ADC9-40D4-8FF5-167964027A87">
-        <di:waypoint x="667" y="221.5"/>
-        <di:waypoint x="231" y="125"/>
-      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_9B7E825B-3EA7-458A-95D5-1E780E217C5E" dmnElementRef="_9B7E825B-3EA7-458A-95D5-1E780E217C5E">
         <di:waypoint x="462" y="469"/>
         <di:waypoint x="462" y="682.1277944023939"/>
@@ -1067,10 +1067,10 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_BB293DCA-7BC5-4D48-8E16-7A185841DB8B" dmnElementRef="_BB293DCA-7BC5-4D48-8E16-7A185841DB8B">
         <di:waypoint x="237.59813084112147" y="221.68421052631578"/>
-        <di:waypoint x="391" y="558"/>
+        <di:waypoint x="388" y="558"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_92C14858-7A28-46F0-8867-64AC6C150983" dmnElementRef="_92C14858-7A28-46F0-8867-64AC6C150983">
-        <di:waypoint x="391" y="558"/>
+        <di:waypoint x="388" y="558"/>
         <di:waypoint x="1081" y="535"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_13358630-D0A9-4CD6-A27B-48C939B31500" dmnElementRef="_13358630-D0A9-4CD6-A27B-48C939B31500">
