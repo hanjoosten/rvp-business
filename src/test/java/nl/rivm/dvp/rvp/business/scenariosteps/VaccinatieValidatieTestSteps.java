@@ -57,11 +57,11 @@ public class VaccinatieValidatieTestSteps implements Nl {
 
     // @DataTableType
     // public Vaccinatie vaccinatieEntry(Map<String, String> entry) {
-    //     return new Vaccinatie(
-    //         VaccinSoort.valueOf(entry.get("vaccinSoort")),
-    //         entry.get("lastName"),
-    //         entry.get("lastName"),
-    //         entry.get("famousBook"));
+    // return new Vaccinatie(
+    // VaccinSoort.valueOf(entry.get("vaccinSoort")),
+    // entry.get("lastName"),
+    // entry.get("lastName"),
+    // entry.get("famousBook"));
     // }
 
     public VaccinatieValidatieTestSteps() {
@@ -101,11 +101,11 @@ public class VaccinatieValidatieTestSteps implements Nl {
                     .contentType(ContentType.JSON)
                     .accept(ContentType.JSON)
                     .body(request.toJSON())
-                    .log().all() // commentaar verwijderen voor requestlogging
+                    // .log().all() // commentaar verwijderen voor requestlogging
                     .when()
                     .request("POST", "/BeoordelenVaccinaties")
                     .then()
-                    .log().all() // commentaar verwijderen voor responselogging
+                    // .log().all() // commentaar verwijderen voor responselogging
                     .statusCode(200)
                     .extract();
             assertDoesNotThrow(() -> this.resultaat = (VaccinatiesValidatieResponse) result.jsonPath()
