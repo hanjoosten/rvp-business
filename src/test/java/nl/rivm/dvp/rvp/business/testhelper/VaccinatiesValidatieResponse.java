@@ -19,7 +19,7 @@ public class VaccinatiesValidatieResponse {
     public String toString() {
         StringBuilder result = new StringBuilder();
 
-        result.append("beoordeeldeVaccinaties: [");
+        result.append("BeoordeeldeVaccinaties: [");
         for (int i = 0; i < beoordeeldeVaccinaties.size(); i++) {
             result.append(beoordeeldeVaccinaties.get(i).toString());
             if (i < beoordeeldeVaccinaties.size() - 1) {
