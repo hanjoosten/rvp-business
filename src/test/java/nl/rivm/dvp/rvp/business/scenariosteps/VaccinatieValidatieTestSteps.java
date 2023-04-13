@@ -6,19 +6,15 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.*;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-
 import io.cucumber.java8.Nl;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.ParameterType;
+import io.cucumber.java.DataTableType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +28,6 @@ import lombok.extern.slf4j.Slf4j;
 import nl.rivm.dvp.rvp.business.model.Client;
 import nl.rivm.dvp.rvp.business.model.VaccinSoort;
 import nl.rivm.dvp.rvp.business.model.Vaccinatie;
-import nl.rivm.dvp.rvp.business.model.BeoordeeldeVaccinatie;
 import nl.rivm.dvp.rvp.business.testhelper.VaccinatiesValidatieRequest;
 import nl.rivm.dvp.rvp.business.testhelper.VaccinatiesValidatieResponse;
 
@@ -59,6 +54,15 @@ public class VaccinatieValidatieTestSteps implements Nl {
     public LocalDateTime datumMetTijd(String datetimeString) {
         return LocalDateTime.parse(datetimeString, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
     };
+
+    // @DataTableType
+    // public Vaccinatie vaccinatieEntry(Map<String, String> entry) {
+    //     return new Vaccinatie(
+    //         VaccinSoort.valueOf(entry.get("vaccinSoort")),
+    //         entry.get("lastName"),
+    //         entry.get("lastName"),
+    //         entry.get("famousBook"));
+    // }
 
     public VaccinatieValidatieTestSteps() {
         Before(() -> {
@@ -97,11 +101,11 @@ public class VaccinatieValidatieTestSteps implements Nl {
                     .contentType(ContentType.JSON)
                     .accept(ContentType.JSON)
                     .body(request.toJSON())
-                    // .log().all() // commentaar verwijderen voor requestlogging
+                    .log().all() // commentaar verwijderen voor requestlogging
                     .when()
                     .request("POST", "/BeoordelenVaccinaties")
                     .then()
-                    // .log().all() // commentaar verwijderen voor responselogging
+                    .log().all() // commentaar verwijderen voor responselogging
                     .statusCode(200)
                     .extract();
             assertDoesNotThrow(() -> this.resultaat = (VaccinatiesValidatieResponse) result.jsonPath()
