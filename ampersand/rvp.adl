@@ -27,7 +27,7 @@ RELATION vaccinatieToestand[BeoordeeldeVaccinatieComponent*VaccinatieToestand][U
 RELATION leeftijdInDagen[BeoordeeldeVaccinatieComponent*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
 RELATION component[BeoordeeldeVaccinatieComponent * Component][UNI,TOT]
  
-RELATION beschermtTegen[Component*Infectieziekte][TOT, SUR]
+RELATION beschermtTegen[Component*Infectieziekte][TOT, UNI]
 POPULATION beschermtTegen[Component*Infectieziekte] CONTAINS [
     ("AK", "Kinkhoest"),
     ("B", "Bof"),
