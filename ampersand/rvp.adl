@@ -1,0 +1,99 @@
+CONTEXT RVP IN DUTCH
+
+RELATION geboorteDatum[Client * Datum] [UNI,TOT] REPRESENT Datum TYPE DATE
+RELATION indicaties[Client * Indicatie] 
+RELATION onbeschermdDatum[Client * Datum] [UNI]
+RELATION vaccinaties[Client*Vaccinatie] 
+RELATION vaccinSoort[Vaccinatie * VaccinSoort] [UNI,TOT] 
+RELATION uitvoerdatum[Vaccinatie * Datum] [UNI,TOT]
+RELATION product[Vaccinatie * Product] [UNI]
+RELATION expiratiedatum[Vaccinatie * Datum] [UNI]
+
+RELATION vaccinatie[BeoordeeldeVaccinatie*Vaccinatie] [UNI]
+RELATION rangnummer[BeoordeeldeVaccinatie*Rangnummer][UNI] REPRESENT Rangnummer TYPE INTEGER
+RELATION isGeldig[BeoordeeldeVaccinatie*BeoordeeldeVaccinatie][PROP]
+RELATION vaccinatieToestand[BeoordeeldeVaccinatie*VaccinatieToestand][UNI]
+RELATION leeftijdInDagen[BeoordeeldeVaccinatie*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
+RELATION toelichting[BeoordeeldeVaccinatie*Tekst][UNI]
+
+RELATION vaccinatie[VaccinatieComponent*Vaccinatie][UNI,TOT]
+RELATION component[VaccinatieComponent*Component][UNI,TOT]
+
+RELATION vaccinatieComponent[BeoordeeldeVaccinatieComponent*VaccinatieComponent][UNI,TOT]
+RELATION toelichting[BeoordeeldeVaccinatieComponent*Tekst][UNI]
+RELATION rangnummer[BeoordeeldeVaccinatieComponent*Rangnummer][UNI] REPRESENT Rangnummer TYPE INTEGER
+RELATION isGeldig[BeoordeeldeVaccinatieComponent*BeoordeeldeVaccinatieComponent][PROP]
+RELATION vaccinatieToestand[BeoordeeldeVaccinatieComponent*VaccinatieToestand][UNI]
+RELATION leeftijdInDagen[BeoordeeldeVaccinatieComponent*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
+RELATION component[BeoordeeldeVaccinatieComponent * Component][UNI,TOT]
+ 
+RELATION beschermtTegen[Component*Infectieziekte][TOT, SUR]
+POPULATION beschermtTegen[Component*Infectieziekte] CONTAINS [
+    ("AK", "Kinkhoest"),
+    ("B", "Bof"),
+    ("D_BOOSTER", "Difterie"),
+    ("D", "Difterie"),
+    ("HEPB", "Hepatitis B"),
+    ("HIB", "HiB-ziekten"),
+    ("HPV", "HPV-kanker"),
+    ("K_BOOSTER", "Kinkhoest"),
+    ("K", "Kinkhoest"),
+    ("M", "Mazelen"),
+    ("MENACWY", "Meningokokkenziekte Y"),
+    ("MENC", "Meningokokkenziekte C"),
+    ("P_BOOSTER", "Polio"),
+    ("P", "Polio"),
+    ("PNEU", "Pneumokokkenziekte"),
+    ("R", "Rode hond"),
+    ("T_BOOSTER", "Tetanus"),
+    ("T", "Tetanus")
+
+]
+RELATION component[VaccinSoort*Component][TOT]
+POPULATION component[VaccinSoort*Component] CONTAINS[
+    ("PNEU", "PNEU"),
+    ("DTP", "D"),("DTP", "T"),("DTP", "P"),
+    ("DKTP_HIB_HEPB", "D"),("DKTP_HIB_HEPB", "K"),("DKTP_HIB_HEPB", "T"),("DKTP_HIB_HEPB", "P"),("DKTP_HIB_HEPB", "HIB"),("DKTP_HIB_HEPB", "HEPB"),
+    ("MENC", "MENC"),
+    ("DKTP_BOOSTER", "D_BOOSTER"),("DKTP_BOOSTER", "K_BOOSTER"),("DKTP_BOOSTER", "T_BOOSTER"),("DKTP_BOOSTER", "P_BOOSTER"),
+    ("HEPB", "HEPB"),
+    ("BMR", "B"),("BMR", "M"),("BMR", "R"),
+    ("MENACWY", "MENACWY"),
+    ("HIB", "HIB"),
+    ("DKTP_HIB", "D"),("DKTP_HIB", "K"),("DKTP_HIB", "T"),("DKTP_HIB", "P"),("DKTP_HIB", "HIB"),
+    ("HPV", "HPV"),
+    ("DKT", "D"),("DKT", "K"),("DKT", "T"),
+    ("DKTP_HEPB", "D"),("DKTP_HEPB", "K"),("DKTP_HEPB", "T"),("DKTP_HEPB", "P"),("DKTP_HEPB", "HEPB"),
+    ("AK", "AK")
+
+]
+
+RELATION omschrijving[Indicatie*Tekst] [UNI,TOT]
+POPULATION omschrijving[Indicatie*Tekst] CONTAINS [ 
+  ( "HepbDCode", "Moeder is draagster van HepB"),
+  ( "HepbECode", "Minstens een ouder afkomstig uit land met hoog-emdemisch voorkomen HepB"),
+  ( "HepbVCode", "Kind is geboren voor 1-8-2011 en in buitenland gestart met HepB vaccinatie"),
+  ( "HepbDownCode", "Kind is geboren voor 1-8-2011 en heeft Down-syndroom"),
+  ( "HepbWHOCode", "Kind heeft in buitenland WHO schema gevolgd voor HepB"),
+  ( "DKTP3_5_11", "Kind volgt 3-5-11 schema voor zuigelingen voor DKTP en HepB"),
+  ( "DKTP2_3_5_11", "Kind volgt 2-3-5-11 schema voor zuigelingen voor DKTP en HepB")
+] 
+RELATION omschrijving[VaccinSoort*Tekst] [UNI,TOT]
+POPULATION omschrijving[VaccinSoort*Tekst] CONTAINS [ 
+
+    ("AK", "Het losse aK-vaccin (acellulair Kinkhoest)"),
+    ("BMR", "BMR-vaccin (bof, mazelen, rodehond): Dit vaccin biedt bescherming tegen bof, mazelen en rodehond."),
+    ("DKT", "Het DKT-vaccin (een cocktail van D, K en T) wat wordt ingezet om zwangeren te beschermen tegen kinkhoest"),
+    ("DKTP_BOOSTER", "- Het DKTP booster vaccin (een cocktail van D, K, T en P maar met een lagere dosis waardoor het uitsluitend ingezet kan worden als booster vaccin)"),
+    ("DKTP_HEPB", "Het DKTP-HepB vaccin"),
+    ("DKTP_HIB", "Het DKTP-Hib vaccin"),
+    ("DKTP_HIB_HEPB", "een cocktail van D – difterie, K – kinkhoest, T – tetanus, P – polio, Hib – Haemophilus influenzae type B en HepB – Hepatitis B"),
+    ("DTP", "Het DTP-vaccin (een cocktail van D, T en P)"),
+    ("HEPB", "Het losse EepB vaccin"),
+    ("HIB", "Hib-vaccin (Haemophilus influenzae type b): Dit vaccin biedt bescherming tegen infecties veroorzaakt door de bacterie Haemophilus influenzae type b."),
+    ("HPV", "HPV-vaccin (humaan papillomavirus): Dit vaccin biedt bescherming tegen infecties veroorzaakt door het humaan papillomavirus, dat kan leiden tot baarmoederhalskanker en andere kankers."),
+    ("MENACWY", "MenACWY-vaccin (meningokokken ACWY): Dit vaccin biedt bescherming tegen infecties veroorzaakt door de bacterie Neisseria meningitidis serogroepen A, C, W en Y."),
+    ("MENC", "Het MenC-vaccin (Meningokokken type C)"),
+    ("PNEU", "Pneumokokkenvaccin: Dit vaccin biedt bescherming tegen infecties veroorzaakt door de bacterie Streptococcus pneumoniae.")
+]
+ENDCONTEXT
