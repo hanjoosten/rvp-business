@@ -29,14 +29,14 @@
     <dmn:variable id="_40174642-329B-4438-BDC7-28E051BAF83D" name="client" typeRef="dt.Client"/>
   </dmn:inputData>
   <dmn:decision id="_BC75F0F2-57CE-447C-A7DF-D858D2B9F677" name="is vaccin verlopen">
-    <dmn:description>Een vaccinatie moet worden uitgevoerd met een vaccin waarvan de werking nog wordt gegarandeerd. De werking kan niet meer worden gegarandeerd vanaf de expiratiedatum. Vanaf die datum is het vaccin verlopen. </dmn:description>
+    <dmn:description>Een vaccinatie moet worden uitgevoerd met een vaccin waarvan de werking nog wordt gegarandeerd. De werking kan alléén worden gegarandeerd tot en met expiratiedatum. Na die datum is het vaccin verlopen. </dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_B728B178-5EC3-41F1-A096-70E8B0C1E345" name="is vaccin verlopen" typeRef="boolean"/>
     <dmn:informationRequirement id="_606E8DE4-20C8-4053-8BD3-FBF77AE82688">
       <dmn:requiredInput href="#_ACC3C659-43CA-427B-A397-98790B5CE418"/>
     </dmn:informationRequirement>
     <dmn:literalExpression id="_B7A8BA91-08AA-4497-BA47-0459B5187FF5">
-      <dmn:text>Vaccinatie.expiratiedatum &lt; Vaccinatie.uitvoerdatum</dmn:text>
+      <dmn:text>Vaccinatie.expiratiedatum &lt;= Vaccinatie.uitvoerdatum</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:inputData id="_ACC3C659-43CA-427B-A397-98790B5CE418" name="Vaccinatie">
