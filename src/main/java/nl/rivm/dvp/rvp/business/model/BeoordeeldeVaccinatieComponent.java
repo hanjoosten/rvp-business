@@ -9,12 +9,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class BeoordeeldeVaccinatie {
-    Vaccinatie vaccinatie;
+public class BeoordeeldeVaccinatieComponent {
+    VaccinatieComponent vaccinatieComponent;
     Integer rangnummer;
     Boolean isGeldig;
-    String vaccinatieToestand;
+    VaccinatieToestand vaccinatieToestand;
     Integer leeftijdInDagen;
     String toelichting;
+    Component component;
 
 }

@@ -1,6 +1,7 @@
 package nl.rivm.dvp.rvp.business.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,12 +10,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class BeoordeeldeVaccinatie {
+@Builder
+public class VaccinatieComponent {
+    /**
+     * Een specifieke component gegeven in een specifieke 
+     */
+    VaccinSoort vaccinComponent;
     Vaccinatie vaccinatie;
-    Integer rangnummer;
-    Boolean isGeldig;
-    String vaccinatieToestand;
-    Integer leeftijdInDagen;
-    String toelichting;
-
 }

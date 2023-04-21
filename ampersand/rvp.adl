@@ -12,7 +12,7 @@ RELATION expiratiedatum[Vaccinatie * Datum] [UNI]
 RELATION vaccinatie[BeoordeeldeVaccinatie*Vaccinatie] [UNI]
 RELATION rangnummer[BeoordeeldeVaccinatie*Rangnummer][UNI] REPRESENT Rangnummer TYPE INTEGER
 RELATION isGeldig[BeoordeeldeVaccinatie*BeoordeeldeVaccinatie][PROP]
-RELATION vaccinatieToestand[BeoordeeldeVaccinatie*VaccinatieToestand][UNI]
+-- RELATION vaccinatieToestand[BeoordeeldeVaccinatie*VaccinatieToestand][UNI]
 RELATION leeftijdInDagen[BeoordeeldeVaccinatie*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
 RELATION toelichting[BeoordeeldeVaccinatie*Tekst][UNI]
 
@@ -24,9 +24,12 @@ RELATION toelichting[BeoordeeldeVaccinatieComponent*Tekst][UNI]
 RELATION rangnummer[BeoordeeldeVaccinatieComponent*Rangnummer][UNI] REPRESENT Rangnummer TYPE INTEGER
 RELATION isGeldig[BeoordeeldeVaccinatieComponent*BeoordeeldeVaccinatieComponent][PROP]
 RELATION vaccinatieToestand[BeoordeeldeVaccinatieComponent*VaccinatieToestand][UNI]
+  MEANING {+De weerbaarheid die de client heeft bereikt tegen de infectieziekte van de component.+}
 RELATION leeftijdInDagen[BeoordeeldeVaccinatieComponent*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
 RELATION component[BeoordeeldeVaccinatieComponent * Component][UNI,TOT]
- 
+
+RELATION infectieziekte[VaccinatieToestand*Infectieziekte][UNI,TOT]
+
 RELATION beschermtTegen[Component*Infectieziekte][TOT, UNI]
 POPULATION beschermtTegen[Component*Infectieziekte] CONTAINS [
     ("AK", "Kinkhoest"),
