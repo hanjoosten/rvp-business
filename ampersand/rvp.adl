@@ -73,13 +73,13 @@ POPULATION component[VaccinSoort*Component] CONTAINS[
 
 RELATION omschrijving[Indicatie*Tekst] [UNI,TOT]
 POPULATION omschrijving[Indicatie*Tekst] CONTAINS [ 
-  ( "HepbDCode", "Moeder is draagster van HepB"),
-  ( "HepbECode", "Minstens een ouder afkomstig uit land met hoog-emdemisch voorkomen HepB"),
-  ( "HepbVCode", "Kind is geboren voor 1-8-2011 en in buitenland gestart met HepB vaccinatie"),
-  ( "HepbDownCode", "Kind is geboren voor 1-8-2011 en heeft Down-syndroom"),
-  ( "HepbWHOCode", "Kind heeft in buitenland WHO schema gevolgd voor HepB"),
-  ( "DKTP3_5_11", "Kind volgt 3-5-11 schema voor zuigelingen voor DKTP en HepB"),
-  ( "DKTP2_3_5_11", "Kind volgt 2-3-5-11 schema voor zuigelingen voor DKTP en HepB")
+  ( "hepbDCode", "Moeder is draagster van HepB"),
+  ( "hepbECode", "Minstens een ouder afkomstig uit land met hoog-emdemisch voorkomen HepB"),
+  ( "hepbVCode", "Kind is geboren voor 1-8-2011 en in buitenland gestart met HepB vaccinatie"),
+  ( "hepbDownCode", "Kind is geboren voor 1-8-2011 en heeft Down-syndroom"),
+  ( "hepbWHOCode", "Kind heeft in buitenland WHO schema gevolgd voor HepB"),
+  ( "dKTP3_5_11", "Kind volgt 3-5-11 schema voor zuigelingen voor DKTP en HepB"),
+  ( "dKTP2_3_5_11", "Kind volgt 2-3-5-11 schema voor zuigelingen voor DKTP en HepB")
 ] 
 RELATION omschrijving[VaccinSoort*Tekst] [UNI,TOT]
 POPULATION omschrijving[VaccinSoort*Tekst] CONTAINS [ 

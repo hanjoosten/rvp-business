@@ -35,17 +35,6 @@
       <dmn:typeRef>boolean</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_80C00E4F-15E1-4DE8-A96B-C04ECBAB533A" name="Dossier" isCollection="false">
-    <dmn:itemComponent id="_3CFBFBA5-516D-4186-BFDE-0EA966472C6D" name="vaccinaties" isCollection="true">
-      <dmn:typeRef>Vaccinatie</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_0AF00904-CA1C-4672-9122-F44BB1639C27" name="peildatum" isCollection="false">
-      <dmn:typeRef>date</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_0C991125-6D28-4548-82B7-7A6E58343578" name="client" isCollection="false">
-      <dmn:typeRef>Client</dmn:typeRef>
-    </dmn:itemComponent>
-  </dmn:itemDefinition>
   <dmn:itemDefinition id="_F68E8648-6373-4C8A-8858-71ADC147E626" name="VaccinSoort" isCollection="false"/>
   <dmn:itemDefinition id="_E153E23F-0419-4127-9BB7-8E56ABD5B37D" name="Vaccinatie" isCollection="false">
     <dmn:itemComponent id="_03C4E4C0-D5E8-4014-84C3-7933376C2F3D" name="vaccinSoort" isCollection="false">
