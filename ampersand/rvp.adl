@@ -3,13 +3,13 @@ CONTEXT RVP IN DUTCH
 RELATION geboorteDatum[Client * Datum] [UNI,TOT] REPRESENT Datum TYPE DATE
 RELATION indicaties[Client * Indicatie] 
 RELATION onbeschermdDatum[Client * Datum] [UNI]
-RELATION vaccinaties[Client*Vaccinatie] 
+RELATION vaccinaties[Client*Vaccinatie] [INJ, SUR]
 RELATION vaccinSoort[Vaccinatie * VaccinSoort] [UNI,TOT] 
 RELATION uitvoerdatum[Vaccinatie * Datum] [UNI,TOT]
 RELATION product[Vaccinatie * Product] [UNI]
 RELATION expiratiedatum[Vaccinatie * Datum] [UNI]
 
-RELATION vaccinatie[BeoordeeldeVaccinatie*Vaccinatie] [UNI]
+RELATION vaccinatie[BeoordeeldeVaccinatie*Vaccinatie][UNI,TOT,INJ]
 RELATION rangnummer[BeoordeeldeVaccinatie*Rangnummer][UNI] REPRESENT Rangnummer TYPE INTEGER
 RELATION isGeldig[BeoordeeldeVaccinatie*BeoordeeldeVaccinatie][PROP]
 -- RELATION vaccinatieToestand[BeoordeeldeVaccinatie*VaccinatieToestand][UNI]
@@ -19,7 +19,7 @@ RELATION toelichting[BeoordeeldeVaccinatie*Tekst][UNI]
 RELATION vaccinatie[VaccinatieComponent*Vaccinatie][UNI,TOT]
 RELATION component[VaccinatieComponent*Component][UNI,TOT]
 
-RELATION vaccinatieComponent[BeoordeeldeVaccinatieComponent*VaccinatieComponent][UNI,TOT]
+RELATION vaccinatieComponent[BeoordeeldeVaccinatieComponent*VaccinatieComponent][UNI,TOT,INJ]
 RELATION toelichting[BeoordeeldeVaccinatieComponent*Tekst][UNI]
 RELATION rangnummer[BeoordeeldeVaccinatieComponent*Rangnummer][UNI] REPRESENT Rangnummer TYPE INTEGER
 RELATION isGeldig[BeoordeeldeVaccinatieComponent*BeoordeeldeVaccinatieComponent][PROP]
@@ -28,7 +28,7 @@ RELATION vaccinatieToestand[BeoordeeldeVaccinatieComponent*VaccinatieToestand][U
 RELATION leeftijdInDagen[BeoordeeldeVaccinatieComponent*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
 RELATION component[BeoordeeldeVaccinatieComponent * Component][UNI,TOT]
 
-RELATION infectieziekte[VaccinatieToestand*Infectieziekte][UNI,TOT]
+RELATION infectieziekte[VaccinatieToestand*Infectieziekte][UNI,TOT,SUR]
 
 RELATION beschermtTegen[Component*Infectieziekte][TOT, UNI]
 POPULATION beschermtTegen[Component*Infectieziekte] CONTAINS [
