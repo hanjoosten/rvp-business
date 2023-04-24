@@ -9,24 +9,24 @@ RELATION uitvoerdatum[Vaccinatie * Datum] [UNI,TOT]
 RELATION product[Vaccinatie * Product] [UNI]
 RELATION expiratiedatum[Vaccinatie * Datum] [UNI]
 
-RELATION vaccinatie[BeoordeeldeVaccinatie*Vaccinatie][UNI,TOT,INJ]
-RELATION rangnummer[BeoordeeldeVaccinatie*Rangnummer][UNI] REPRESENT Rangnummer TYPE INTEGER
-RELATION isGeldig[BeoordeeldeVaccinatie*BeoordeeldeVaccinatie][PROP]
--- RELATION vaccinatieToestand[BeoordeeldeVaccinatie*VaccinatieToestand][UNI]
-RELATION leeftijdInDagen[BeoordeeldeVaccinatie*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
-RELATION toelichting[BeoordeeldeVaccinatie*Tekst][UNI]
+RELATION vaccinatie[GevalideerdeVaccinatie*Vaccinatie][UNI,TOT,INJ]
+RELATION rangnummer[GevalideerdeVaccinatie*Rangnummer][UNI] REPRESENT Rangnummer TYPE INTEGER
+RELATION isGeldig[GevalideerdeVaccinatie*GevalideerdeVaccinatie][PROP]
+-- RELATION vaccinatieToestand[GevalideerdeVaccinatie*VaccinatieToestand][UNI]
+RELATION leeftijdInDagen[GevalideerdeVaccinatie*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
+RELATION toelichting[GevalideerdeVaccinatie*Tekst][UNI]
 
 RELATION vaccinatie[VaccinatieComponent*Vaccinatie][UNI,TOT]
 RELATION component[VaccinatieComponent*Component][UNI,TOT]
 
-RELATION vaccinatieComponent[BeoordeeldeVaccinatieComponent*VaccinatieComponent][UNI,TOT,INJ]
-RELATION toelichting[BeoordeeldeVaccinatieComponent*Tekst][UNI]
-RELATION rangnummer[BeoordeeldeVaccinatieComponent*Rangnummer][UNI] REPRESENT Rangnummer TYPE INTEGER
-RELATION isGeldig[BeoordeeldeVaccinatieComponent*BeoordeeldeVaccinatieComponent][PROP]
-RELATION vaccinatieToestand[BeoordeeldeVaccinatieComponent*VaccinatieToestand][UNI]
+RELATION vaccinatieComponent[GevalideerdeVaccinatieComponent*VaccinatieComponent][UNI,TOT,INJ]
+RELATION toelichting[GevalideerdeVaccinatieComponent*Tekst][UNI]
+RELATION rangnummer[GevalideerdeVaccinatieComponent*Rangnummer][UNI] REPRESENT Rangnummer TYPE INTEGER
+RELATION isGeldig[GevalideerdeVaccinatieComponent*GevalideerdeVaccinatieComponent][PROP]
+RELATION vaccinatieToestand[GevalideerdeVaccinatieComponent*VaccinatieToestand][UNI]
   MEANING {+De weerbaarheid die de client heeft bereikt tegen de infectieziekte van de component.+}
-RELATION leeftijdInDagen[BeoordeeldeVaccinatieComponent*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
---RELATION component[BeoordeeldeVaccinatieComponent * Component][UNI,TOT]
+RELATION leeftijdInDagen[GevalideerdeVaccinatieComponent*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
+--RELATION component[GevalideerdeVaccinatieComponent * Component][UNI,TOT]
 
 RELATION infectieziekte_vaccinatieToestand[VaccinatieToestand*Infectieziekte][TOT,SUR]
 POPULATION infectieziekte_vaccinatieToestand[VaccinatieToestand*Infectieziekte] CONTAINS 

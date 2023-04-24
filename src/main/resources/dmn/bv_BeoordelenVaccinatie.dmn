@@ -44,15 +44,15 @@
     <dmn:extensionElements/>
     <dmn:variable id="_840226A8-01BA-45E3-AF55-9F25996D3E13" name="Vaccinatie" typeRef="dt.Vaccinatie"/>
   </dmn:inputData>
-  <dmn:inputData id="_6626FA35-4B6C-4F07-A7FC-291EED03CD64" name="Beoordeelde vaccinaties">
+  <dmn:inputData id="_6626FA35-4B6C-4F07-A7FC-291EED03CD64" name="Gevalideerde vaccinaties">
     <dmn:description>Vaccinaties bij de client uitgevoerd voorafgaand aan de te valideren vaccinatie.</dmn:description>
     <dmn:extensionElements/>
-    <dmn:variable id="_18530391-B130-4136-BE63-F139255C5BCB" name="Beoordeelde vaccinaties" typeRef="dt.BeoordeeldeVaccinaties"/>
+    <dmn:variable id="_18530391-B130-4136-BE63-F139255C5BCB" name="Gevalideerde vaccinaties" typeRef="dt.GevalideerdeVaccinaties"/>
   </dmn:inputData>
   <dmn:decision id="_6D8ADFAB-908F-41D9-ADA7-B169DC08B940" name="Beoordeeld vaccinatie">
     <dmn:description>De gegevens van de te valideren vaccinatie inclusief het resultaat van de beoordeling.</dmn:description>
     <dmn:extensionElements/>
-    <dmn:variable id="_E105FE2F-23D0-48FD-A049-D73EDAC15ED8" name="Beoordeeld vaccinatie" typeRef="dt.BeoordeeldeVaccinatie"/>
+    <dmn:variable id="_E105FE2F-23D0-48FD-A049-D73EDAC15ED8" name="Beoordeeld vaccinatie" typeRef="dt.GevalideerdeVaccinatie"/>
     <dmn:informationRequirement id="_AEBF596B-C69E-4006-83EB-C573019EF0C7">
       <dmn:requiredInput href="#_ACC3C659-43CA-427B-A397-98790B5CE418"/>
     </dmn:informationRequirement>
@@ -512,22 +512,22 @@
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
-  <dmn:decision id="_3D5A9726-9E89-4464-8FA4-3CA6FF09A54C" name="Laatst geldige beoordeelde vaccinatie">
+  <dmn:decision id="_3D5A9726-9E89-4464-8FA4-3CA6FF09A54C" name="Laatst geldige gevalideerde vaccinatie">
     <dmn:description>De meest recent uitgevoerde geldige vaccinatie bij de client, waarvan de vaccinsoort voorkomt in dezelfde vaccinsoortgroep als de te valideren vaccinatie.</dmn:description>
     <dmn:extensionElements/>
-    <dmn:variable id="_4AAEFE4F-DE0E-4079-9DA4-5C4EE89AB216" name="Laatst geldige beoordeelde vaccinatie" typeRef="dt.BeoordeeldeVaccinatie"/>
+    <dmn:variable id="_4AAEFE4F-DE0E-4079-9DA4-5C4EE89AB216" name="Laatst geldige gevalideerde vaccinatie" typeRef="dt.GevalideerdeVaccinatie"/>
     <dmn:informationRequirement id="_9615EC1C-AC95-49FC-B9E1-F5097BC86F2E">
       <dmn:requiredDecision href="#_4F4ADF42-0739-43CA-9B3E-7A7322D4BFD8"/>
     </dmn:informationRequirement>
     <dmn:context id="_6FD9A2B4-489D-41A7-8EA6-42EE02CBE545">
       <dmn:contextEntry>
-        <dmn:variable id="_93A5E71F-7990-4FC2-9C15-F6042BF4B804" name="gesorteerd" typeRef="dt.BeoordeeldeVaccinaties"/>
+        <dmn:variable id="_93A5E71F-7990-4FC2-9C15-F6042BF4B804" name="gesorteerd" typeRef="dt.GevalideerdeVaccinaties"/>
         <dmn:literalExpression id="_03690800-011A-4C3F-AA75-070E9B07F810">
           <dmn:text>sort( list: geldige vaccinaties in vaccinSoortGroep, precedes: function(x,y) x.rangnummer &gt; y.rangnummer )</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
       <dmn:contextEntry>
-        <dmn:variable id="_6122CF8D-5A6F-4939-8C4A-24E9F58381F4" name="LaatstGeldige" typeRef="dt.BeoordeeldeVaccinatie"/>
+        <dmn:variable id="_6122CF8D-5A6F-4939-8C4A-24E9F58381F4" name="LaatstGeldige" typeRef="dt.GevalideerdeVaccinatie"/>
         <dmn:literalExpression id="_D58163F0-6EFA-46AC-AFAD-61CCC5E3FE0D">
           <dmn:text>if count(gesorteerd) = 0 then null else gesorteerd[1]</dmn:text>
         </dmn:literalExpression>
@@ -550,7 +550,7 @@
       <dmn:requiredDecision href="#_3D5A9726-9E89-4464-8FA4-3CA6FF09A54C"/>
     </dmn:informationRequirement>
     <dmn:literalExpression id="_6B921DCA-4360-46AA-AAEA-A2BBE5359F24">
-      <dmn:text>(Vaccinatie.uitvoerdatum - Laatst geldige beoordeelde vaccinatie.vaccinatie.uitvoerdatum).days</dmn:text>
+      <dmn:text>(Vaccinatie.uitvoerdatum - Laatst geldige gevalideerde vaccinatie.vaccinatie.uitvoerdatum).days</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_58353E5B-4561-43D3-8D45-DA3BCBD24566" name="hoogste rang">
@@ -561,7 +561,7 @@
       <dmn:requiredDecision href="#_3D5A9726-9E89-4464-8FA4-3CA6FF09A54C"/>
     </dmn:informationRequirement>
     <dmn:literalExpression id="_A3697648-332F-4BD9-9A8E-D3B48B7D6C21">
-      <dmn:text>Laatst geldige beoordeelde vaccinatie.rangnummer</dmn:text>
+      <dmn:text>Laatst geldige gevalideerde vaccinatie.rangnummer</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_164EF57F-03AD-474C-99C7-587E91DCCCB8" name="vaccinSoort">
@@ -658,18 +658,18 @@
   <dmn:decision id="_A66B07EB-072F-485F-804D-AE38D5C30308" name="geldige vaccinaties">
     <dmn:description>De vaccinaties die eerder zijn uitgevoerd bij de client, en die geldig zijn verklaard.</dmn:description>
     <dmn:extensionElements/>
-    <dmn:variable id="_EE303CC1-8431-477C-B19C-C31787C237A8" name="geldige vaccinaties" typeRef="dt.BeoordeeldeVaccinaties"/>
+    <dmn:variable id="_EE303CC1-8431-477C-B19C-C31787C237A8" name="geldige vaccinaties" typeRef="dt.GevalideerdeVaccinaties"/>
     <dmn:informationRequirement id="_795890BA-5F72-48A7-B64E-405109A2908B">
       <dmn:requiredInput href="#_6626FA35-4B6C-4F07-A7FC-291EED03CD64"/>
     </dmn:informationRequirement>
     <dmn:literalExpression id="_91EB85BE-D0CC-424F-B9AF-48FC77187790">
-      <dmn:text>Beoordeelde vaccinaties[isGeldig]</dmn:text>
+      <dmn:text>Gevalideerde vaccinaties[isGeldig]</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_4F4ADF42-0739-43CA-9B3E-7A7322D4BFD8" name="geldige vaccinaties in vaccinSoortGroep">
     <dmn:description>De vaccinaties die eerder zijn uitgevoerd bij de client, die geldig zijn verklaard en waarvan de vaccinsoort voorkomt in dezelfde vaccinsoortgroep als van de te valideren vaccinatie.</dmn:description>
     <dmn:extensionElements/>
-    <dmn:variable id="_8255D5F7-95B7-495E-90FB-48013FA27D51" name="geldige vaccinaties in vaccinSoortGroep" typeRef="dt.BeoordeeldeVaccinaties"/>
+    <dmn:variable id="_8255D5F7-95B7-495E-90FB-48013FA27D51" name="geldige vaccinaties in vaccinSoortGroep" typeRef="dt.GevalideerdeVaccinaties"/>
     <dmn:informationRequirement id="_58045AA4-8D3B-40C8-8D9D-227B36F31850">
       <dmn:requiredDecision href="#_A66B07EB-072F-485F-804D-AE38D5C30308"/>
     </dmn:informationRequirement>

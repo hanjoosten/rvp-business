@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class BeoordeeldeVaccinatie {
+public class GevalideerdeVaccinatie {
     Vaccinatie vaccinatie;
     Integer rangnummer;
     Boolean isGeldig;

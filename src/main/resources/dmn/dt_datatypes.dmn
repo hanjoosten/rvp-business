@@ -53,7 +53,7 @@
   <dmn:itemDefinition id="_E141A931-221E-4A36-960F-4457E64969D0" name="Vaccinaties" isCollection="true">
     <dmn:typeRef>Vaccinatie</dmn:typeRef>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_BA8DD5E9-1451-4A74-9497-10ED84CF2F2E" name="BeoordeeldeVaccinatie" isCollection="false">
+  <dmn:itemDefinition id="_BA8DD5E9-1451-4A74-9497-10ED84CF2F2E" name="GevalideerdeVaccinatie" isCollection="false">
     <dmn:itemComponent id="_ECF4C339-6DF1-4547-81E0-2734FEFEAB09" name="vaccinatie" isCollection="false">
       <dmn:typeRef>Vaccinatie</dmn:typeRef>
     </dmn:itemComponent>
@@ -70,8 +70,8 @@
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_282C0B25-A28A-4EBF-A7DE-43E099105261" name="BeoordeeldeVaccinaties" isCollection="true">
-    <dmn:typeRef>BeoordeeldeVaccinatie</dmn:typeRef>
+  <dmn:itemDefinition id="_282C0B25-A28A-4EBF-A7DE-43E099105261" name="GevalideerdeVaccinaties" isCollection="true">
+    <dmn:typeRef>GevalideerdeVaccinatie</dmn:typeRef>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_2BDC50E4-405A-43CA-BBE8-D72AC9777C80" name="VaccinSoorten" isCollection="true">
     <dmn:typeRef>VaccinSoort</dmn:typeRef>
@@ -92,7 +92,7 @@
       <dmn:typeRef>Component</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_9FC2E76B-908B-4B8F-9034-5CCC4659C5F3" name="BeoordeeldeVaccinatieComponent" isCollection="false">
+  <dmn:itemDefinition id="_9FC2E76B-908B-4B8F-9034-5CCC4659C5F3" name="GevalideerdeVaccinatieComponent" isCollection="false">
     <dmn:itemComponent id="_49704522-22E7-496E-968A-77F3928B3D5E" name="vaccinatieComponent" isCollection="false">
       <dmn:typeRef>VaccinatieComponent</dmn:typeRef>
     </dmn:itemComponent>
@@ -106,14 +106,36 @@
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
     <dmn:itemComponent id="_33C0BE8E-9422-4D20-8908-6B254A39D196" name="vaccinatieToestand" isCollection="false">
-      <dmn:typeRef>string</dmn:typeRef>
+      <dmn:typeRef>VaccinatieToestand</dmn:typeRef>
     </dmn:itemComponent>
     <dmn:itemComponent id="_CC2ED438-CE1B-4D85-94FE-DE0A22768D3D" name="toelichting" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_9E0CED7B-D750-4083-9C94-10F61D48CAA1" name="BeoordeeldeVaccinatieComponenten" isCollection="true">
-    <dmn:typeRef>BeoordeeldeVaccinatieComponent</dmn:typeRef>
+  <dmn:itemDefinition id="_9E0CED7B-D750-4083-9C94-10F61D48CAA1" name="GevalideerdeVaccinatieComponenten" isCollection="true">
+    <dmn:typeRef>GevalideerdeVaccinatieComponent</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_4DAEB212-C911-4888-81D1-CD747DFF9243" name="VaccinatieComponenten" isCollection="true">
+    <dmn:typeRef>VaccinatieComponent</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_558E3728-6836-4C85-8F0E-7DAD25BCAD54" name="RangnummerBepaling" isCollection="false">
+    <dmn:itemComponent id="_9ADCA427-C0B0-4419-BB2C-495B59D0E5E7" name="rangnummer" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_5D8F5F81-A097-4155-8789-7DA295F63D1A" name="toelichting" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_702B294A-E028-4E30-80CF-8F3E2A30F9A1" name="VaccinatieToestand" isCollection="false">
+    <dmn:itemComponent id="_5CA4C9F0-6070-4C2D-845B-D6070A2BFB18" name="toestand" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_04E28BDB-3272-4E8C-B3A1-1BCC41E00B9B" name="infectieziekte" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_4BD2F5F7-BC04-405D-A5D6-4AB899F1273E" name="Componenten" isCollection="true">
+    <dmn:typeRef>Component</dmn:typeRef>
   </dmn:itemDefinition>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_DB99F0E6-07DA-45A9-9C5A-9C5A2B4262BF" name="DRG">

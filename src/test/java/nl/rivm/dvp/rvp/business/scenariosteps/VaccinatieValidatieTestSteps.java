@@ -120,7 +120,7 @@ public class VaccinatieValidatieTestSteps implements Nl {
         Dan("verwacht ik dat {int} van deze vaccinaties geldig zijn verklaard",
                 (Integer aantalGeldig) -> {
                     var aantal = getResultaat()
-                            .getBeoordeeldeVaccinaties()
+                            .getGevalideerdeVaccinaties()
                             .stream()
                             .filter(x -> x.getIsGeldig())
                             .collect(Collectors.toList())

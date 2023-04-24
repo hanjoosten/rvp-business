@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
 import lombok.Setter;
-import nl.rivm.dvp.rvp.business.model.BeoordeeldeVaccinatie;
+import nl.rivm.dvp.rvp.business.model.GevalideerdeVaccinatie;
 import java.util.List;
 
 @Getter
@@ -13,16 +13,16 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VaccinatiesValidatieResponse {
 
-    @JsonProperty("BeoordeeldeVaccinaties")
-    private List<BeoordeeldeVaccinatie> beoordeeldeVaccinaties;
+    @JsonProperty("GevalideerdeVaccinaties")
+    private List<GevalideerdeVaccinatie> gevalideerdeVaccinaties;
 
     public String toString() {
         StringBuilder result = new StringBuilder();
 
-        result.append("BeoordeeldeVaccinaties: [");
-        for (int i = 0; i < beoordeeldeVaccinaties.size(); i++) {
-            result.append(beoordeeldeVaccinaties.get(i).toString());
-            if (i < beoordeeldeVaccinaties.size() - 1) {
+        result.append("GevalideerdeVaccinaties: [");
+        for (int i = 0; i < gevalideerdeVaccinaties.size(); i++) {
+            result.append(gevalideerdeVaccinaties.get(i).toString());
+            if (i < gevalideerdeVaccinaties.size() - 1) {
                 result.append(", ");
             }
         }
