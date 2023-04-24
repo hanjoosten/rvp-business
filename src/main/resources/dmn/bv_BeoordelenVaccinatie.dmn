@@ -24,7 +24,7 @@
     <dmn:inputData href="#_ACC3C659-43CA-427B-A397-98790B5CE418"/>
   </dmn:decisionService>
   <dmn:inputData id="_DAC028AE-A180-4F42-9675-EFA17BA9D7AB" name="client">
-    <dmn:description>De client waarbij de te beoordelen vaccinatie is uitgevoerd.</dmn:description>
+    <dmn:description>De client waarbij de te valideren vaccinatie is uitgevoerd.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_40174642-329B-4438-BDC7-28E051BAF83D" name="client" typeRef="dt.Client"/>
   </dmn:inputData>
@@ -45,12 +45,12 @@
     <dmn:variable id="_840226A8-01BA-45E3-AF55-9F25996D3E13" name="Vaccinatie" typeRef="dt.Vaccinatie"/>
   </dmn:inputData>
   <dmn:inputData id="_6626FA35-4B6C-4F07-A7FC-291EED03CD64" name="Beoordeelde vaccinaties">
-    <dmn:description>Vaccinaties bij de client uitgevoerd voorafgaand aan de te beoordelen vaccinatie.</dmn:description>
+    <dmn:description>Vaccinaties bij de client uitgevoerd voorafgaand aan de te valideren vaccinatie.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_18530391-B130-4136-BE63-F139255C5BCB" name="Beoordeelde vaccinaties" typeRef="dt.BeoordeeldeVaccinaties"/>
   </dmn:inputData>
   <dmn:decision id="_6D8ADFAB-908F-41D9-ADA7-B169DC08B940" name="Beoordeeld vaccinatie">
-    <dmn:description>De gegevens van de te beoordelen vaccinatie inclusief het resultaat van de beoordeling.</dmn:description>
+    <dmn:description>De gegevens van de te valideren vaccinatie inclusief het resultaat van de beoordeling.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_E105FE2F-23D0-48FD-A049-D73EDAC15ED8" name="Beoordeeld vaccinatie" typeRef="dt.BeoordeeldeVaccinatie"/>
     <dmn:informationRequirement id="_AEBF596B-C69E-4006-83EB-C573019EF0C7">
@@ -474,7 +474,7 @@
     </dmn:decisionTable>
   </dmn:decision>
   <dmn:decision id="_3F147A94-7AE4-4E7C-A407-7941A321147E" name="is geldig">
-    <dmn:description>Is de te beoordelen vaccinatie geldig?</dmn:description>
+    <dmn:description>Is de te valideren vaccinatie geldig?</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_58C4BC11-8D94-4F31-A757-3B762003225B" name="is geldig" typeRef="boolean"/>
     <dmn:informationRequirement id="_AB7DF50C-D042-470A-A5B0-47748DC5CF12">
@@ -513,7 +513,7 @@
     </dmn:decisionTable>
   </dmn:decision>
   <dmn:decision id="_3D5A9726-9E89-4464-8FA4-3CA6FF09A54C" name="Laatst geldige beoordeelde vaccinatie">
-    <dmn:description>De meest recent uitgevoerde geldige vaccinatie bij de client, waarvan de vaccinsoort voorkomt in dezelfde vaccinsoortgroep als de te beoordelen vaccinatie.</dmn:description>
+    <dmn:description>De meest recent uitgevoerde geldige vaccinatie bij de client, waarvan de vaccinsoort voorkomt in dezelfde vaccinsoortgroep als de te valideren vaccinatie.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_4AAEFE4F-DE0E-4079-9DA4-5C4EE89AB216" name="Laatst geldige beoordeelde vaccinatie" typeRef="dt.BeoordeeldeVaccinatie"/>
     <dmn:informationRequirement id="_9615EC1C-AC95-49FC-B9E1-F5097BC86F2E">
@@ -540,7 +540,7 @@
     </dmn:context>
   </dmn:decision>
   <dmn:decision id="_65119BE3-54F8-4611-9D3C-DDD67D9D1518" name="Interval">
-    <dmn:description>Met het interval wordt het aantal dagen aangegeven dat is verlopen tussen de uitvoerdatum van de te beoordelen vaccinatie en de meest recente eerdere vaccinatie van dezelfde vaccin soort groep, die geldig is verklaard.</dmn:description>
+    <dmn:description>Met het interval wordt het aantal dagen aangegeven dat is verlopen tussen de uitvoerdatum van de te valideren vaccinatie en de meest recente eerdere vaccinatie van dezelfde vaccin soort groep, die geldig is verklaard.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_F2826BEF-D1BC-430A-94D7-6FCF9A05285C" name="Interval" typeRef="number"/>
     <dmn:informationRequirement id="_35EB8B1D-1CB0-4638-B7F2-210909B00752">
@@ -554,7 +554,7 @@
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_58353E5B-4561-43D3-8D45-DA3BCBD24566" name="hoogste rang">
-    <dmn:description>Het hoogste rangnummer van de eerder bij de client uitgevoerde geldige vaccinaties in dezelfde vaccinsoortgroep als de vaccinsoortgroep waartoe de te beoordelen vaccinatie behoort.</dmn:description>
+    <dmn:description>Het hoogste rangnummer van de eerder bij de client uitgevoerde geldige vaccinaties in dezelfde vaccinsoortgroep als de vaccinsoortgroep waartoe de te valideren vaccinatie behoort.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_1793A63B-2BE6-4888-89C1-49F0832E8061" name="hoogste rang" typeRef="number"/>
     <dmn:informationRequirement id="_96277E7F-7918-4156-B9C6-DE3C468356C6">
@@ -667,7 +667,7 @@
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_4F4ADF42-0739-43CA-9B3E-7A7322D4BFD8" name="geldige vaccinaties in vaccinSoortGroep">
-    <dmn:description>De vaccinaties die eerder zijn uitgevoerd bij de client, die geldig zijn verklaard en waarvan de vaccinsoort voorkomt in dezelfde vaccinsoortgroep als van de te beoordelen vaccinatie.</dmn:description>
+    <dmn:description>De vaccinaties die eerder zijn uitgevoerd bij de client, die geldig zijn verklaard en waarvan de vaccinsoort voorkomt in dezelfde vaccinsoortgroep als van de te valideren vaccinatie.</dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_8255D5F7-95B7-495E-90FB-48013FA27D51" name="geldige vaccinaties in vaccinSoortGroep" typeRef="dt.BeoordeeldeVaccinaties"/>
     <dmn:informationRequirement id="_58045AA4-8D3B-40C8-8D9D-227B36F31850">
@@ -692,7 +692,7 @@
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_3C4067A6-C009-49FE-8E38-B715892A2DFA" name="Leeftijd in dagen">
-    <dmn:description>De leeftijd van de client op het moment van uitvoeren van de te beoordelen vaccinatie. De leeftijd wordt gemeten in hele dagen. </dmn:description>
+    <dmn:description>De leeftijd van de client op het moment van uitvoeren van de te valideren vaccinatie. De leeftijd wordt gemeten in hele dagen. </dmn:description>
     <dmn:extensionElements/>
     <dmn:variable id="_0415F958-4A37-4D3F-B834-5D4C13D4A7E4" name="Leeftijd in dagen" typeRef="number"/>
     <dmn:informationRequirement id="_92C14858-7A28-46F0-8867-64AC6C150983">
