@@ -13,7 +13,7 @@ import lombok.Setter;
 @Builder
 public class VaccinatieComponent {
     /**
-     * Een specifieke component gegeven in een specifieke 
+     * Een specifieke component gegeven in een specifieke vaccinatie
      */
     VaccinSoort vaccinComponent;
     Vaccinatie vaccinatie;

@@ -76,6 +76,45 @@
   <dmn:itemDefinition id="_2BDC50E4-405A-43CA-BBE8-D72AC9777C80" name="VaccinSoorten" isCollection="true">
     <dmn:typeRef>VaccinSoort</dmn:typeRef>
   </dmn:itemDefinition>
+  <dmn:itemDefinition id="_CB8C39B4-EA16-496E-A6D8-C5A33E6203E3" name="VaccinatieComponent" isCollection="false">
+    <dmn:itemComponent id="_96716672-3171-490B-910B-0AF5D3C6D91C" name="vaccinatieComponent" isCollection="false">
+      <dmn:typeRef>VaccinatieComponent</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_771FBC78-3C48-4F1C-837D-FCB4090CA18F" name="vaccinatie" isCollection="false">
+      <dmn:typeRef>Vaccinatie</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_D9FAFDD5-A518-45DD-B0FE-409A1F98C81E" name="component" isCollection="false">
+      <dmn:typeRef>Component</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_4DF10E39-C274-4942-AF39-4A9DC1BEEBA3" name="Component" isCollection="false">
+    <dmn:itemComponent id="_F048BB27-EB7E-428E-8C2D-7D80E4E76BE5" name="naam" isCollection="false">
+      <dmn:typeRef>Component</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_9FC2E76B-908B-4B8F-9034-5CCC4659C5F3" name="BeoordeeldeVaccinatieComponent" isCollection="false">
+    <dmn:itemComponent id="_49704522-22E7-496E-968A-77F3928B3D5E" name="vaccinatieComponent" isCollection="false">
+      <dmn:typeRef>VaccinatieComponent</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_4DA2E880-0541-4BEE-9FA0-4A55C5A4447A" name="isGeldig" isCollection="false">
+      <dmn:typeRef>boolean</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_9798B563-5621-4E94-A699-3FFCFF18DB9A" name="leeftijdInDagen" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_D0219B4E-FEFF-4919-AADA-56C10D37B9D9" name="rangnummer" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_33C0BE8E-9422-4D20-8908-6B254A39D196" name="vaccinatieToestand" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_CC2ED438-CE1B-4D85-94FE-DE0A22768D3D" name="toelichting" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_9E0CED7B-D750-4083-9C94-10F61D48CAA1" name="BeoordeeldeVaccinatieComponenten" isCollection="true">
+    <dmn:typeRef>BeoordeeldeVaccinatieComponent</dmn:typeRef>
+  </dmn:itemDefinition>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_DB99F0E6-07DA-45A9-9C5A-9C5A2B4262BF" name="DRG">
       <di:extension>
