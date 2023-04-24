@@ -3,7 +3,7 @@ CONTEXT RVP IN DUTCH
 RELATION geboorteDatum[Client * Datum] [UNI,TOT] REPRESENT Datum TYPE DATE
 RELATION indicaties[Client * Indicatie] 
 RELATION onbeschermdDatum[Client * Datum] [UNI]
-RELATION vaccinaties[Client*Vaccinatie] [INJ, SUR]
+RELATION client[Vaccinatie*Client] [UNI,TOT]
 RELATION vaccinSoort[Vaccinatie * VaccinSoort] [UNI,TOT] 
 RELATION uitvoerdatum[Vaccinatie * Datum] [UNI,TOT]
 RELATION product[Vaccinatie * Product] [UNI]
@@ -26,10 +26,25 @@ RELATION isGeldig[BeoordeeldeVaccinatieComponent*BeoordeeldeVaccinatieComponent]
 RELATION vaccinatieToestand[BeoordeeldeVaccinatieComponent*VaccinatieToestand][UNI]
   MEANING {+De weerbaarheid die de client heeft bereikt tegen de infectieziekte van de component.+}
 RELATION leeftijdInDagen[BeoordeeldeVaccinatieComponent*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
-RELATION component[BeoordeeldeVaccinatieComponent * Component][UNI,TOT]
+--RELATION component[BeoordeeldeVaccinatieComponent * Component][UNI,TOT]
 
-RELATION infectieziekte[VaccinatieToestand*Infectieziekte][UNI,TOT,SUR]
-
+RELATION infectieziekte[VaccinatieToestand*Infectieziekte][TOT,SUR]
+POPULATION infectieziekte[VaccinatieToestand*Infectieziekte] CONTAINS 
+  [ 
+    ("TODO","Rode hond"),
+    ("TODO","Kinkhoest"),
+    ("TODO","Bof"),
+    ("TODO","Difterie"),
+    ("TODO","Pneumokokkenziekte"),
+    ("TODO","HPV-kanker"),
+    ("TODO","HiB-ziekten"),
+    ("TODO","Hepatitis B"),
+    ("TODO","Tetanus"),
+    ("TODO","Polio"),
+    ("TODO","Mazelen"),
+    ("TODO","Meningokokkenziekte C"),
+    ("TODO","Meningokokkenziekte Y")
+    ]
 RELATION beschermtTegen[Component*Infectieziekte][TOT, UNI]
 POPULATION beschermtTegen[Component*Infectieziekte] CONTAINS [
     ("AK", "Kinkhoest"),
