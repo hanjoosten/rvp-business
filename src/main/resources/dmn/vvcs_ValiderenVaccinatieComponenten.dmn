@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_8CCB13E7-9681-42F0-8704-4623B9CB11CE" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" id="_434201D0-81F2-4345-8F77-259F6D3A256F" name="vvcs_ValiderenVaccinatieComponenten" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_8CCB13E7-9681-42F0-8704-4623B9CB11CE">
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_8CCB13E7-9681-42F0-8704-4623B9CB11CE" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" xmlns:included2="https://kiegroup.org/dmn/_BAAC4EAE-36E0-43D8-AF53-D2D799A24B8A" id="_434201D0-81F2-4345-8F77-259F6D3A256F" name="vvcs_ValiderenVaccinatieComponenten" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_8CCB13E7-9681-42F0-8704-4623B9CB11CE">
   <dmn:extensionElements/>
   <dmn:import id="_41645D4B-86CE-4095-A94B-EF8B2CCE17F9" name="dt" namespace="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" locationURI="dt_datatypes.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import id="_3C6FA64B-F25B-4219-A821-6778B5D0409E" name="vvc" namespace="https://kiegroup.org/dmn/_BAAC4EAE-36E0-43D8-AF53-D2D799A24B8A" locationURI="vvc_ValiderenVaccinatieComponent.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
   <dmn:inputData id="_FFC653CA-83E5-49F5-BF13-A8387F595314" name="client">
     <dmn:extensionElements/>
     <dmn:variable id="_19D4F797-5AF0-4208-B9D7-452711D4CE82" name="client" typeRef="dt.Client"/>
   </dmn:inputData>
   <dmn:inputData id="_FF442A21-890B-4D26-BFAD-CA17665DC12E" name="vaccinatie componenten">
     <dmn:extensionElements/>
-    <dmn:variable id="_6FABEA30-437F-4673-A0CB-B1E5E028C898" name="vaccinatie componenten"/>
+    <dmn:variable id="_6FABEA30-437F-4673-A0CB-B1E5E028C898" name="vaccinatie componenten" typeRef="dt.VaccinatieComponenten"/>
   </dmn:inputData>
   <dmn:decision id="_ED37267F-24ED-40EB-BD6A-CD69D017AA19" name="gevalideerde vaccinatie componenten">
     <dmn:extensionElements/>
-    <dmn:variable id="_614A7DAA-5E6E-4A07-B3C0-A3D7020F5D7D" name="gevalideerde vaccinatie componenten"/>
+    <dmn:variable id="_614A7DAA-5E6E-4A07-B3C0-A3D7020F5D7D" name="gevalideerde vaccinatie componenten" typeRef="dt.GevalideerdeVaccinatieComponenten"/>
     <dmn:informationRequirement id="_3CF6BC96-9DBA-481C-AFAE-C38F53F4358D">
       <dmn:requiredInput href="#_FF442A21-890B-4D26-BFAD-CA17665DC12E"/>
     </dmn:informationRequirement>
@@ -119,6 +120,9 @@
         <dmn:text>vvc.ValiderenVaccinatieComponentService(eerdere,client,vaccinatie component)</dmn:text>
       </dmn:literalExpression>
     </dmn:encapsulatedLogic>
+    <dmn:knowledgeRequirement id="_2C1840F8-5279-492C-B41B-6B65A3C60C2A">
+      <dmn:requiredKnowledge href="https://kiegroup.org/dmn/_BAAC4EAE-36E0-43D8-AF53-D2D799A24B8A#_8F37811C-BDF1-4E3B-8ED3-B82CFA4DB27C"/>
+    </dmn:knowledgeRequirement>
   </dmn:businessKnowledgeModel>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_F7E62DC2-1912-4AB1-A22A-198F72C9E4C3" name="DRG">
@@ -169,6 +173,19 @@
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_8F37811C-BDF1-4E3B-8ED3-B82CFA4DB27C" dmnElementRef="included2:_8F37811C-BDF1-4E3B-8ED3-B82CFA4DB27C" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="447" y="194" width="319" height="150"/>
+        <dmndi:DMNLabel/>
+        <dmndi:DMNDecisionServiceDividerLine>
+          <di:waypoint x="447" y="294"/>
+          <di:waypoint x="766" y="294"/>
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_FFC653CA-83E5-49F5-BF13-A8387F595314" dmnElementRef="_FFC653CA-83E5-49F5-BF13-A8387F595314" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
@@ -229,6 +246,10 @@
       <dmndi:DMNEdge id="dmnedge-drg-_10EBC08E-24E7-4703-AD3D-0D3BE48C71C2" dmnElementRef="_10EBC08E-24E7-4703-AD3D-0D3BE48C71C2">
         <di:waypoint x="606" y="138"/>
         <di:waypoint x="395" y="138"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_2C1840F8-5279-492C-B41B-6B65A3C60C2A" dmnElementRef="_2C1840F8-5279-492C-B41B-6B65A3C60C2A">
+        <di:waypoint x="606.5" y="269"/>
+        <di:waypoint x="606" y="138"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
