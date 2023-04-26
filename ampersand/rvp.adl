@@ -60,7 +60,6 @@ POPULATION beschermtTegen[Component*Infectieziekte] CONTAINS [
     ("D booster", "Difterie"),
     ("D", "Difterie"),
     ("HBIg", "Hepatitis B Immunoglobuline"),
-    ("Hep B", "Hepatitis B"),
     ("HepA", "Hepatitis A"),
     ("HepB", "Hepatitis B"),
     ("Hib", "HiB-ziekten"),

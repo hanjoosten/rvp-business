@@ -35,7 +35,12 @@
       <dmn:typeRef>boolean</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_F68E8648-6373-4C8A-8858-71ADC147E626" name="VaccinSoort" isCollection="false"/>
+  <dmn:itemDefinition id="_F68E8648-6373-4C8A-8858-71ADC147E626" name="VaccinSoort" isCollection="false">
+    <dmn:typeRef>string</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="expression" id="_3275B9CF-5C41-42CD-88B7-203056322FBB">
+      <dmn:text>"aK", "B", "BCG", "BM", "BMR", "BMRW", "COVID", "D", "DK-Hib", "DKT", "DKT+HepB", "DKT+Hib", "DKT+Hib+HepB", "DKTP", "DKTP booster", "DKTP-HepB", "DKTP-Hib", "DKTP-Hib-HepB", "DT", "DTP", "HBIg", "Hep A", "Hep B", "Hib", "Hib+HepB", "HPV", "IPV", "K", "M", "MenACWY", "MenC", "MR", "OPV", "P", "Pneu", "R", "Rota", "T", "TP", "Waterpokken"</dmn:text>
+    </dmn:allowedValues>
+  </dmn:itemDefinition>
   <dmn:itemDefinition id="_E153E23F-0419-4127-9BB7-8E56ABD5B37D" name="Vaccinatie" isCollection="false">
     <dmn:itemComponent id="_03C4E4C0-D5E8-4014-84C3-7933376C2F3D" name="vaccinSoort" isCollection="false">
       <dmn:typeRef>VaccinSoort</dmn:typeRef>
@@ -88,9 +93,10 @@
     </dmn:itemComponent>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_4DF10E39-C274-4942-AF39-4A9DC1BEEBA3" name="Component" isCollection="false">
-    <dmn:itemComponent id="_F048BB27-EB7E-428E-8C2D-7D80E4E76BE5" name="naam" isCollection="false">
-      <dmn:typeRef>Component</dmn:typeRef>
-    </dmn:itemComponent>
+    <dmn:typeRef>string</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="expression" id="_09E849BD-FDB4-4231-9041-6BF1C70824A9">
+      <dmn:text>"aK", "B", "BCG", "COVID", "D booster", "D", "HBIg", "HepA", "HepB", "Hib", "HPV", "IPV", "K booster", "K", "M", "MenACWY", "MenC", "OPV", "P booster", "P", "Pneu", "R", "Rota", "T booster", "T", "Waterpokken" </dmn:text>
+    </dmn:allowedValues>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_9FC2E76B-908B-4B8F-9034-5CCC4659C5F3" name="GevalideerdeVaccinatieComponent" isCollection="false">
     <dmn:itemComponent id="_49704522-22E7-496E-968A-77F3928B3D5E" name="vaccinatieComponent" isCollection="false">
@@ -136,6 +142,12 @@
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_4BD2F5F7-BC04-405D-A5D6-4AB899F1273E" name="Componenten" isCollection="true">
     <dmn:typeRef>Component</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_CA1CBF9B-8B85-4D30-BBCC-6EF9A063FD44" name="Infectieziekte" isCollection="false">
+    <dmn:typeRef>string</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="expression" id="_78D1FF4E-E29E-4C29-B4DC-9935B3167B20">
+      <dmn:text>"Rodehond","Kinkhoest","Bof","Difterie","Pneumokokkenziekte","HPV-kanker","HiB-ziekten","Hepatitis B","Tetanus","Polio","Mazelen","Meningokokkenziekte C","Meningokokkenziekte Y", "Hepatitis A", "Waterpokken", "Bacillus Calmette-Guérin", "SARS-CoV-2", "Rotavirus", "Hepatitis B Immunoglobuline"</dmn:text>
+    </dmn:allowedValues>
   </dmn:itemDefinition>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_DB99F0E6-07DA-45A9-9C5A-9C5A2B4262BF" name="DRG">
