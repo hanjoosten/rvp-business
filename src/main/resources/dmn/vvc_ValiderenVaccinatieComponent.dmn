@@ -210,7 +210,7 @@
           <dmn:text>"R"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_5F57A42F-C339-4B76-ACC7-2DEB06C84E85">
-          <dmn:text>"Rode hond"</dmn:text>
+          <dmn:text>"Rodehond"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -393,7 +393,7 @@
           <dmn:text>"Difterie"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_FAC1BB6D-793F-4886-BBF7-DA5DE7FBA85D">
-          <dmn:text>["D", "D_BOOSTER"]</dmn:text>
+          <dmn:text>["D", "D booster"]</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -415,7 +415,7 @@
           <dmn:text>"Kinkhoest"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_01FDED08-FEA1-4592-9585-AE3591AED443">
-          <dmn:text>["AK", "K", "K_BOOSTER"]</dmn:text>
+          <dmn:text>["aK", "K", "K booster"]</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -423,7 +423,7 @@
       </dmn:rule>
       <dmn:rule id="_83298E85-F13E-46FC-BF63-96D43791C463">
         <dmn:inputEntry id="_87A70FF4-DA75-4ACA-8144-9DD47722E727">
-          <dmn:text>"Rode hond"</dmn:text>
+          <dmn:text>"Rodehond"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_E430DCC5-0E4C-4D26-A28C-68897DDEF9BE">
           <dmn:text>["R"]</dmn:text>

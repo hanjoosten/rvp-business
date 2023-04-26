@@ -31,7 +31,7 @@ RELATION leeftijdInDagen[GevalideerdeVaccinatieComponent*Leeftijd][UNI,TOT] REPR
 RELATION infectieziekte_vaccinatieToestand[VaccinatieToestand*Infectieziekte][TOT,SUR]
 POPULATION infectieziekte_vaccinatieToestand[VaccinatieToestand*Infectieziekte] CONTAINS 
   [ 
-    ("TODO","Rode hond"),
+    ("TODO","Rodehond"),
     ("TODO","Kinkhoest"),
     ("TODO","Bof"),
     ("TODO","Difterie"),
@@ -43,75 +43,188 @@ POPULATION infectieziekte_vaccinatieToestand[VaccinatieToestand*Infectieziekte] 
     ("TODO","Polio"),
     ("TODO","Mazelen"),
     ("TODO","Meningokokkenziekte C"),
-    ("TODO","Meningokokkenziekte Y")
+    ("TODO","Meningokokkenziekte Y"),
+    ("TODO", "Hepatitis A"),
+    ("TODO", "Waterpokken"),
+    ("TODO", "Bacillus Calmette-Guérin"),
+    ("TODO", "SARS-CoV-2"),
+    ("TODO", "Rotavirus"),
+    ("TODO", "Hepatitis B Immunoglobuline")
     ]
 RELATION beschermtTegen[Component*Infectieziekte][TOT, UNI]
 POPULATION beschermtTegen[Component*Infectieziekte] CONTAINS [
-    ("AK", "Kinkhoest"),
+    ("aK", "Kinkhoest"),
     ("B", "Bof"),
-    ("D_BOOSTER", "Difterie"),
+    ("BCG", "Bacillus Calmette-Guérin"),
+    ("COVID", "SARS-CoV-2"),
+    ("D booster", "Difterie"),
     ("D", "Difterie"),
-    ("HEPB", "Hepatitis B"),
-    ("HIB", "HiB-ziekten"),
+    ("HBIg", "Hepatitis B Immunoglobuline"),
+    ("Hep B", "Hepatitis B"),
+    ("HepA", "Hepatitis A"),
+    ("HepB", "Hepatitis B"),
+    ("Hib", "HiB-ziekten"),
     ("HPV", "HPV-kanker"),
-    ("K_BOOSTER", "Kinkhoest"),
+    ("IPV", "Polio"),
+    ("K booster", "Kinkhoest"),
     ("K", "Kinkhoest"),
     ("M", "Mazelen"),
-    ("MENACWY", "Meningokokkenziekte Y"),
-    ("MENC", "Meningokokkenziekte C"),
-    ("P_BOOSTER", "Polio"),
+    ("MenACWY", "Meningokokkenziekte Y"),
+    ("MenC", "Meningokokkenziekte C"),
+    ("OPV", "Polio"),
+    ("P booster", "Polio"),
     ("P", "Polio"),
-    ("PNEU", "Pneumokokkenziekte"),
-    ("R", "Rode hond"),
-    ("T_BOOSTER", "Tetanus"),
-    ("T", "Tetanus")
-
+    ("Pneu", "Pneumokokkenziekte"),
+    ("R", "Rodehond"),
+    ("Rota", "Rotavirus"),
+    ("T booster", "Tetanus"),
+    ("T", "Tetanus"),
+    ("Waterpokken", "Waterpokken")
 ]
 RELATION component_vaccinSoort[VaccinSoort*Component][TOT]
 POPULATION component_vaccinSoort[VaccinSoort*Component] CONTAINS[
-    ("PNEU", "PNEU"),
-    ("DTP", "D"),("DTP", "T"),("DTP", "P"),
-    ("DKTP_HIB_HEPB", "D"),("DKTP_HIB_HEPB", "K"),("DKTP_HIB_HEPB", "T"),("DKTP_HIB_HEPB", "P"),("DKTP_HIB_HEPB", "HIB"),("DKTP_HIB_HEPB", "HEPB"),
-    ("MENC", "MENC"),
-    ("DKTP_BOOSTER", "D_BOOSTER"),("DKTP_BOOSTER", "K_BOOSTER"),("DKTP_BOOSTER", "T_BOOSTER"),("DKTP_BOOSTER", "P_BOOSTER"),
-    ("HEPB", "HEPB"),
-    ("BMR", "B"),("BMR", "M"),("BMR", "R"),
-    ("MENACWY", "MENACWY"),
-    ("HIB", "HIB"),
-    ("DKTP_HIB", "D"),("DKTP_HIB", "K"),("DKTP_HIB", "T"),("DKTP_HIB", "P"),("DKTP_HIB", "HIB"),
-    ("HPV", "HPV"),
-    ("DKT", "D"),("DKT", "K"),("DKT", "T"),
-    ("DKTP_HEPB", "D"),("DKTP_HEPB", "K"),("DKTP_HEPB", "T"),("DKTP_HEPB", "P"),("DKTP_HEPB", "HEPB"),
-    ("AK", "AK")
-
+     ("aK", "aK")
+    ,("B", "B")
+    ,("BCG", "BCG")
+    ,("BM", "B")
+    ,("BM", "M")
+    ,("BMR", "B")
+    ,("BMR", "M")
+    ,("BMR", "R")
+    ,("BMRW", "B")
+    ,("BMRW", "M")
+    ,("BMRW", "R")
+    ,("BMRW", "Waterpokken")
+    ,("COVID", "COVID")
+    ,("D", "D")
+    ,("DK-Hib", "D")
+    ,("DK-Hib", "Hib")
+    ,("DK-Hib", "K")
+    ,("DKT", "D")
+    ,("DKT", "K")
+    ,("DKT", "T")
+    ,("DKT+HepB", "D")
+    ,("DKT+HepB", "HepB")
+    ,("DKT+HepB", "K")
+    ,("DKT+HepB", "T")
+    ,("DKT+Hib", "D")
+    ,("DKT+Hib", "Hib")
+    ,("DKT+Hib", "K")
+    ,("DKT+Hib", "T")
+    ,("DKT+Hib+HepB", "D")
+    ,("DKT+Hib+HepB", "HepB")
+    ,("DKT+Hib+HepB", "Hib")
+    ,("DKT+Hib+HepB", "K")
+    ,("DKT+Hib+HepB", "T")
+    ,("DKTP booster", "D booster")
+    ,("DKTP booster", "K booster")
+    ,("DKTP booster", "P booster")
+    ,("DKTP booster", "T booster")
+    ,("DKTP-HepB", "D")
+    ,("DKTP-HepB", "HepB")
+    ,("DKTP-HepB", "K")
+    ,("DKTP-HepB", "P")
+    ,("DKTP-HepB", "T")
+    ,("DKTP-Hib-HepB", "D")
+    ,("DKTP-Hib-HepB", "HepB")
+    ,("DKTP-Hib-HepB", "Hib")
+    ,("DKTP-Hib-HepB", "K")
+    ,("DKTP-Hib-HepB", "P")
+    ,("DKTP-Hib-HepB", "T")
+    ,("DKTP-Hib", "D")
+    ,("DKTP-Hib", "Hib")
+    ,("DKTP-Hib", "K")
+    ,("DKTP-Hib", "P")
+    ,("DKTP-Hib", "T")
+    ,("DKTP", "D")
+    ,("DKTP", "K")
+    ,("DKTP", "P")
+    ,("DKTP", "T")
+    ,("DT", "D")
+    ,("DT", "T")
+    ,("DTP", "D")
+    ,("DTP", "P")
+    ,("DTP", "T")
+    ,("HBIg", "HBIg")
+    ,("Hep A", "HepA")
+    ,("Hep B", "HepB")
+    ,("Hib", "Hib")
+    ,("Hib+HepB", "HepB")
+    ,("Hib+HepB", "Hib")
+    ,("HPV", "HPV")
+    ,("IPV", "IPV")
+    ,("K", "K")
+    ,("M", "M")
+    ,("MenACWY", "MenACWY")
+    ,("MenC", "MenC")
+    ,("MR", "M")
+    ,("MR", "R")
+    ,("OPV", "OPV")
+    ,("P", "P")
+    ,("Pneu", "Pneu")
+    ,("R", "R")
+    ,("Rota", "Rota")
+    ,("T", "T")
+    ,("TP", "P")
+    ,("TP", "T")
+    ,("Waterpokken", "Waterpokken")
 ]
 
 RELATION omschrijving[Indicatie*Tekst] [UNI,TOT]
 POPULATION omschrijving[Indicatie*Tekst] CONTAINS [ 
-  ( "hepbDCode", "Moeder is draagster van HepB"),
-  ( "hepbECode", "Minstens een ouder afkomstig uit land met hoog-emdemisch voorkomen HepB"),
-  ( "hepbVCode", "Kind is geboren voor 1-8-2011 en in buitenland gestart met HepB vaccinatie"),
-  ( "hepbDownCode", "Kind is geboren voor 1-8-2011 en heeft Down-syndroom"),
-  ( "hepbWHOCode", "Kind heeft in buitenland WHO schema gevolgd voor HepB"),
-  ( "dKTP3_5_11", "Kind volgt 3-5-11 schema voor zuigelingen voor DKTP en HepB"),
-  ( "dKTP2_3_5_11", "Kind volgt 2-3-5-11 schema voor zuigelingen voor DKTP en HepB")
+  ( "HepB D-code", "Moeder is draagster van HepB"),
+  ( "HepB E-code", "Minstens een ouder afkomstig uit land met hoog-emdemisch voorkomen HepB"),
+  ( "HepB V-code", "Kind is geboren voor 1-8-2011 en in buitenland gestart met HepB vaccinatie"),
+  ( "Down-code", "Kind is geboren voor 1-8-2011 en heeft Down-syndroom"),
+  ( "HepB WHO-schema", "Kind heeft in buitenland WHO schema gevolgd voor HepB"),
+  ( "DKTP 3-5-11", "Kind volgt 3-5-11 schema voor zuigelingen voor DKTP en HepB"),
+  ( "DKPT 2-3-5-11", "Kind volgt 2-3-5-11 schema voor zuigelingen voor DKTP en HepB")
 ] 
 RELATION omschrijving[VaccinSoort*Tekst] [UNI,TOT]
 POPULATION omschrijving[VaccinSoort*Tekst] CONTAINS [ 
 
-    ("AK", "Het losse aK-vaccin (acellulair Kinkhoest)"),
+    ("aK", "Het losse aK-vaccin (acellulair Kinkhoest)"),
     ("BMR", "BMR-vaccin (bof, mazelen, rodehond): Dit vaccin biedt bescherming tegen bof, mazelen en rodehond."),
     ("DKT", "Het DKT-vaccin (een cocktail van D, K en T) wat wordt ingezet om zwangeren te beschermen tegen kinkhoest"),
-    ("DKTP_BOOSTER", "- Het DKTP booster vaccin (een cocktail van D, K, T en P maar met een lagere dosis waardoor het uitsluitend ingezet kan worden als booster vaccin)"),
-    ("DKTP_HEPB", "Het DKTP-HepB vaccin"),
-    ("DKTP_HIB", "Het DKTP-Hib vaccin"),
-    ("DKTP_HIB_HEPB", "een cocktail van D – difterie, K – kinkhoest, T – tetanus, P – polio, Hib – Haemophilus influenzae type B en HepB – Hepatitis B"),
+    ("DKTP booster", "- Het DKTP booster vaccin (een cocktail van D, K, T en P maar met een lagere dosis waardoor het uitsluitend ingezet kan worden als booster vaccin)"),
+    ("DKTP-HepB", "Het DKTP-HepB vaccin"),
+    ("DKTP-Hib", "Het DKTP-Hib vaccin"),
+    ("DKT+Hib+HepB", "een cocktail van D – difterie, K – kinkhoest, T – tetanus, P – polio, Hib – Haemophilus influenzae type B en HepB – Hepatitis B"),
     ("DTP", "Het DTP-vaccin (een cocktail van D, T en P)"),
-    ("HEPB", "Het losse EepB vaccin"),
-    ("HIB", "Hib-vaccin (Haemophilus influenzae type b): Dit vaccin biedt bescherming tegen infecties veroorzaakt door de bacterie Haemophilus influenzae type b."),
+    ("Hep B", "Het losse EepB vaccin"),
+    ("Hib", "Hib-vaccin (Haemophilus influenzae type b): Dit vaccin biedt bescherming tegen infecties veroorzaakt door de bacterie Haemophilus influenzae type b."),
     ("HPV", "HPV-vaccin (humaan papillomavirus): Dit vaccin biedt bescherming tegen infecties veroorzaakt door het humaan papillomavirus, dat kan leiden tot baarmoederhalskanker en andere kankers."),
-    ("MENACWY", "MenACWY-vaccin (meningokokken ACWY): Dit vaccin biedt bescherming tegen infecties veroorzaakt door de bacterie Neisseria meningitidis serogroepen A, C, W en Y."),
-    ("MENC", "Het MenC-vaccin (Meningokokken type C)"),
-    ("PNEU", "Pneumokokkenvaccin: Dit vaccin biedt bescherming tegen infecties veroorzaakt door de bacterie Streptococcus pneumoniae.")
+    ("MenACWY", "MenACWY-vaccin (meningokokken ACWY): Dit vaccin biedt bescherming tegen infecties veroorzaakt door de bacterie Neisseria meningitidis serogroepen A, C, W en Y."),
+    ("MenC", "Het MenC-vaccin (Meningokokken type C)"),
+    ("Pneu", "Pneumokokkenvaccin: Dit vaccin biedt bescherming tegen infecties veroorzaakt door de bacterie Streptococcus pneumoniae."),
+    ("Rota", "Rota"),
+    ("OPV", "OPV"),
+    ("M", "Het losse M-vaccin"),
+    ("K", "Het losse K-vaccin"),
+    ("D", "Het losse D-vaccin"),
+    ("B", "Het losse B-vaccin"),
+    ("T", "Het losse T-vaccin"),
+    ("P", "Het losse P-vaccin"),
+    ("R", "Het losse R-vaccin"),
+    ("TP", "Het TP-vaccin (een cocktail van T en P)"),
+    ("DK-Hib", "Het DK-Hib vaccin"),
+    ("DKT+Hib", "Het DKT+Hib vaccin"),
+    ("Hib+HepB", "Het Hib+HepB vaccin"),
+    ("Hep A", "Het Hep A vaccin"),
+    ("BMRW", "Het BMRW vaccin"),
+    ("IPV", "Het IPV vaccin"),
+    ("DKTP", "Het DKTP vaccin"),
+    ("Waterpokken", "Het Waterpokken vaccin"),
+    ("DKT+HepB", "Het DKT+HepB vaccin"),
+    ("BCG", "Het BCG vaccin"),
+    ("MR", "Het MR vaccin"),
+    ("DT", "Het DT vaccin"),
+    ("COVID", "Het COVID vaccin"),
+    ("DKTP-Hib-HepB", "Het DKTP-Hib-HepB vaccin"),
+    ("BM", "Het BM vaccin"),
+    ("HBIg", "Het HBIg vaccin")
+
+ 
+
 ]
 ENDCONTEXT
