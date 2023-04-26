@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_BAAC4EAE-36E0-43D8-AF53-D2D799A24B8A" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" id="_66B8BCDD-E302-48EE-B1F1-E4BEE9961FD8" name="vvc_ValiderenVaccinatieComponent" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_BAAC4EAE-36E0-43D8-AF53-D2D799A24B8A">
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_BAAC4EAE-36E0-43D8-AF53-D2D799A24B8A" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" xmlns:included2="xls2dmn_8c91f710-98c5-4fac-867d-b88403a6a018" id="_66B8BCDD-E302-48EE-B1F1-E4BEE9961FD8" name="vvc_ValiderenVaccinatieComponent" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_BAAC4EAE-36E0-43D8-AF53-D2D799A24B8A">
   <dmn:extensionElements/>
   <dmn:import id="_6B546BCC-3129-4FB6-B8F0-E282D2C22869" name="dt" namespace="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" locationURI="dt_datatypes.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import id="_DFC197BA-61E5-4A2D-93FC-ED09A233C9AD" name="stm" namespace="xls2dmn_8c91f710-98c5-4fac-867d-b88403a6a018" locationURI="stm_stamgegevens.xlsx.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
   <dmn:decisionService id="_8F37811C-BDF1-4E3B-8ED3-B82CFA4DB27C" name="ValiderenVaccinatieComponentService">
     <dmn:extensionElements/>
     <dmn:variable id="_CE239BE6-6F82-4CB9-8AD9-AE874E87BB89" name="ValiderenVaccinatieComponentService" typeRef="dt.GevalideerdeVaccinatieComponent"/>
@@ -170,64 +171,16 @@
   </dmn:decision>
   <dmn:decision id="_E92278EE-87DE-4E4F-9606-2578A69811ED" name="infectieziekte">
     <dmn:extensionElements/>
-    <dmn:variable id="_F53DC89D-14CA-4F00-AF03-6A2F3C774157" name="infectieziekte" typeRef="string"/>
+    <dmn:variable id="_F53DC89D-14CA-4F00-AF03-6A2F3C774157" name="infectieziekte" typeRef="dt.Infectieziekte"/>
     <dmn:informationRequirement id="_19EA5882-27AC-4E9C-947A-9E268975B53E">
       <dmn:requiredDecision href="#_7DAAEC3D-9089-44B2-A1E6-34E98F3F81CB"/>
     </dmn:informationRequirement>
-    <dmn:decisionTable id="_242FE0BB-ECD0-438D-B8E7-D438A54D1CE3" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
-      <dmn:input id="_F1E048A4-3A5D-45AF-8F83-506446A834A6">
-        <dmn:inputExpression id="_E756CBDB-CE9C-4482-9620-E46A8E39E792" typeRef="dt.Component">
-          <dmn:text>component</dmn:text>
-        </dmn:inputExpression>
-      </dmn:input>
-      <dmn:output id="_8FEBE39F-D77D-480A-A9BF-766757462FE7"/>
-      <dmn:annotation name="annotation-1"/>
-      <dmn:rule id="_8357AB9C-D3EB-4788-BC1C-5084D5D395C2">
-        <dmn:inputEntry id="_3C25CE59-E8B8-4130-9BFF-8E7B7BA6DF60">
-          <dmn:text>"B"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_8CE047F3-CE7B-41CD-9FDF-6043D8515335">
-          <dmn:text>"Bof"
-</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_C3C9FD49-FA2A-41FA-97B5-817287301276">
-        <dmn:inputEntry id="_D5C6AEB2-BC62-425F-88A3-CCC44209D9CC">
-          <dmn:text>"M"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_092B95A2-FDF2-4298-A2B2-4210DB7B9B6D">
-          <dmn:text>"Mazelen"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_EAA4B8F8-F8A3-482D-AB0F-E9C9F597A841">
-        <dmn:inputEntry id="_5A192AFA-7D41-4CB1-9FB5-97F782D3B3FA">
-          <dmn:text>"R"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_5F57A42F-C339-4B76-ACC7-2DEB06C84E85">
-          <dmn:text>"Rodehond"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_1A4273D2-1981-4CBA-8C06-D9897D3FCCC8">
-        <dmn:inputEntry id="_62483C51-961C-41AC-A885-D22901294E26">
-          <dmn:text>"HPV"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_1CCE1CC0-1104-4A8B-A2EC-E7A93EB38530">
-          <dmn:text>"HPV-kanker"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-    </dmn:decisionTable>
+    <dmn:knowledgeRequirement id="_EC7F0C64-D634-4114-86A7-F1FF390057F0">
+      <dmn:requiredKnowledge href="xls2dmn_8c91f710-98c5-4fac-867d-b88403a6a018#_8FAB4726-AB94-4E40-9807-B4C8C7F2B580"/>
+    </dmn:knowledgeRequirement>
+    <dmn:literalExpression id="_118CE62A-F719-46E7-8A6F-7D5D7442C9E4">
+      <dmn:text>stm.bepaalInfectieziekte(component)</dmn:text>
+    </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_E4387182-DCB5-40A9-9BD0-683397057C16" name="uitvoerdatum">
     <dmn:extensionElements/>
@@ -526,11 +479,8 @@
           <kie:ComponentWidths dmnElementRef="_414052F8-C4C0-4D4D-8CB3-CA62D7C99C86">
             <kie:width>300</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_242FE0BB-ECD0-438D-B8E7-D438A54D1CE3">
-            <kie:width>50</kie:width>
-            <kie:width>137</kie:width>
-            <kie:width>119</kie:width>
-            <kie:width>100</kie:width>
+          <kie:ComponentWidths dmnElementRef="_118CE62A-F719-46E7-8A6F-7D5D7442C9E4">
+            <kie:width>465</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_33F23F6F-44E1-4BCC-A0F6-53579B9772CA">
             <kie:width>507</kie:width>
@@ -776,6 +726,15 @@
         <dc:Bounds x="374.25" y="349.00000000000006" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_8FAB4726-AB94-4E40-9807-B4C8C7F2B580" dmnElementRef="included2:_8FAB4726-AB94-4E40-9807-B4C8C7F2B580" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1131" y="476.3421052631579" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_BF1B1961-7057-4906-BF95-A2F4C42EFB2B" dmnElementRef="_BF1B1961-7057-4906-BF95-A2F4C42EFB2B">
         <di:waypoint x="754.25" y="307.00000000000006"/>
         <di:waypoint x="633.25" y="222"/>
@@ -818,6 +777,10 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_19EA5882-27AC-4E9C-947A-9E268975B53E" dmnElementRef="_19EA5882-27AC-4E9C-947A-9E268975B53E">
         <di:waypoint x="424.25" y="464.00000000000006"/>
+        <di:waypoint x="563.25" y="408.00000000000006"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_EC7F0C64-D634-4114-86A7-F1FF390057F0" dmnElementRef="_EC7F0C64-D634-4114-86A7-F1FF390057F0">
+        <di:waypoint x="1181" y="501.3421052631579"/>
         <di:waypoint x="563.25" y="408.00000000000006"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_5CBE08A8-90E4-462D-86D0-83B4DD9752BC" dmnElementRef="_5CBE08A8-90E4-462D-86D0-83B4DD9752BC">

@@ -796,6 +796,19 @@
       <dmn:text>["aK", "B", "BCG", "BM", "BMR", "BMRW", "COVID", "D", "DK-Hib", "DKT", "DKT+HepB", "DKT+Hib", "DKT+Hib+HepB", "DKTP", "DKTP booster", "DKTP-HepB", "DKTP-Hib", "DKTP-Hib-HepB", "DT", "DTP", "HBIg", "Hep A", "Hep B", "Hib", "Hib+HepB", "HPV", "IPV", "K", "M", "MenACWY", "MenC", "MR", "OPV", "P", "Pneu", "R", "Rota", "T", "TP", "Waterpokken"]</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
+  <dmn:businessKnowledgeModel id="_8FAB4726-AB94-4E40-9807-B4C8C7F2B580" name="bepaalInfectieziekte">
+    <dmn:extensionElements/>
+    <dmn:variable id="_34A7B43A-E0F7-4CA1-856D-9820D102CDD7" name="bepaalInfectieziekte" typeRef="dt.Infectieziekte"/>
+    <dmn:encapsulatedLogic id="_234F11FC-077A-473C-BD90-442EA8DE7E1F" kind="FEEL">
+      <dmn:formalParameter id="_82310D02-C401-43DE-B6B8-8F783D85FC3C" name="component" typeRef="dt.Component"/>
+      <dmn:literalExpression id="_9F45E446-7A7D-4153-A0F2-8C8C9F689579">
+        <dmn:text>componentService(component).beschermtTegen</dmn:text>
+      </dmn:literalExpression>
+    </dmn:encapsulatedLogic>
+    <dmn:knowledgeRequirement id="_C77DBD8C-FCC6-4FBE-B687-05C7672B0B5F">
+      <dmn:requiredKnowledge href="#_397301DF-5DF6-480F-ADC2-CFADAA995196"/>
+    </dmn:knowledgeRequirement>
+  </dmn:businessKnowledgeModel>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_7B729624-D3E3-45DC-923D-74CE2E2087E2" name="DRG">
       <di:extension>
@@ -817,6 +830,13 @@
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_B09FA322-522E-4A3A-93AA-011113857C63">
             <kie:width>300</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_9F45E446-7A7D-4153-A0F2-8C8C9F689579">
+            <kie:width>561</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_234F11FC-077A-473C-BD90-442EA8DE7E1F">
+            <kie:width>50</kie:width>
+            <kie:width>561</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
@@ -900,6 +920,15 @@
         <dc:Bounds x="689" y="117" width="163" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_8FAB4726-AB94-4E40-9807-B4C8C7F2B580" dmnElementRef="_8FAB4726-AB94-4E40-9807-B4C8C7F2B580" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="271" y="403" width="136" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_5D91714B-A069-4B36-849D-B4C3E4E3A160" dmnElementRef="_5D91714B-A069-4B36-849D-B4C3E4E3A160">
         <di:waypoint x="605" y="306"/>
         <di:waypoint x="605" y="142"/>
@@ -907,6 +936,10 @@
       <dmndi:DMNEdge id="dmnedge-drg-_C9051CBB-CAFC-4FCB-9648-7248230CB391" dmnElementRef="_C9051CBB-CAFC-4FCB-9648-7248230CB391">
         <di:waypoint x="183" y="306"/>
         <di:waypoint x="183.5" y="121"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_C77DBD8C-FCC6-4FBE-B687-05C7672B0B5F" dmnElementRef="_C77DBD8C-FCC6-4FBE-B687-05C7672B0B5F">
+        <di:waypoint x="278" y="157"/>
+        <di:waypoint x="339" y="428"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
