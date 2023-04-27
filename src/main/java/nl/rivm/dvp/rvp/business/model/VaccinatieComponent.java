@@ -15,6 +15,6 @@ public class VaccinatieComponent {
     /**
      * Een specifieke component gegeven in een specifieke vaccinatie
      */
-    VaccinSoort vaccinComponent;
+    Component component;
     Vaccinatie vaccinatie;
 }

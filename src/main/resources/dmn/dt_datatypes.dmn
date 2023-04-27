@@ -82,9 +82,6 @@
     <dmn:typeRef>VaccinSoort</dmn:typeRef>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_CB8C39B4-EA16-496E-A6D8-C5A33E6203E3" name="VaccinatieComponent" isCollection="false">
-    <dmn:itemComponent id="_96716672-3171-490B-910B-0AF5D3C6D91C" name="vaccinatieComponent" isCollection="false">
-      <dmn:typeRef>VaccinatieComponent</dmn:typeRef>
-    </dmn:itemComponent>
     <dmn:itemComponent id="_771FBC78-3C48-4F1C-837D-FCB4090CA18F" name="vaccinatie" isCollection="false">
       <dmn:typeRef>Vaccinatie</dmn:typeRef>
     </dmn:itemComponent>

@@ -12,4 +12,4 @@ Functionaliteit: validatie van vaccinaties
             | BMR         | 2021-02-01   | null    | 2025-01-01     | Geldig, rangnummer 1 |
             | BMR         | 2021-03-01   | null    | 2025-01-01     | Geldig, rangnummer 2 |
         Als deze vaccinaties worden gevalideerd
-        Dan verwacht ik dat 3 van deze vaccinaties geldig zijn verklaard
+        Dan verwacht ik 15 vaccinatiecomponenten
