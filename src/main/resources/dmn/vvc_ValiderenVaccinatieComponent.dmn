@@ -116,7 +116,7 @@
         </dmn:inputExpression>
       </dmn:input>
       <dmn:input id="_B15680B8-C6C9-4B95-A425-D6BDD7A62BB0">
-        <dmn:inputExpression id="_0999F4DC-A814-4062-9741-FB5F7975E59E" typeRef="string">
+        <dmn:inputExpression id="_0999F4DC-A814-4062-9741-FB5F7975E59E" typeRef="dt.Infectieziekte">
           <dmn:text>infectieziekte</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
@@ -227,25 +227,18 @@
           <dmn:text>Rangnummer.rangnummer</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:output id="_AE36CF92-C567-46C2-9A69-C08449028E66"/>
+      <dmn:output id="_AE36CF92-C567-46C2-9A69-C08449028E66">
+        <dmn:defaultOutputEntry id="_21EEAA6E-2DB9-4D1F-BEC9-99F4F6A07112">
+          <dmn:text>false</dmn:text>
+        </dmn:defaultOutputEntry>
+      </dmn:output>
       <dmn:annotation name="annotation-1"/>
       <dmn:rule id="_FB0D11AD-80CA-4593-BA31-E382D9EB0A4E">
         <dmn:inputEntry id="_A959FFC9-12AA-4681-8E39-7B138622ABCB">
-          <dmn:text>not(null)</dmn:text>
+          <dmn:text>-</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_94150462-B2B3-4F2E-82F0-03316CE84DD2">
           <dmn:text>true</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_336F7394-5702-4FFF-85BA-8FB44B8A7DD0">
-        <dmn:inputEntry id="_2FBBE60D-A98C-4D7F-BA05-565C05132D08">
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_6606F4E3-8F68-41E0-91BE-DC920E434D21">
-          <dmn:text>false</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -324,7 +317,7 @@
     </dmn:informationRequirement>
     <dmn:decisionTable id="_9CD1F94C-7028-4C4F-BB2F-DFBD9E820F1B" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_23939285-1650-4AEF-94DA-FEA5DD0B71B7">
-        <dmn:inputExpression id="_6E4856B3-EEAF-459E-B7C2-595A08021240" typeRef="string">
+        <dmn:inputExpression id="_6E4856B3-EEAF-459E-B7C2-595A08021240" typeRef="dt.Infectieziekte">
           <dmn:text>infectieziekte</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
@@ -651,7 +644,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="704.25" y="282.00000000000006" width="100" height="50"/>
+        <dc:Bounds x="704" y="281" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_0CF7B2D4-E1EB-47B1-9011-6D5979B929A3" dmnElementRef="_0CF7B2D4-E1EB-47B1-9011-6D5979B929A3" isCollapsed="false">
@@ -736,7 +729,7 @@
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_BF1B1961-7057-4906-BF95-A2F4C42EFB2B" dmnElementRef="_BF1B1961-7057-4906-BF95-A2F4C42EFB2B">
-        <di:waypoint x="754.25" y="307.00000000000006"/>
+        <di:waypoint x="754" y="306"/>
         <di:waypoint x="633.25" y="222"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_615F15CD-4309-42F8-B882-81379EE50571" dmnElementRef="_615F15CD-4309-42F8-B882-81379EE50571">
@@ -802,7 +795,7 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_79B8ABF3-CE8C-44C4-80AB-F445A12655FD" dmnElementRef="_79B8ABF3-CE8C-44C4-80AB-F445A12655FD">
         <di:waypoint x="633.25" y="304.00000000000006"/>
-        <di:waypoint x="754.25" y="307.00000000000006"/>
+        <di:waypoint x="754" y="306"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_6F89EDB3-A87B-4B0A-AA44-CA9775A55E24" dmnElementRef="_6F89EDB3-A87B-4B0A-AA44-CA9775A55E24">
         <di:waypoint x="563.25" y="408.00000000000006"/>
