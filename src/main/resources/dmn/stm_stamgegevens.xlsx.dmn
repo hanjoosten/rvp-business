@@ -538,20 +538,9 @@
           <dmn:text/>
         </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule id="_B2D0A2B6-EE16-40A8-9D98-A7B95C4D5C16">
-        <dmn:inputEntry id="_F10001E7-DC5D-4CAF-9CB7-6767F6705C21">
-          <dmn:text>"D"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_936519D5-213E-4561-A5A8-53A49636CED2">
-          <dmn:text>"Difterie"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
       <dmn:rule id="_4FC9E9B4-7289-4825-9AE5-DED1AFE8D62C">
         <dmn:inputEntry id="_1465379B-C93A-49A3-B447-C7449D4CD562">
-          <dmn:text>"D booster"</dmn:text>
+          <dmn:text>"D","D booster"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_B1B9858B-9A97-48EF-828F-E1108F8C6486">
           <dmn:text>"Difterie"</dmn:text>
@@ -606,7 +595,7 @@
       </dmn:rule>
       <dmn:rule id="_0ACAE1E7-2FE8-4BB1-AFBE-12BFF153E0EE">
         <dmn:inputEntry id="_A6AC6EF7-49A9-4A81-9A1F-19BB581DD69C">
-          <dmn:text>"OPV"</dmn:text>
+          <dmn:text>"OPV","P","P booster"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_D8D41637-3412-4E9F-B884-9B5876A1C550">
           <dmn:text>"Polio"</dmn:text>
@@ -637,20 +626,9 @@
           <dmn:text/>
         </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule id="_5690E4DC-E5F1-4F45-A551-E00ABC0E465B">
-        <dmn:inputEntry id="_045E7275-A8A3-478E-A9DC-C68DB54622E2">
-          <dmn:text>"K"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_F7439DCE-AF18-4F75-803E-DD903D28AC3E">
-          <dmn:text>"Kinkhoest"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
       <dmn:rule id="_32D655E5-6CA4-4F08-92B2-73639BF20CC7">
         <dmn:inputEntry id="_58B185CC-4177-4375-8E8C-2B31406D5047">
-          <dmn:text>"K booster"</dmn:text>
+          <dmn:text>"K","K booster"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_3C7977F6-E4F4-4E8A-9559-5390B5D9F027">
           <dmn:text>"Kinkhoest"</dmn:text>
@@ -692,28 +670,6 @@
           <dmn:text/>
         </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule id="_CD5B7D6B-2151-4428-B451-85674DA9EC6C">
-        <dmn:inputEntry id="_A5E804D6-B70E-430C-856C-C4676772E2F0">
-          <dmn:text>"P"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_C7FF4DD2-C241-4D13-A96B-A4AF05233986">
-          <dmn:text>"Polio"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_14644BE8-985D-47E3-8E0A-1DAA75B2017E">
-        <dmn:inputEntry id="_4A11C023-63A1-4C33-9957-2BDB0641F140">
-          <dmn:text>"P booster"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_851C0A94-FCA9-4C4C-8CFA-245A01EF6F72">
-          <dmn:text>"Polio"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
       <dmn:rule id="_6D9E947F-9207-4F6F-B329-C82408BEAB17">
         <dmn:inputEntry id="_5D4D8220-BA99-41A5-AAA3-6F712146AD53">
           <dmn:text>"Pneu"</dmn:text>
@@ -747,20 +703,9 @@
           <dmn:text/>
         </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule id="_5EEF1661-5535-48EE-B96C-98FD6E3EB69C">
-        <dmn:inputEntry id="_170E6E0B-60F4-4DC7-8C4F-75A63F73B3FF">
-          <dmn:text>"T"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_2E95F413-202D-42E3-ADDA-D414CC8F657D">
-          <dmn:text>"Tetanus"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
       <dmn:rule id="_FDBF3E33-0F36-4509-96E4-188FABA58EB1">
         <dmn:inputEntry id="_50E3EC5C-960F-4561-824F-27304B6B03B2">
-          <dmn:text>"T booster"</dmn:text>
+          <dmn:text>"T","T booster"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_A796DE74-F0AF-4BD3-A2D7-A2417F5C7C6E">
           <dmn:text>"Tetanus"</dmn:text>
