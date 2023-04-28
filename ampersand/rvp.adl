@@ -9,13 +9,6 @@ RELATION uitvoerdatum[Vaccinatie * Datum] [UNI,TOT]
 RELATION product[Vaccinatie * Product] [UNI]
 RELATION expiratiedatum[Vaccinatie * Datum] [UNI]
 
-RELATION vaccinatie[GevalideerdeVaccinatie*Vaccinatie][UNI,TOT,INJ]
-RELATION rangnummer[GevalideerdeVaccinatie*Rangnummer][UNI] REPRESENT Rangnummer TYPE INTEGER
-RELATION isGeldig[GevalideerdeVaccinatie*GevalideerdeVaccinatie][PROP]
--- RELATION vaccinatieToestand[GevalideerdeVaccinatie*VaccinatieToestand][UNI]
-RELATION leeftijdInDagen[GevalideerdeVaccinatie*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
-RELATION toelichting[GevalideerdeVaccinatie*Tekst][UNI]
-
 RELATION vaccinatie[VaccinatieComponent*Vaccinatie][UNI,TOT]
 RELATION component[VaccinatieComponent*Component][UNI,TOT]
 
