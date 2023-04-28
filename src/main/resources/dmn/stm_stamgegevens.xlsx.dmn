@@ -595,7 +595,7 @@
       </dmn:rule>
       <dmn:rule id="_0ACAE1E7-2FE8-4BB1-AFBE-12BFF153E0EE">
         <dmn:inputEntry id="_A6AC6EF7-49A9-4A81-9A1F-19BB581DD69C">
-          <dmn:text>"OPV","P","P booster"</dmn:text>
+          <dmn:text>"IPV","OPV","P","P booster"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_D8D41637-3412-4E9F-B884-9B5876A1C550">
           <dmn:text>"Polio"</dmn:text>
@@ -610,17 +610,6 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_942C23F9-031D-4CA8-AA32-6A9228C1A711">
           <dmn:text>"HPV-kanker"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_D292AB0D-8CF4-486A-AD70-79D0CAB0F359">
-        <dmn:inputEntry id="_41D1B275-84AC-4D36-ACE4-E4457D92BAAF">
-          <dmn:text>"IPV"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_ADF50CDB-5BE2-461A-8E58-3C26E8059F45">
-          <dmn:text>"Polio"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
