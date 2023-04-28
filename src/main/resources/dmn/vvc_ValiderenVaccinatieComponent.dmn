@@ -6,22 +6,22 @@
   <dmn:import id="_F19AC4A4-AE7B-4CBB-AE58-B82AC4D7D5C9" name="rb" namespace="https://kiegroup.org/dmn/_386BF0A1-3E1D-4ABF-8738-570B8A4865C0" locationURI="rb__rangnummerbepaling.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
   <dmn:decisionService id="_8F37811C-BDF1-4E3B-8ED3-B82CFA4DB27C" name="ValiderenVaccinatieComponentService">
     <dmn:extensionElements/>
-    <dmn:variable id="_CE239BE6-6F82-4CB9-8AD9-AE874E87BB89" name="ValiderenVaccinatieComponentService" typeRef="Any"/>
+    <dmn:variable id="_CE239BE6-6F82-4CB9-8AD9-AE874E87BB89" name="ValiderenVaccinatieComponentService" typeRef="dt.GevalideerdeVaccinatieComponent"/>
     <dmn:outputDecision href="#_060A02D4-ECFA-4A76-854F-9C814044BFF6"/>
-    <dmn:outputDecision href="#_E92278EE-87DE-4E4F-9606-2578A69811ED"/>
-    <dmn:outputDecision href="#_159AC1FC-313C-4D99-8D21-EBEA754239FE"/>
-    <dmn:outputDecision href="#_DB15608C-417E-4B6E-A635-CC6BE2BA1185"/>
-    <dmn:outputDecision href="#_0CF7B2D4-E1EB-47B1-9011-6D5979B929A3"/>
-    <dmn:outputDecision href="#_7DAAEC3D-9089-44B2-A1E6-34E98F3F81CB"/>
-    <dmn:outputDecision href="#_E4387182-DCB5-40A9-9BD0-683397057C16"/>
-    <dmn:outputDecision href="#_587C016D-BA95-45D8-B610-3BEC9EE4B937"/>
-    <dmn:outputDecision href="#_3D86A67F-AF66-4722-8508-8E6B92CC3E15"/>
-    <dmn:outputDecision href="#_52F3801D-DCFE-4645-AD42-1A2283D29AAA"/>
-    <dmn:outputDecision href="#_5146140B-D268-4EF8-BCDB-07B3FCAA4847"/>
-    <dmn:outputDecision href="#_9B13DD90-F95E-4748-8F9A-CC4778557529"/>
+    <dmn:encapsulatedDecision href="#_E92278EE-87DE-4E4F-9606-2578A69811ED"/>
+    <dmn:encapsulatedDecision href="#_159AC1FC-313C-4D99-8D21-EBEA754239FE"/>
     <dmn:encapsulatedDecision href="#_1B822670-4077-49AC-817F-722014AC076D"/>
     <dmn:encapsulatedDecision href="#_D50EC52C-6D47-4A2C-B312-4BB69E254446"/>
+    <dmn:encapsulatedDecision href="#_DB15608C-417E-4B6E-A635-CC6BE2BA1185"/>
+    <dmn:encapsulatedDecision href="#_0CF7B2D4-E1EB-47B1-9011-6D5979B929A3"/>
+    <dmn:encapsulatedDecision href="#_7DAAEC3D-9089-44B2-A1E6-34E98F3F81CB"/>
+    <dmn:encapsulatedDecision href="#_E4387182-DCB5-40A9-9BD0-683397057C16"/>
+    <dmn:encapsulatedDecision href="#_587C016D-BA95-45D8-B610-3BEC9EE4B937"/>
+    <dmn:encapsulatedDecision href="#_3D86A67F-AF66-4722-8508-8E6B92CC3E15"/>
     <dmn:encapsulatedDecision href="#_6161CF53-3A64-4D48-81F0-6095F5420E60"/>
+    <dmn:encapsulatedDecision href="#_52F3801D-DCFE-4645-AD42-1A2283D29AAA"/>
+    <dmn:encapsulatedDecision href="#_5146140B-D268-4EF8-BCDB-07B3FCAA4847"/>
+    <dmn:encapsulatedDecision href="#_9B13DD90-F95E-4748-8F9A-CC4778557529"/>
     <dmn:inputData href="#_543417EE-C99A-4F21-B75E-FC61EBFF371B"/>
     <dmn:inputData href="#_0E336785-2B84-4F70-991D-6B0B49D7DD7A"/>
     <dmn:inputData href="#_9365EEAA-8FC1-4B21-BF1E-E483A54FB0D4"/>
@@ -100,7 +100,7 @@
   </dmn:decision>
   <dmn:decision id="_587C016D-BA95-45D8-B610-3BEC9EE4B937" name="Rangnummer">
     <dmn:extensionElements/>
-    <dmn:variable id="_AC4DE5EC-07C5-43C6-A30B-2ACFFE5AA761" name="Rangnummer" typeRef="Any"/>
+    <dmn:variable id="_AC4DE5EC-07C5-43C6-A30B-2ACFFE5AA761" name="Rangnummer" typeRef="dt.RangnummerBepaling"/>
     <dmn:informationRequirement id="_89E74B67-4031-4F62-9B3E-99F401F7F6CA">
       <dmn:requiredDecision href="#_E92278EE-87DE-4E4F-9606-2578A69811ED"/>
     </dmn:informationRequirement>
@@ -562,8 +562,8 @@
         <dc:Bounds x="344.25" y="147.00000000000006" width="655.4999999999999" height="765.9999999999999"/>
         <dmndi:DMNLabel/>
         <dmndi:DMNDecisionServiceDividerLine>
-          <di:waypoint x="344.25" y="659"/>
-          <di:waypoint x="999.7499999999999" y="659"/>
+          <di:waypoint x="344.25" y="267.8888888888889"/>
+          <di:waypoint x="999.7499999999999" y="267.8888888888889"/>
         </dmndi:DMNDecisionServiceDividerLine>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_0E336785-2B84-4F70-991D-6B0B49D7DD7A" dmnElementRef="_0E336785-2B84-4F70-991D-6B0B49D7DD7A" isCollapsed="false">

@@ -70,7 +70,7 @@
         <dmn:contextEntry>
           <dmn:variable id="_75954027-5A04-4467-A482-387501D36B37" name="gevalideerde jongste" typeRef="dt.GevalideerdeVaccinatieComponent"/>
           <dmn:literalExpression id="_7587C7FC-661E-4CB2-A4F5-33BEAF75C839">
-            <dmn:text>if jongste = null then null else valideer vaccinatie component(gevalideerde overigen,client,jongste)</dmn:text>
+            <dmn:text>if jongste = null then null else valideer vaccinatie component(client,gevalideerde overigen,jongste)</dmn:text>
           </dmn:literalExpression>
         </dmn:contextEntry>
         <dmn:contextEntry>
@@ -151,40 +151,40 @@
       <di:extension>
         <kie:ComponentsWidthsExtension>
           <kie:ComponentWidths dmnElementRef="_9B1321FB-02A3-4F7F-9976-04ABB94AEAEF">
-            <kie:width>409</kie:width>
+            <kie:width>583</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_81DDF35E-CAD7-496D-9F53-13F74C82CF52">
             <kie:width>50</kie:width>
             <kie:width>247</kie:width>
-            <kie:width>799</kie:width>
+            <kie:width>1323</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_ABDFF3E4-9498-4C35-B34C-3A713AC90BD7">
-            <kie:width>799</kie:width>
+            <kie:width>1323</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_0414CDEF-A0B2-4E4D-A7F3-D6E192BC5D41">
-            <kie:width>799</kie:width>
+            <kie:width>1323</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_DC8BB022-BA74-4228-9C50-092D578EAE7B">
-            <kie:width>799</kie:width>
+            <kie:width>1323</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_1AB703EC-9820-4CB2-999B-27C1619DC26A">
-            <kie:width>799</kie:width>
+            <kie:width>1323</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_7587C7FC-661E-4CB2-A4F5-33BEAF75C839">
-            <kie:width>799</kie:width>
+            <kie:width>1323</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_C237285D-6ABB-49ED-9D5B-7E85FEA6BD28">
             <kie:width>50</kie:width>
             <kie:width>266</kie:width>
-            <kie:width>363</kie:width>
-            <kie:width>100</kie:width>
+            <kie:width>468</kie:width>
+            <kie:width>519</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_7130A2BC-E747-431E-9992-C8133CA4C012">
-            <kie:width>799</kie:width>
+            <kie:width>1323</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_4C9D03B0-7223-41EF-9A39-50E43A688D12">
             <kie:width>50</kie:width>
-            <kie:width>1116</kie:width>
+            <kie:width>1640</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_556310A9-489D-419A-94A0-C63A85FC1AC1">
             <kie:width>677</kie:width>
