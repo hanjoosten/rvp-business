@@ -2,21 +2,45 @@ package nl.rivm.dvp.rvp.business.model;
 
 public enum VaccinSoort {
      AK("aK"),
+     B("B"),
+     BCG("BCG"),
+     BM("BM"),
      BMR("BMR"),
+     BMRW("BMRW"),
+     COVID("COVID"),
+     D("D"),
+     DKHIB("DK-Hib"),
      DKT("DKT"),
-     DKT_BOOSTER("KTP booster"),
-     DKTP_HEPB("DKTP-HepB"),
-     DKTP_HIB("DKTP-Hib"),
-     DKT_HIB_HEPB("DKT+Hib+HepB"),
+     DKTHEPB("DKT+HepB"),
+     DKTHIB("DKT+Hib"),
+     DKTHIBHEPB("DKT+Hib+HepB"),
+     DKTPBOOSTER("DKTP booster"),
+     DKTPHEPB("DKTP-HepB"),
+     DKTPHIBHEPB("DKTP-Hib-HepB"),
+     DKTPHIB("DKTP-Hib"),
+     DKTP("DKTP"),
+     DT("DT"),
      DTP("DTP"),
+     HBIG("HBIg"),
+     HEPA("Hep A"),
      HEPB("Hep B"),
      HIB("Hib"),
+     HIBHEPB("Hib+HepB"),
      HPV("HPV"),
+     IPV("IPV"),
+     K("K"),
+     M("M"),
      MENACWY("MenACWY"),
      MENC("MenC"),
-     PNEU("Pneu");
-
-     // TODO: Aanvullen op basis van soorten in rvp.adl
+     MR("MR"),
+     OPV("OPV"),
+     P("P"),
+     PNEU("Pneu"),
+     R("R"),
+     ROTA("Rota"),
+     T("T"),
+     TP("TP"),
+     WATERPOKKEN("Waterpokken");
 
      // Member to hold the name
      private String string;

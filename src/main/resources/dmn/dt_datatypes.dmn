@@ -87,7 +87,7 @@
   <dmn:itemDefinition id="_F68E8648-6373-4C8A-8858-71ADC147E626" name="VaccinSoort" isCollection="false">
     <dmn:typeRef>string</dmn:typeRef>
     <dmn:allowedValues kie:constraintType="expression" id="_3275B9CF-5C41-42CD-88B7-203056322FBB">
-      <dmn:text>"aK", "B", "BCG", "BM", "BMR", "BMRW", "COVID", "D", "DK-Hib", "DKT", "DKT+HepB", "DKT+Hib", "DKT+Hib+HepB", "DKTP", "DKTP booster", "DKTP-HepB", "DKTP-Hib", "DKTP-Hib-HepB", "DT", "DTP", "HBIg", "Hep A", "Hep B", "Hib", "Hib+HepB", "HPV", "IPV", "K", "M", "MenACWY", "MenC", "MR", "OPV", "P", "Pneu", "R", "Rota", "T", "TP", "Waterpokken"</dmn:text>
+      <dmn:text>"aK", "B", "BCG", "BM", "BMR", "BMRW", "COVID", "D", "DK-Hib", "DKT", "DKT+HepB", "DKT+Hib", "DKT+Hib+HepB", "DKTP booster", "DKTP-HepB", "DKTP-Hib-HepB", "DKTP-Hib", "DKTP", "DT", "DTP", "HBIg", "Hep A", "Hep B", "Hib", "Hib+HepB", "HPV", "IPV", "K", "M", "MenACWY", "MenC", "MR", "OPV", "P", "Pneu", "R", "Rota", "T", "TP", "Waterpokken"</dmn:text>
     </dmn:allowedValues>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_2BDC50E4-405A-43CA-BBE8-D72AC9777C80" name="VaccinSoorten" isCollection="true">
