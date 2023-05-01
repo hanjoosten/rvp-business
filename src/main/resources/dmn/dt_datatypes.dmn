@@ -6,47 +6,67 @@
       <dmn:typeRef>date</dmn:typeRef>
     </dmn:itemComponent>
     <dmn:itemComponent id="_C395179A-371C-4634-AFEC-FCBE641C9A70" name="indicaties" isCollection="false">
-      <dmn:typeRef>Indicaties</dmn:typeRef>
+      <dmn:typeRef>Indicatie</dmn:typeRef>
     </dmn:itemComponent>
     <dmn:itemComponent id="_E610A31A-54CB-4DF9-A8EF-2538523F8C90" name="geboortedatum" isCollection="false">
       <dmn:typeRef>date</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_A6306E4A-FFCA-443C-A25E-2BDBB13855C1" name="Indicaties" isCollection="false">
-    <dmn:itemComponent id="_AD4A7509-9A02-45D3-9C1C-E614E90B3801" name="hepbWHOCode" isCollection="false">
+  <dmn:itemDefinition id="_4DF10E39-C274-4942-AF39-4A9DC1BEEBA3" name="Component" isCollection="false">
+    <dmn:typeRef>string</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="expression" id="_09E849BD-FDB4-4231-9041-6BF1C70824A9">
+      <dmn:text>"aK", "B", "BCG", "COVID", "D booster", "D", "HBIg", "HepA", "HepB", "Hib", "HPV", "IPV", "K booster", "K", "M", "MenACWY", "MenC", "OPV", "P booster", "P", "Pneu", "R", "Rota", "T booster", "T", "Waterpokken" </dmn:text>
+    </dmn:allowedValues>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_4BD2F5F7-BC04-405D-A5D6-4AB899F1273E" name="Componenten" isCollection="true">
+    <dmn:typeRef>Component</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_9FC2E76B-908B-4B8F-9034-5CCC4659C5F3" name="GevalideerdeVaccinatieComponent" isCollection="false">
+    <dmn:itemComponent id="_49704522-22E7-496E-968A-77F3928B3D5E" name="vaccinatieComponent" isCollection="false">
+      <dmn:typeRef>VaccinatieComponent</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_4DA2E880-0541-4BEE-9FA0-4A55C5A4447A" name="isGeldig" isCollection="false">
       <dmn:typeRef>boolean</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_55BD4E4F-4794-404D-A4F2-D086F5BE2CC1" name="hepbVCode" isCollection="false">
-      <dmn:typeRef>boolean</dmn:typeRef>
+    <dmn:itemComponent id="_9798B563-5621-4E94-A699-3FFCFF18DB9A" name="leeftijdInDagen" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_32E1493A-88FD-4E17-A791-C566C72D26DA" name="hepbECode" isCollection="false">
-      <dmn:typeRef>boolean</dmn:typeRef>
+    <dmn:itemComponent id="_D0219B4E-FEFF-4919-AADA-56C10D37B9D9" name="rangnummer" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_C4BF5D6A-8CD9-4898-B46A-427E79C85DE8" name="hepbDownCode" isCollection="false">
-      <dmn:typeRef>boolean</dmn:typeRef>
+    <dmn:itemComponent id="_33C0BE8E-9422-4D20-8908-6B254A39D196" name="vaccinatieToestand" isCollection="false">
+      <dmn:typeRef>VaccinatieToestand</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_4598FEDD-B072-45DF-986A-649609FECA17" name="hepbDCode" isCollection="false">
-      <dmn:typeRef>boolean</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_8EA25759-8957-486C-ADAE-6F8AFB5C4C89" name="dKTP3_5_11" isCollection="false">
-      <dmn:typeRef>boolean</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_792914EE-64F2-4CF6-BFB5-BCBB5898C340" name="dKTP2_3_5_11" isCollection="false">
-      <dmn:typeRef>boolean</dmn:typeRef>
+    <dmn:itemComponent id="_CC2ED438-CE1B-4D85-94FE-DE0A22768D3D" name="toelichting" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_80C00E4F-15E1-4DE8-A96B-C04ECBAB533A" name="Dossier" isCollection="false">
-    <dmn:itemComponent id="_3CFBFBA5-516D-4186-BFDE-0EA966472C6D" name="vaccinaties" isCollection="true">
-      <dmn:typeRef>Vaccinatie</dmn:typeRef>
+  <dmn:itemDefinition id="_9E0CED7B-D750-4083-9C94-10F61D48CAA1" name="GevalideerdeVaccinatieComponenten" isCollection="true">
+    <dmn:typeRef>GevalideerdeVaccinatieComponent</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_319A841C-F97F-428A-B246-D907C8D341FF" name="Indicatie" isCollection="false">
+    <dmn:typeRef>string</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="expression" id="_FE38C7AC-39AD-4573-978C-77EDD00338B9">
+      <dmn:text>"HepB D-code", "HepB E-code", "HepB V-code", "Down-code", "HepB WHO-schema", "DKTP 2-3-5-11", "DKTP 3-5-11"</dmn:text>
+    </dmn:allowedValues>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_FB37FC13-C95A-4D7D-ACDC-2279072C9D79" name="Indicaties" isCollection="true">
+    <dmn:typeRef>Indicatie</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_CA1CBF9B-8B85-4D30-BBCC-6EF9A063FD44" name="Infectieziekte" isCollection="false">
+    <dmn:typeRef>string</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="expression" id="_78D1FF4E-E29E-4C29-B4DC-9935B3167B20">
+      <dmn:text>"Rodehond","Kinkhoest","Bof","Difterie","Pneumokokkenziekte","HPV-kanker","HiB-ziekten","Hepatitis B","Tetanus","Polio","Mazelen","Meningokokkenziekte C","Meningokokkenziekte Y", "Hepatitis A", "Waterpokken", "Bacillus Calmette-Guérin", "SARS-CoV-2", "Rotavirus", "Hepatitis B Immunoglobuline"</dmn:text>
+    </dmn:allowedValues>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_558E3728-6836-4C85-8F0E-7DAD25BCAD54" name="RangnummerBepaling" isCollection="false">
+    <dmn:itemComponent id="_9ADCA427-C0B0-4419-BB2C-495B59D0E5E7" name="rangnummer" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_0AF00904-CA1C-4672-9122-F44BB1639C27" name="peildatum" isCollection="false">
-      <dmn:typeRef>date</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_0C991125-6D28-4548-82B7-7A6E58343578" name="client" isCollection="false">
-      <dmn:typeRef>Client</dmn:typeRef>
+    <dmn:itemComponent id="_5D8F5F81-A097-4155-8789-7DA295F63D1A" name="toelichting" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_F68E8648-6373-4C8A-8858-71ADC147E626" name="VaccinSoort" isCollection="false"/>
   <dmn:itemDefinition id="_E153E23F-0419-4127-9BB7-8E56ABD5B37D" name="Vaccinatie" isCollection="false">
     <dmn:itemComponent id="_03C4E4C0-D5E8-4014-84C3-7933376C2F3D" name="vaccinSoort" isCollection="false">
       <dmn:typeRef>VaccinSoort</dmn:typeRef>
@@ -64,28 +84,33 @@
   <dmn:itemDefinition id="_E141A931-221E-4A36-960F-4457E64969D0" name="Vaccinaties" isCollection="true">
     <dmn:typeRef>Vaccinatie</dmn:typeRef>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_BA8DD5E9-1451-4A74-9497-10ED84CF2F2E" name="BeoordeeldeVaccinatie" isCollection="false">
-    <dmn:itemComponent id="_ECF4C339-6DF1-4547-81E0-2734FEFEAB09" name="vaccinatie" isCollection="false">
-      <dmn:typeRef>Vaccinatie</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_B597F94A-BBBF-4F42-8A41-F3B1FE9AFB89" name="rangnummer" isCollection="false">
-      <dmn:typeRef>number</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_56F76FE7-C3A2-4229-A046-3BA55D865785" name="isGeldig" isCollection="false">
-      <dmn:typeRef>boolean</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_BAA86F3A-5FE0-4C23-8051-670BFB293770" name="vaccinatieToestand" isCollection="false">
-      <dmn:typeRef>string</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_5F2595B9-A8DD-409F-BA33-A0D5936130C6" name="leeftijdInDagen" isCollection="false">
-      <dmn:typeRef>number</dmn:typeRef>
-    </dmn:itemComponent>
-  </dmn:itemDefinition>
-  <dmn:itemDefinition id="_282C0B25-A28A-4EBF-A7DE-43E099105261" name="BeoordeeldeVaccinaties" isCollection="true">
-    <dmn:typeRef>BeoordeeldeVaccinatie</dmn:typeRef>
+  <dmn:itemDefinition id="_F68E8648-6373-4C8A-8858-71ADC147E626" name="VaccinSoort" isCollection="false">
+    <dmn:typeRef>string</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="expression" id="_3275B9CF-5C41-42CD-88B7-203056322FBB">
+      <dmn:text>"aK", "B", "BCG", "BM", "BMR", "BMRW", "COVID", "D", "DK-Hib", "DKT", "DKT+HepB", "DKT+Hib", "DKT+Hib+HepB", "DKTP booster", "DKTP-HepB", "DKTP-Hib-HepB", "DKTP-Hib", "DKTP", "DT", "DTP", "HBIg", "Hep A", "Hep B", "Hib", "Hib+HepB", "HPV", "IPV", "K", "M", "MenACWY", "MenC", "MR", "OPV", "P", "Pneu", "R", "Rota", "T", "TP", "Waterpokken"</dmn:text>
+    </dmn:allowedValues>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_2BDC50E4-405A-43CA-BBE8-D72AC9777C80" name="VaccinSoorten" isCollection="true">
     <dmn:typeRef>VaccinSoort</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_CB8C39B4-EA16-496E-A6D8-C5A33E6203E3" name="VaccinatieComponent" isCollection="false">
+    <dmn:itemComponent id="_771FBC78-3C48-4F1C-837D-FCB4090CA18F" name="vaccinatie" isCollection="false">
+      <dmn:typeRef>Vaccinatie</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_D9FAFDD5-A518-45DD-B0FE-409A1F98C81E" name="component" isCollection="false">
+      <dmn:typeRef>Component</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_4DAEB212-C911-4888-81D1-CD747DFF9243" name="VaccinatieComponenten" isCollection="true">
+    <dmn:typeRef>VaccinatieComponent</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_702B294A-E028-4E30-80CF-8F3E2A30F9A1" name="VaccinatieToestand" isCollection="false">
+    <dmn:itemComponent id="_5CA4C9F0-6070-4C2D-845B-D6070A2BFB18" name="toestand" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_04E28BDB-3272-4E8C-B3A1-1BCC41E00B9B" name="infectieziekte" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
   </dmn:itemDefinition>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_DB99F0E6-07DA-45A9-9C5A-9C5A2B4262BF" name="DRG">

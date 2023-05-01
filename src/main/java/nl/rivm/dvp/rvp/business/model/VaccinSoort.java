@@ -1,34 +1,58 @@
 package nl.rivm.dvp.rvp.business.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
-@Getter
-@AllArgsConstructor
 public enum VaccinSoort {
-   AK, // Het losse aK-vaccin (acellulair Kinkhoest)
-   BMR, // BMR-vaccin (bof, mazelen, rodehond): Dit vaccin biedt bescherming tegen bof,
-        // mazelen en rodehond.
-   DKT, // Het DKT-vaccin (een cocktail van D, K en T) wat wordt ingezet om zwangeren te
-        // beschermen tegen kinkhoest
-   DKTP_BOOSTER, // - Het DKTP booster vaccin (een cocktail van D, K, T en P maar met een lagere
-                 // dosis waardoor het uitsluitend ingezet kan worden als booster vaccin)
-   DKTP_HEPB, // Het DKTP-HepB vaccin
-   DKTP_HIB, // Het DKTP-Hib vaccin
+     AK("aK"),
+     B("B"),
+     BCG("BCG"),
+     BM("BM"),
+     BMR("BMR"),
+     BMRW("BMRW"),
+     COVID("COVID"),
+     D("D"),
+     DKHIB("DK-Hib"),
+     DKT("DKT"),
+     DKTHEPB("DKT+HepB"),
+     DKTHIB("DKT+Hib"),
+     DKTHIBHEPB("DKT+Hib+HepB"),
+     DKTPBOOSTER("DKTP booster"),
+     DKTPHEPB("DKTP-HepB"),
+     DKTPHIBHEPB("DKTP-Hib-HepB"),
+     DKTPHIB("DKTP-Hib"),
+     DKTP("DKTP"),
+     DT("DT"),
+     DTP("DTP"),
+     HBIG("HBIg"),
+     HEPA("Hep A"),
+     HEPB("Hep B"),
+     HIB("Hib"),
+     HIBHEPB("Hib+HepB"),
+     HPV("HPV"),
+     IPV("IPV"),
+     K("K"),
+     M("M"),
+     MENACWY("MenACWY"),
+     MENC("MenC"),
+     MR("MR"),
+     OPV("OPV"),
+     P("P"),
+     PNEU("Pneu"),
+     R("R"),
+     ROTA("Rota"),
+     T("T"),
+     TP("TP"),
+     WATERPOKKEN("Waterpokken");
 
-   DKTP_HIB_HEPB, // een cocktail van D – difterie, K – kinkhoest, T – tetanus, P – polio, Hib –
-   // Haemophilus influenzae type B en HepB – Hepatitis B
-   DTP, // Het DTP-vaccin (een cocktail van D, T en P)
-   HEPB, // Het losse EepB vaccin
-   HIB, // Hib-vaccin (Haemophilus influenzae type b): Dit vaccin biedt bescherming
-        // tegen infecties veroorzaakt door de bacterie Haemophilus influenzae type b.
-   HPV, // HPV-vaccin (humaan papillomavirus): Dit vaccin biedt bescherming tegen
-        // infecties veroorzaakt door het humaan papillomavirus, dat kan leiden tot
-        // baarmoederhalskanker en andere kankers.
-   MENACWY, // MenACWY-vaccin (meningokokken ACWY): Dit vaccin biedt bescherming tegen
-   // infecties veroorzaakt door de bacterie Neisseria meningitidis serogroepen A,
-   // C, W en Y.
-   MENC, // Het MenC-vaccin (Meningokokken type C)
-   PNEU, // Pneumokokkenvaccin: Dit vaccin biedt bescherming tegen infecties veroorzaakt
-         // door de bacterie Streptococcus pneumoniae.
+     // Member to hold the name
+     private String string;
+
+     // constructor to set the string
+     VaccinSoort(String name) {
+          string = name;
+     }
+
+     // the toString just returns the given name
+     @Override
+     public String toString() {
+          return string;
+     }
 }

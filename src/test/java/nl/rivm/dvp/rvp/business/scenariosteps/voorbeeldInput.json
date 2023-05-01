@@ -1,0 +1,48 @@
+{
+    "client": {
+        "geboortedatum": "2020-01-01",
+        "indicaties": {
+            "hepbDCode": false,
+            "hepbECode": false,
+            "hepbVCode": false,
+            "hepbDownCode": false,
+            "hepbWHOCode": false,
+            "dktp3_5_11": false,
+            "dktp2_3_5_11": false
+        },
+        "onbeschermdDatum": null
+    },
+    "vaccinaties": [
+        {
+            "vaccinSoort": "BMR",
+            "uitvoerdatum": "2020-02-02",
+            "product": "null",
+            "expiratiedatum": "2025-01-01"
+        },
+        {
+            "vaccinSoort": "BMR",
+            "uitvoerdatum": "2020-12-30",
+            "product": "null",
+            "expiratiedatum": "2025-01-01"
+        },
+        {
+            "vaccinSoort": "BMR",
+            "uitvoerdatum": "2021-01-01",
+            "product": "null",
+            "expiratiedatum": "2025-01-01"
+        },
+        {
+            "vaccinSoort": "BMR",
+            "uitvoerdatum": "2021-02-01",
+            "product": "null",
+            "expiratiedatum": "2025-01-01"
+        },
+        {
+            "vaccinSoort": "BMR",
+            "uitvoerdatum": "2021-03-01",
+            "product": "null",
+            "expiratiedatum": "2025-01-01"
+        }
+    ],
+    "peildatum": "2023-04-27"
+}

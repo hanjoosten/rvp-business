@@ -101,11 +101,11 @@ public class VaccinatieValidatieTestSteps implements Nl {
                     .contentType(ContentType.JSON)
                     .accept(ContentType.JSON)
                     .body(request.toJSON())
-                    // .log().all() // commentaar verwijderen voor requestlogging
+                    .log().all() // commentaar verwijderen voor requestlogging
                     .when()
-                    .request("POST", "/BeoordelenVaccinaties")
+                    .request("POST", "/Valideren")
                     .then()
-                    // .log().all() // commentaar verwijderen voor responselogging
+                    .log().all() // commentaar verwijderen voor responselogging
                     .statusCode(200)
                     .extract();
             assertDoesNotThrow(() -> this.resultaat = (VaccinatiesValidatieResponse) result.jsonPath()
@@ -117,12 +117,12 @@ public class VaccinatieValidatieTestSteps implements Nl {
             // log.info(resultaat.toString());
         });
 
-        Dan("verwacht ik dat {int} van deze vaccinaties geldig zijn verklaard",
+        Dan("verwacht ik {int} vaccinatiecomponenten",
                 (Integer aantalGeldig) -> {
                     var aantal = getResultaat()
-                            .getBeoordeeldeVaccinaties()
+                            .getGevalideerdeVaccinatieComponenten()
                             .stream()
-                            .filter(x -> x.getIsGeldig())
+                            // .filter(x -> x.getIsGeldig())
                             .collect(Collectors.toList())
                             .size();
                     assertEquals(aantalGeldig, aantal);
