@@ -287,7 +287,7 @@
       <dmn:requiredDecision href="#_DB15608C-417E-4B6E-A635-CC6BE2BA1185"/>
     </dmn:informationRequirement>
     <dmn:literalExpression id="_22082CBE-2514-45FC-B6BF-DD6240B68B0D">
-      <dmn:text>(vaccinatie component.vaccinatie.uitvoerdatum - recentste geldige.vaccinatie component.vaccinatie.uitvoerdatum).days</dmn:text>
+      <dmn:text>(vaccinatie component.vaccinatie.uitvoerdatum - recentste geldige.vaccinatieComponent.vaccinatie.uitvoerdatum).days</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_6161CF53-3A64-4D48-81F0-6095F5420E60" name="geldige vaccinatie componenten">
