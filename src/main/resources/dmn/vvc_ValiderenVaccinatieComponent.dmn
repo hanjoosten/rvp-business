@@ -55,6 +55,9 @@
     <dmn:informationRequirement id="_F842A967-78F2-47DA-9A58-D04EF3824633">
       <dmn:requiredInput href="#_9365EEAA-8FC1-4B21-BF1E-E483A54FB0D4"/>
     </dmn:informationRequirement>
+    <dmn:informationRequirement id="_66A3B17D-BB00-4727-9B4E-42AC879D1B68">
+      <dmn:requiredDecision href="#_E92278EE-87DE-4E4F-9606-2578A69811ED"/>
+    </dmn:informationRequirement>
     <dmn:context id="_4808E8B8-8394-4773-BADD-E42207C35350">
       <dmn:contextEntry>
         <dmn:variable id="_9AD15DE0-A58F-4E37-9536-7CC49381DEDB" name="vaccinatieComponent" typeRef="dt.VaccinatieComponent"/>
@@ -66,6 +69,12 @@
         <dmn:variable id="_A6992BC4-629B-46A5-A98A-F9069F210DEC" name="validatieResultaat" typeRef="dt.ValidatieResultaat"/>
         <dmn:literalExpression id="_64BBF720-FCBA-4998-B457-6237DB41336D">
           <dmn:text>validatie resultaat</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_C5A2420D-B98F-4C26-954D-7AA6181325BB" name="infectieziekte" typeRef="dt.Infectieziekte"/>
+        <dmn:literalExpression id="_D8F869CE-38A0-4CDF-9EDD-895807A22317">
+          <dmn:text>infectieziekte</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
       <dmn:contextEntry>
@@ -410,6 +419,9 @@
           <kie:ComponentWidths dmnElementRef="_64BBF720-FCBA-4998-B457-6237DB41336D">
             <kie:width>300</kie:width>
           </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_D8F869CE-38A0-4CDF-9EDD-895807A22317">
+            <kie:width>300</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_CEA1CD48-07A9-4486-B579-6C6C742556C4">
             <kie:width>300</kie:width>
           </kie:ComponentWidths>
@@ -704,6 +716,10 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_F842A967-78F2-47DA-9A58-D04EF3824633" dmnElementRef="_F842A967-78F2-47DA-9A58-D04EF3824633">
         <di:waypoint x="214.59813084112147" y="250.68421052631584"/>
+        <di:waypoint x="633.25" y="222"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_66A3B17D-BB00-4727-9B4E-42AC879D1B68" dmnElementRef="_66A3B17D-BB00-4727-9B4E-42AC879D1B68">
+        <di:waypoint x="563.25" y="408.00000000000006"/>
         <di:waypoint x="633.25" y="222"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_89E74B67-4031-4F62-9B3E-99F401F7F6CA" dmnElementRef="_89E74B67-4031-4F62-9B3E-99F401F7F6CA">

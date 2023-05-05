@@ -1,5 +1,7 @@
 package nl.rivm.dvp.rvp.business.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -15,4 +17,6 @@ public class GevalideerdeVaccinatieComponent {
     Boolean isGeldig;
     VaccinatieToestand vaccinatieToestand;
     Integer leeftijdInDagen;
+    Infectieziekte infectieziekte;
+
 }
