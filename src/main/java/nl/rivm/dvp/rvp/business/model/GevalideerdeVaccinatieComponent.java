@@ -11,9 +11,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class GevalideerdeVaccinatieComponent {
     VaccinatieComponent vaccinatieComponent;
-    Integer rangnummer;
+    ValidatieResultaat validatieResultaat;
     Boolean isGeldig;
     VaccinatieToestand vaccinatieToestand;
     Integer leeftijdInDagen;
-    String toelichting;
 }

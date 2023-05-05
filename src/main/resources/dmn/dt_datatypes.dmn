@@ -35,7 +35,7 @@
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
     <dmn:itemComponent id="_33C0BE8E-9422-4D20-8908-6B254A39D196" name="vaccinatieToestand" isCollection="false">
-      <dmn:typeRef>VaccinatieToestand</dmn:typeRef>
+      <dmn:typeRef>ZZZVaccinatieToestand</dmn:typeRef>
     </dmn:itemComponent>
     <dmn:itemComponent id="_CC2ED438-CE1B-4D85-94FE-DE0A22768D3D" name="toelichting" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
@@ -65,6 +65,9 @@
     </dmn:itemComponent>
     <dmn:itemComponent id="_5D8F5F81-A097-4155-8789-7DA295F63D1A" name="toelichting" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_1C0785CB-3289-4057-BF45-017A2282F6DC" name="vaccinatieToestand" isCollection="false">
+      <dmn:typeRef>ZZZVaccinatieToestand</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_E153E23F-0419-4127-9BB7-8E56ABD5B37D" name="Vaccinatie" isCollection="false">
@@ -104,7 +107,7 @@
   <dmn:itemDefinition id="_4DAEB212-C911-4888-81D1-CD747DFF9243" name="VaccinatieComponenten" isCollection="true">
     <dmn:typeRef>VaccinatieComponent</dmn:typeRef>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_702B294A-E028-4E30-80CF-8F3E2A30F9A1" name="VaccinatieToestand" isCollection="false">
+  <dmn:itemDefinition id="_702B294A-E028-4E30-80CF-8F3E2A30F9A1" name="ZZZVaccinatieToestand" isCollection="false">
     <dmn:itemComponent id="_5CA4C9F0-6070-4C2D-845B-D6070A2BFB18" name="toestand" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
