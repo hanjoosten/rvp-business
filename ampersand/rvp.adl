@@ -16,13 +16,14 @@ RELATION vaccinatieComponent[GevalideerdeVaccinatieComponent*VaccinatieComponent
 RELATION validatieResultaat[GevalideerdeVaccinatieComponent*ValidatieResultaat][UNI]
 RELATION isGeldig[GevalideerdeVaccinatieComponent*GevalideerdeVaccinatieComponent][PROP]
 RELATION leeftijdInDagen[GevalideerdeVaccinatieComponent*Leeftijd][UNI,TOT] REPRESENT Leeftijd TYPE INTEGER
+RELATION infectieziekte[GevalideerdeVaccinatieComponent*Infectieziekte][UNI]
 
 RELATION rangnummer[ValidatieResultaat * Rangnummer] [UNI] REPRESENT Rangnummer TYPE INTEGER
 RELATION toestand[ValidatieResultaat*VaccinatieToestand] [UNI]
 RELATION toelichting[ValidatieResultaat * Tekst] [UNI]
 
-RELATION infectieziekte[VaccinatieToestand*Infectieziekte][TOT,SUR]
-POPULATION infectieziekte[VaccinatieToestand*Infectieziekte] CONTAINS 
+RELATION infectieziekte_vaccinatieToestand[VaccinatieToestand*Infectieziekte][TOT,SUR]
+POPULATION infectieziekte_vaccinatieToestand[VaccinatieToestand*Infectieziekte] CONTAINS 
   [ 
     ("TODO","Rodehond"),
     ("TODO","Kinkhoest"),

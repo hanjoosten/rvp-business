@@ -106,6 +106,9 @@
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_702B294A-E028-4E30-80CF-8F3E2A30F9A1" name="VaccinatieToestand" isCollection="false">
     <dmn:typeRef>string</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="expression" id="_668E2C32-D365-4B02-A3F1-7DD3276F98BF">
+      <dmn:text>"Basisimmuun", "Gerevaccineerd", "Primaire serie", "Volledig afgesloten"</dmn:text>
+    </dmn:allowedValues>
   </dmn:itemDefinition>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_DB99F0E6-07DA-45A9-9C5A-9C5A2B4262BF" name="DRG">
