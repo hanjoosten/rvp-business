@@ -3,7 +3,7 @@
   <dmn:extensionElements/>
   <dmn:import id="_6B546BCC-3129-4FB6-B8F0-E282D2C22869" name="dt" namespace="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" locationURI="dt_datatypes.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
   <dmn:import id="_DFC197BA-61E5-4A2D-93FC-ED09A233C9AD" name="stm" namespace="xls2dmn_8c91f710-98c5-4fac-867d-b88403a6a018" locationURI="stm_stamgegevens.xlsx.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
-  <dmn:import id="_F19AC4A4-AE7B-4CBB-AE58-B82AC4D7D5C9" name="rb" namespace="https://kiegroup.org/dmn/_386BF0A1-3E1D-4ABF-8738-570B8A4865C0" locationURI="rb__rangnummerbepaling.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import id="_F19AC4A4-AE7B-4CBB-AE58-B82AC4D7D5C9" name="rb" namespace="https://kiegroup.org/dmn/_386BF0A1-3E1D-4ABF-8738-570B8A4865C0" locationURI="rb__ValidatieResultaat.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
   <dmn:decisionService id="_8F37811C-BDF1-4E3B-8ED3-B82CFA4DB27C" name="ValiderenVaccinatieComponentService">
     <dmn:extensionElements/>
     <dmn:variable id="_CE239BE6-6F82-4CB9-8AD9-AE874E87BB89" name="ValiderenVaccinatieComponentService" typeRef="dt.GevalideerdeVaccinatieComponent"/>
@@ -100,7 +100,7 @@
   </dmn:decision>
   <dmn:decision id="_587C016D-BA95-45D8-B610-3BEC9EE4B937" name="Rangnummer">
     <dmn:extensionElements/>
-    <dmn:variable id="_AC4DE5EC-07C5-43C6-A30B-2ACFFE5AA761" name="Rangnummer" typeRef="dt.RangnummerBepaling"/>
+    <dmn:variable id="_AC4DE5EC-07C5-43C6-A30B-2ACFFE5AA761" name="Rangnummer" typeRef="dt.ValidatieResultaat"/>
     <dmn:informationRequirement id="_89E74B67-4031-4F62-9B3E-99F401F7F6CA">
       <dmn:requiredDecision href="#_E92278EE-87DE-4E4F-9606-2578A69811ED"/>
     </dmn:informationRequirement>
@@ -127,7 +127,7 @@
     </dmn:knowledgeRequirement>
     <dmn:context id="_EBB15EFD-88E9-46A6-9816-5DE64F618B03">
       <dmn:contextEntry>
-        <dmn:variable id="_2CC1BF46-368C-47FA-9402-749D8788FD5B" name="resultaat bij verlopen" typeRef="dt.RangnummerBepaling"/>
+        <dmn:variable id="_2CC1BF46-368C-47FA-9402-749D8788FD5B" name="resultaat bij verlopen" typeRef="dt.ValidatieResultaat"/>
         <dmn:context id="_2C01CCAA-7F05-4AF6-8053-5D937C719ECC">
           <dmn:contextEntry>
             <dmn:variable id="_BB20F5E8-17CD-4EF7-8C68-BE6E7953F707" name="rangnummer" typeRef="number"/>
@@ -144,7 +144,7 @@
         </dmn:context>
       </dmn:contextEntry>
       <dmn:contextEntry>
-        <dmn:variable id="_018EF7D1-64CF-476C-8651-E2483008C2FB" name="resultaat" typeRef="dt.RangnummerBepaling"/>
+        <dmn:variable id="_018EF7D1-64CF-476C-8651-E2483008C2FB" name="resultaat" typeRef="dt.ValidatieResultaat"/>
         <dmn:decisionTable id="_9988BA48-954C-43A6-B53A-C1CA494319B5" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
           <dmn:input id="_BEA87523-4D61-4D9C-ACF7-7E491C9E4D6C">
             <dmn:inputExpression id="_5685F2F2-A8F9-48A2-BEBD-3C2B4F0B6CCA" typeRef="boolean">

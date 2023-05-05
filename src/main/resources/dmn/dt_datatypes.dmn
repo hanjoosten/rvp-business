@@ -59,7 +59,7 @@
       <dmn:text>"Rodehond","Kinkhoest","Bof","Difterie","Pneumokokkenziekte","HPV-kanker","HiB-ziekten","Hepatitis B","Tetanus","Polio","Mazelen","Meningokokkenziekte C","Meningokokkenziekte Y", "Hepatitis A", "Waterpokken", "Bacillus Calmette-Guérin", "SARS-CoV-2", "Rotavirus", "Hepatitis B Immunoglobuline"</dmn:text>
     </dmn:allowedValues>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_558E3728-6836-4C85-8F0E-7DAD25BCAD54" name="RangnummerBepaling" isCollection="false">
+  <dmn:itemDefinition id="_558E3728-6836-4C85-8F0E-7DAD25BCAD54" name="ValidatieResultaat" isCollection="false">
     <dmn:itemComponent id="_9ADCA427-C0B0-4419-BB2C-495B59D0E5E7" name="rangnummer" isCollection="false">
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>

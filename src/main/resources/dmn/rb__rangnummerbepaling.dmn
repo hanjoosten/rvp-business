@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_386BF0A1-3E1D-4ABF-8738-570B8A4865C0" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" xmlns:included2="xls2dmn_f5c71aba-ee0d-43ac-ab84-5e891f98efbf" id="_D61D4968-96B4-4DDB-899D-42962BFD6B93" name="rb__rangnummerbepaling" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_386BF0A1-3E1D-4ABF-8738-570B8A4865C0">
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_386BF0A1-3E1D-4ABF-8738-570B8A4865C0" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" xmlns:included2="xls2dmn_f5c71aba-ee0d-43ac-ab84-5e891f98efbf" id="_D61D4968-96B4-4DDB-899D-42962BFD6B93" name="rb__ValidatieResultaat" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_386BF0A1-3E1D-4ABF-8738-570B8A4865C0">
   <dmn:extensionElements/>
   <dmn:import id="_45CF5B00-6841-49D8-8854-C535D28D3133" name="dt" namespace="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" locationURI="dt_datatypes.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
   <dmn:import id="_8443EB33-47EB-4F32-AD9A-DB56E75243CA" name="bmrhvp" namespace="xls2dmn_f5c71aba-ee0d-43ac-ab84-5e891f98efbf" locationURI="rangnummerBMR_HVP.xlsx.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
   <dmn:decisionService id="_6697E923-1090-4895-ACE3-9FD8BE799E53" name="rangnummerService">
     <dmn:extensionElements/>
-    <dmn:variable id="_C35E7108-4381-4ACC-8AEC-AFAFE703337C" name="rangnummerService" typeRef="dt.RangnummerBepaling"/>
+    <dmn:variable id="_C35E7108-4381-4ACC-8AEC-AFAFE703337C" name="rangnummerService" typeRef="dt.ValidatieResultaat"/>
     <dmn:outputDecision href="#_21F9B76B-83ED-4DC9-A8FE-635053922DDB"/>
     <dmn:inputData href="#_2F828FF6-1339-4E60-869F-7548F94B1C53"/>
     <dmn:inputData href="#_5E65582C-32B1-43C6-B1B4-CD65D3C53F10"/>
@@ -16,7 +16,7 @@
   </dmn:decisionService>
   <dmn:decision id="_21F9B76B-83ED-4DC9-A8FE-635053922DDB" name="Rangnummer">
     <dmn:extensionElements/>
-    <dmn:variable id="_A6E44A87-1822-42A3-9FFD-A7026D3D9F3B" name="Rangnummer" typeRef="dt.RangnummerBepaling"/>
+    <dmn:variable id="_A6E44A87-1822-42A3-9FFD-A7026D3D9F3B" name="Rangnummer" typeRef="dt.ValidatieResultaat"/>
     <dmn:informationRequirement id="_E22507E6-8379-4F7E-BD30-239CA6A68087">
       <dmn:requiredInput href="#_5E65582C-32B1-43C6-B1B4-CD65D3C53F10"/>
     </dmn:informationRequirement>
@@ -99,7 +99,7 @@
   </dmn:inputData>
   <dmn:businessKnowledgeModel id="_AB8743CF-48FD-4359-AB66-E4806F378D26" name="bepaal rangnummer">
     <dmn:extensionElements/>
-    <dmn:variable id="_B34FD879-88C0-4C6B-9B3F-B7788666002D" name="bepaal rangnummer" typeRef="dt.RangnummerBepaling"/>
+    <dmn:variable id="_B34FD879-88C0-4C6B-9B3F-B7788666002D" name="bepaal rangnummer" typeRef="dt.ValidatieResultaat"/>
     <dmn:encapsulatedLogic id="_A9893621-24B9-47E0-AE18-2DF152400ECC" kind="FEEL">
       <dmn:formalParameter id="_189F1162-E777-4FE0-B5E2-FCF21EEA8B7A" name="component" typeRef="dt.Component"/>
       <dmn:formalParameter id="_026E1151-0D01-4747-9B66-017D047D2A9D" name="hoogste rangnummer" typeRef="number"/>
