@@ -19,7 +19,7 @@ RELATION leeftijdInDagen[GevalideerdeVaccinatieComponent*Leeftijd][UNI,TOT] REPR
 RELATION infectieziekte[GevalideerdeVaccinatieComponent*Infectieziekte][UNI]
 
 RELATION rangnummer[ValidatieResultaat * Rangnummer] [UNI] REPRESENT Rangnummer TYPE INTEGER
-RELATION toestand[ValidatieResultaat*VaccinatieToestand] [UNI]
+RELATION vaccinatieToestand[ValidatieResultaat*VaccinatieToestand] [UNI]
 RELATION toelichting[ValidatieResultaat * Tekst] [UNI]
 
 RELATION infectieziekte_vaccinatieToestand[VaccinatieToestand*Infectieziekte][TOT,SUR]

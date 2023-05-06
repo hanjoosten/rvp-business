@@ -2,6 +2,25 @@
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="xls2dmn_f5c71aba-ee0d-43ac-ab84-5e891f98efbf" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:included1="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" id="dmnid_rangnummerBMR_HVP" name="rangnummerBMR_HVP" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="xls2dmn_f5c71aba-ee0d-43ac-ab84-5e891f98efbf">
   <dmn:extensionElements/>
   <dmn:import id="_E4A7BEAE-F9A6-4B42-95DF-A5BD5EA4E2DA" name="dt" namespace="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" locationURI="dt_datatypes.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:decisionService id="_A3CB8E2C-F3AE-4D6B-9269-06D6783B6A7D" name="BofMazelenRodehondService">
+    <dmn:extensionElements/>
+    <dmn:variable id="_91C568B6-A9E2-4A9F-8787-1E7B85D451D4" name="BofMazelenRodehondService" typeRef="number"/>
+    <dmn:outputDecision href="#d_RangnummerBMR"/>
+    <dmn:inputData href="#id_leeftijd_32in_32dagen"/>
+    <dmn:inputData href="#id_component"/>
+    <dmn:inputData href="#id_hoogste_32rangnummer"/>
+    <dmn:inputData href="#id_interval"/>
+  </dmn:decisionService>
+  <dmn:decisionService id="_AB27F5B5-8FE8-46BB-B455-0258FDACF308" name="HPVKankerService">
+    <dmn:extensionElements/>
+    <dmn:variable id="_5B778539-320B-4911-858D-4CDFC8898BC7" name="HPVKankerService" typeRef="number"/>
+    <dmn:outputDecision href="#d_RangnummerHPV"/>
+    <dmn:inputData href="#id_leeftijd_32in_32dagen"/>
+    <dmn:inputData href="#id_component"/>
+    <dmn:inputData href="#id_hoogste_32rangnummer"/>
+    <dmn:inputData href="#id_interval"/>
+    <dmn:inputData href="#id_vaccinatie_46uitvoerdatum"/>
+  </dmn:decisionService>
   <dmn:inputData id="id_component" name="component">
     <dmn:extensionElements/>
     <dmn:variable id="idvar_component" name="component" typeRef="dt.Component"/>
@@ -67,6 +86,7 @@
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_8E226722-4765-44BF-A437-154875545AD1" name="rangnummer" typeRef="dt.ValidatieResultaat"/>
+      <dmn:output id="_10CBCCE3-92EB-4F08-B0BF-A37C974BEA09" name="vaccinatieToestand" typeRef="dt.VaccinatieToestand"/>
       <dmn:output id="_13B72761-F119-4A07-8A73-2994D723531A" name="toelichting" typeRef="string"/>
       <dmn:annotation name=""/>
       <dmn:rule id="_5B6204C6-66BD-4F3C-BAF8-CC829C656C42">
@@ -86,6 +106,9 @@
           <dmn:text>= 0</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_10408CEA-38F9-46B5-8645-EEA9621450D1">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_18904DCC-DED1-4BAD-86A3-8442DD0EDFF3">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_5EE50EFF-2AA6-40C0-8BE5-ED10F6944842">
@@ -114,6 +137,9 @@
         <dmn:outputEntry id="_FA163117-C3F1-4DDB-A6A0-FF80B4CE9069">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_76C8E757-5B8F-4F44-B7AB-9A49E8F99135">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_E779BB0C-9C32-4CD9-B6A5-98E5BC2B047D">
           <dmn:text>"te jong gevaccineerd"</dmn:text>
         </dmn:outputEntry>
@@ -140,6 +166,9 @@
         <dmn:outputEntry id="_016B967C-55AF-4A26-BB24-1DFB9671A42D">
           <dmn:text>1</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_E1C775DA-E746-4DB9-ABD2-7DF452A964EB">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_A176A057-85FD-4711-8C21-8220302EBF5C">
           <dmn:text/>
         </dmn:outputEntry>
@@ -164,6 +193,9 @@
           <dmn:text>(0 .. 21)</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_5A9140D9-7273-4A56-BC96-5453196CCB48">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_33113E31-BE80-4817-AE71-30F67B5357BA">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_F8B29630-41BE-4D9E-941B-CB92E5D9AA68">
@@ -192,6 +224,9 @@
         <dmn:outputEntry id="_AF051A65-3E97-4BDC-8082-AE000B0092F3">
           <dmn:text>2</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_982F3A8C-4790-42A8-9DA8-36B87ACC8FA2">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_47018FD4-9EDA-4BA5-8D35-F7C52802F024">
           <dmn:text>"vaccinatie met kort interval"</dmn:text>
         </dmn:outputEntry>
@@ -218,6 +253,9 @@
         <dmn:outputEntry id="_0A69AC6B-3971-4F10-B68D-8F9FAB3218E8">
           <dmn:text>3</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_B33BEB99-8C05-4BEF-8DD0-F21265E6B9E0">
+          <dmn:text>"Volledig afgesloten"</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_B2162549-1384-4E73-94C7-D24133F6F851">
           <dmn:text>"vaccinatie met lang interval"</dmn:text>
         </dmn:outputEntry>
@@ -242,6 +280,9 @@
           <dmn:text>(0 .. 84)</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_481C273A-68C0-47CB-8E1D-5932C6271B82">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_7B3B7FFA-7311-4FAC-AAA8-B2CB4F5174AD">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_EA07068D-42A6-4B0A-96DC-2C8C238A2E12">
@@ -270,6 +311,9 @@
         <dmn:outputEntry id="_8E191D9D-8025-4337-B980-4CDFCE73A87B">
           <dmn:text>3</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_0BDA7800-2B3B-4D4E-950B-5BDCE3541A0D">
+          <dmn:text>"Volledig afgesloten"</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_0A00A72F-25EC-442C-931C-0E1C157F1471">
           <dmn:text/>
         </dmn:outputEntry>
@@ -294,6 +338,9 @@
           <dmn:text>(0 .. 120)</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_D6798658-D6EF-4503-955D-8C871E2CDC6A">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_C7FB64FD-62A6-4023-AE5D-3B6B9466A171">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_641A2D32-FCF1-4C02-9DAF-599E75CFB80E">
@@ -322,6 +369,9 @@
         <dmn:outputEntry id="_BCD5E08D-2A19-44AD-8088-4C16D769F350">
           <dmn:text>3</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_1F53270C-50D1-4E5B-AC6B-6D60CC951F05">
+          <dmn:text>"Volledig afgesloten"</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_4B5E5E3F-3CDB-4B0C-84C0-3CBCE85660F3">
           <dmn:text/>
         </dmn:outputEntry>
@@ -346,6 +396,9 @@
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_C1E16F47-787F-4B16-B805-634740E6C3FE">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E2114904-EAC8-4AC1-89F5-E78D639D6435">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_7D00DF2E-0C82-4F12-820C-C3AD90DB6DB6">
@@ -374,8 +427,11 @@
         <dmn:outputEntry id="_E7C285EA-0284-4665-B903-855CD5FDABAA">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_9610FBB2-C599-4517-998A-5F2B2DC0E909">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_6371419C-11B5-4C9D-A53B-C9B692003CA1">
-          <dmn:text>"MAG NIET VOORKOMEN"</dmn:text>
+          <dmn:text>"zou niet mogen voorkomen" </dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -420,6 +476,7 @@
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_C3618F3A-9768-4A4D-83CB-C6C578A48D6F" name="rangnummer" typeRef="number"/>
+      <dmn:output id="_B4B3DB2A-92BF-4341-88F1-B46CD0C05B19" name="vaccinatieToestand" typeRef="dt.VaccinatieToestand"/>
       <dmn:output id="_1848B534-CB63-4CA4-BA66-E676FE092057" name="toelichting" typeRef="string"/>
       <dmn:annotation name=""/>
       <dmn:rule id="_15AE1CCE-40A5-4441-B33C-14F393099C29">
@@ -436,6 +493,9 @@
           <dmn:text>= 0</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_FF7472BD-4366-4532-957F-3148C63A2B52">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_461171B6-32B6-43A1-98F5-C23B1077FC56">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_B8FC2939-CC93-4BE4-BBE5-79EEC7790D64">
@@ -461,6 +521,9 @@
         <dmn:outputEntry id="_49EC219F-FB2F-45E4-AB78-066871348D0C">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_680E84B5-8B41-420E-B151-FB9D787E91D2">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_0B5E82D2-DC67-4D71-8700-161324778AAD">
           <dmn:text>"te jong gevaccineerd"</dmn:text>
         </dmn:outputEntry>
@@ -483,6 +546,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_F0CF4350-E6A0-4931-B52A-F6F3BA5AF9D2">
           <dmn:text>0</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A803CDB3-4EAE-499C-AFD1-D58BD66442BE">
+          <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_1EA7208A-F227-44C3-A017-CB2057D3EA9D">
           <dmn:text/>
@@ -507,6 +573,9 @@
         <dmn:outputEntry id="_2643D59F-5F32-4652-BEA0-F1E644739AB6">
           <dmn:text>0</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_102A9288-87B7-4F33-A769-DFBB8551F034">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_932BB47B-596C-482A-BAEB-842B0322F10A">
           <dmn:text/>
         </dmn:outputEntry>
@@ -528,6 +597,9 @@
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_6A89C115-67B0-48B6-9712-7BD0B82A4991">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_7CEDFAAB-A8FF-46E7-B534-BD39235A7205">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_24564123-950A-4466-8F9F-DF9768717B27">
@@ -553,6 +625,9 @@
         <dmn:outputEntry id="_21240BA0-5F50-4706-A797-19863E7E15BE">
           <dmn:text>1</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_E1ACC7BF-36DB-40CD-AE25-06C2ACA36A4C">
+          <dmn:text>"Basisimmuun"</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_09EEB1F8-6FA7-415D-ABC4-7192F9A943CB">
           <dmn:text/>
         </dmn:outputEntry>
@@ -574,6 +649,9 @@
           <dmn:text>(0 .. 28)</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_AF726C36-E84F-4601-AB91-7C0AF6894C64">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_D13D0BA0-B388-421F-B07E-B8AA0624AFFB">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_4D9337FB-0CDF-458A-8C85-368ACDA1FD49">
@@ -599,6 +677,9 @@
         <dmn:outputEntry id="_EE782148-6CF8-4E27-B2DC-472B0ED6EB3A">
           <dmn:text>1</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_61D008B8-2EFD-4DFB-B148-AA4CC85C44F3">
+          <dmn:text>"Basisimmuun"</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_CAB70209-D763-4CD9-A699-415D731D56C9">
           <dmn:text/>
         </dmn:outputEntry>
@@ -620,6 +701,9 @@
           <dmn:text>(0 .. 28)</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_9B573FE4-8428-4A3A-931B-D1F51FAE7B68">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_871AE999-95FF-419A-ABA9-4D6574D7851B">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_1B5E2D7A-713E-4344-B9FB-EB16DD4E8F12">
@@ -645,6 +729,9 @@
         <dmn:outputEntry id="_73D610BE-7751-4D08-B018-7849C6CD9671">
           <dmn:text>2</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_65A3AA9B-A958-41FD-9F06-0CB033E73E76">
+          <dmn:text>"Volledig afgesloten"</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_F2031F50-1C7F-4EF3-9E13-B5744397AF47">
           <dmn:text/>
         </dmn:outputEntry>
@@ -668,6 +755,9 @@
         <dmn:outputEntry id="_DF08EBAC-C834-4308-9B6C-9A2A0D1AF993">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_7D33903A-704F-427A-94D5-D51377D65814">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_57FC2325-5F02-4F25-9D21-FF447170B91E">
           <dmn:text>"reeds volledig afgesloten"</dmn:text>
         </dmn:outputEntry>
@@ -675,27 +765,34 @@
           <dmn:text/>
         </dmn:annotationEntry>
       </dmn:rule>
+      <dmn:rule id="_9D6044F0-8EA5-48B6-A0CF-D770051FAD14">
+        <dmn:inputEntry id="_8C448372-5768-4763-B47B-9310092575F9">
+          <dmn:text>not(["B","M","R"])</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_CE563D73-F2C0-4D88-B19A-3CF7ADFC92A6">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_F83D9580-974C-42B4-A07C-8A49AFA41CA4">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_0C92D85B-3F26-40E9-BCD5-362F3380BB8C">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_99FC3C38-E3A3-470A-AE3E-5709524C7089">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_C2C2E63B-E407-4199-8A05-4F7D823ED21C">
+          <dmn:text>null</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_64950075-BA32-4A22-835B-ADD18F1DB20A">
+          <dmn:text>"zou niet mogen voorkomen" </dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
-  <dmn:decisionService id="_A3CB8E2C-F3AE-4D6B-9269-06D6783B6A7D" name="BofMazelenRodehondService">
-    <dmn:extensionElements/>
-    <dmn:variable id="_91C568B6-A9E2-4A9F-8787-1E7B85D451D4" name="BofMazelenRodehondService" typeRef="number"/>
-    <dmn:outputDecision href="#d_RangnummerBMR"/>
-    <dmn:inputData href="#id_leeftijd_32in_32dagen"/>
-    <dmn:inputData href="#id_component"/>
-    <dmn:inputData href="#id_hoogste_32rangnummer"/>
-    <dmn:inputData href="#id_interval"/>
-  </dmn:decisionService>
-  <dmn:decisionService id="_AB27F5B5-8FE8-46BB-B455-0258FDACF308" name="HPVKankerService">
-    <dmn:extensionElements/>
-    <dmn:variable id="_5B778539-320B-4911-858D-4CDFC8898BC7" name="HPVKankerService" typeRef="number"/>
-    <dmn:outputDecision href="#d_RangnummerHPV"/>
-    <dmn:inputData href="#id_leeftijd_32in_32dagen"/>
-    <dmn:inputData href="#id_component"/>
-    <dmn:inputData href="#id_hoogste_32rangnummer"/>
-    <dmn:inputData href="#id_interval"/>
-    <dmn:inputData href="#id_vaccinatie_46uitvoerdatum"/>
-  </dmn:decisionService>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_55E3F8A9-8F4B-432F-AE14-D963B54FD8BC" name="DRG">
       <di:extension>
@@ -708,6 +805,7 @@
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
             <kie:width>133</kie:width>
+            <kie:width>100</kie:width>
             <kie:width>380</kie:width>
             <kie:width>158</kie:width>
           </kie:ComponentWidths>
@@ -718,11 +816,38 @@
             <kie:width>154</kie:width>
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
-            <kie:width>282</kie:width>
+            <kie:width>175</kie:width>
+            <kie:width>233</kie:width>
             <kie:width>136</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_A3CB8E2C-F3AE-4D6B-9269-06D6783B6A7D" dmnElementRef="_A3CB8E2C-F3AE-4D6B-9269-06D6783B6A7D" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="301" y="129" width="200" height="200"/>
+        <dmndi:DMNLabel/>
+        <dmndi:DMNDecisionServiceDividerLine>
+          <di:waypoint x="301" y="229"/>
+          <di:waypoint x="501" y="229"/>
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_AB27F5B5-8FE8-46BB-B455-0258FDACF308" dmnElementRef="_AB27F5B5-8FE8-46BB-B455-0258FDACF308" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="754" y="129" width="200" height="200"/>
+        <dmndi:DMNLabel/>
+        <dmndi:DMNDecisionServiceDividerLine>
+          <di:waypoint x="754" y="229"/>
+          <di:waypoint x="954" y="229"/>
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-id_component" dmnElementRef="id_component" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
@@ -785,32 +910,6 @@
         </dmndi:DMNStyle>
         <dc:Bounds x="351" y="168" width="100" height="50"/>
         <dmndi:DMNLabel/>
-      </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-drg-_A3CB8E2C-F3AE-4D6B-9269-06D6783B6A7D" dmnElementRef="_A3CB8E2C-F3AE-4D6B-9269-06D6783B6A7D" isCollapsed="false">
-        <dmndi:DMNStyle>
-          <dmndi:FillColor red="255" green="255" blue="255"/>
-          <dmndi:StrokeColor red="0" green="0" blue="0"/>
-          <dmndi:FontColor red="0" green="0" blue="0"/>
-        </dmndi:DMNStyle>
-        <dc:Bounds x="301" y="129" width="200" height="200"/>
-        <dmndi:DMNLabel/>
-        <dmndi:DMNDecisionServiceDividerLine>
-          <di:waypoint x="301" y="229"/>
-          <di:waypoint x="501" y="229"/>
-        </dmndi:DMNDecisionServiceDividerLine>
-      </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-drg-_AB27F5B5-8FE8-46BB-B455-0258FDACF308" dmnElementRef="_AB27F5B5-8FE8-46BB-B455-0258FDACF308" isCollapsed="false">
-        <dmndi:DMNStyle>
-          <dmndi:FillColor red="255" green="255" blue="255"/>
-          <dmndi:StrokeColor red="0" green="0" blue="0"/>
-          <dmndi:FontColor red="0" green="0" blue="0"/>
-        </dmndi:DMNStyle>
-        <dc:Bounds x="754" y="129" width="200" height="200"/>
-        <dmndi:DMNLabel/>
-        <dmndi:DMNDecisionServiceDividerLine>
-          <di:waypoint x="754" y="229"/>
-          <di:waypoint x="954" y="229"/>
-        </dmndi:DMNDecisionServiceDividerLine>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_B5E8B36D-A4E7-4BCF-BF91-19A8844386C9" dmnElementRef="_B5E8B36D-A4E7-4BCF-BF91-19A8844386C9">
         <di:waypoint x="761" y="419"/>
