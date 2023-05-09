@@ -1,822 +1,1019 @@
-<?xml version="1.0" ?>
-<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="xls2dmn_2c5ce26d-0b23-48e9-a05b-e531b4f7e54d" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="dmnid_rangnummerPNEU" name="rangnummerPNEU" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="xls2dmn_2c5ce26d-0b23-48e9-a05b-e531b4f7e54d" exporter="kie-dmn-xls2dmn">
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="xls2dmn_2c5ce26d-0b23-48e9-a05b-e531b4f7e54d" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:included1="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" id="dmnid_rangnummerPNEU" name="validatieResultaatPNEU" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="xls2dmn_2c5ce26d-0b23-48e9-a05b-e531b4f7e54d">
+  <dmn:extensionElements/>
+  <dmn:import id="_B7F7D420-E907-4705-9424-387AA64DEC96" name="dt" namespace="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" locationURI="dt_datatypes.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:decisionService id="_089F429B-59DF-4D32-83E3-DFE8693A11D3" name="PneuService">
+    <dmn:extensionElements/>
+    <dmn:variable id="_E9408BF6-3778-4A5A-AF96-E1307D92A237" name="PneuService"/>
+    <dmn:outputDecision href="#d_PNEU"/>
+    <dmn:inputData href="#id_component"/>
+    <dmn:inputData href="#id_hoogste_32leeftijd"/>
+    <dmn:inputData href="#id_hoogste_32rangnummer"/>
+    <dmn:inputData href="#id_interval"/>
+    <dmn:inputData href="#id_leeftijd_32in_32dagen"/>
+    <dmn:inputData href="#id_uitvoerdatum"/>
+  </dmn:decisionService>
   <dmn:inputData id="id_component" name="component">
-    <dmn:variable id="idvar_component" name="component" typeRef="Any"></dmn:variable>
+    <dmn:extensionElements/>
+    <dmn:variable id="idvar_component" name="component" typeRef="dt.Component"/>
   </dmn:inputData>
   <dmn:inputData id="id_uitvoerdatum" name="uitvoerdatum">
-    <dmn:variable id="idvar_uitvoerdatum" name="uitvoerdatum" typeRef="Any"></dmn:variable>
+    <dmn:extensionElements/>
+    <dmn:variable id="idvar_uitvoerdatum" name="uitvoerdatum" typeRef="date"/>
   </dmn:inputData>
   <dmn:inputData id="id_leeftijd_32in_32dagen" name="leeftijd in dagen">
-    <dmn:variable id="idvar_leeftijd_32in_32dagen" name="leeftijd in dagen" typeRef="Any"></dmn:variable>
+    <dmn:extensionElements/>
+    <dmn:variable id="idvar_leeftijd_32in_32dagen" name="leeftijd in dagen" typeRef="number"/>
   </dmn:inputData>
   <dmn:inputData id="id_hoogste_32rangnummer" name="hoogste rangnummer">
-    <dmn:variable id="idvar_hoogste_32rangnummer" name="hoogste rangnummer" typeRef="Any"></dmn:variable>
+    <dmn:extensionElements/>
+    <dmn:variable id="idvar_hoogste_32rangnummer" name="hoogste rangnummer" typeRef="number"/>
   </dmn:inputData>
   <dmn:inputData id="id_hoogste_32leeftijd" name="hoogste leeftijd">
-    <dmn:variable id="idvar_hoogste_32leeftijd" name="hoogste leeftijd" typeRef="Any"></dmn:variable>
+    <dmn:extensionElements/>
+    <dmn:variable id="idvar_hoogste_32leeftijd" name="hoogste leeftijd" typeRef="number"/>
   </dmn:inputData>
   <dmn:inputData id="id_interval" name="interval">
-    <dmn:variable id="idvar_interval" name="interval" typeRef="Any"></dmn:variable>
+    <dmn:extensionElements/>
+    <dmn:variable id="idvar_interval" name="interval" typeRef="number"/>
   </dmn:inputData>
-  <dmn:inputData id="id_rangnummer" name="rangnummer">
-    <dmn:variable id="idvar_rangnummer" name="rangnummer" typeRef="Any"></dmn:variable>
-  </dmn:inputData>
-  <dmn:inputData id="id_toelichting" name="toelichting">
-    <dmn:variable id="idvar_toelichting" name="toelichting" typeRef="Any"></dmn:variable>
-  </dmn:inputData>
-  <dmn:decision id="d_PNEU" name="PNEU">
-    <dmn:variable id="dvar_PNEU" name="PNEU" typeRef="Any"></dmn:variable>
-    <dmn:informationRequirement>
-      <dmn:requiredInput href="#id_component"></dmn:requiredInput>
+  <dmn:decision id="d_PNEU" name="validatieResultaat">
+    <dmn:extensionElements/>
+    <dmn:variable id="dvar_PNEU" name="validatieResultaat" typeRef="dt.ValidatieResultaat"/>
+    <dmn:informationRequirement id="_98B07E74-61D8-43DB-A9B7-AEBF1B3AA44C">
+      <dmn:requiredInput href="#id_component"/>
     </dmn:informationRequirement>
-    <dmn:informationRequirement>
-      <dmn:requiredInput href="#id_uitvoerdatum"></dmn:requiredInput>
+    <dmn:informationRequirement id="_FA8C8F73-8C72-4DE6-A49B-6B16C3567CBE">
+      <dmn:requiredInput href="#id_uitvoerdatum"/>
     </dmn:informationRequirement>
-    <dmn:informationRequirement>
-      <dmn:requiredInput href="#id_leeftijd_32in_32dagen"></dmn:requiredInput>
+    <dmn:informationRequirement id="_00C0E0E6-A043-4039-B20F-5F69BA3DDEC8">
+      <dmn:requiredInput href="#id_leeftijd_32in_32dagen"/>
     </dmn:informationRequirement>
-    <dmn:informationRequirement>
-      <dmn:requiredInput href="#id_hoogste_32rangnummer"></dmn:requiredInput>
+    <dmn:informationRequirement id="_018A131C-CFBC-4367-B3F1-C9E4109039B9">
+      <dmn:requiredInput href="#id_hoogste_32rangnummer"/>
     </dmn:informationRequirement>
-    <dmn:informationRequirement>
-      <dmn:requiredInput href="#id_hoogste_32leeftijd"></dmn:requiredInput>
+    <dmn:informationRequirement id="_9974A915-739A-4CD0-AC0E-619671E7C1D9">
+      <dmn:requiredInput href="#id_hoogste_32leeftijd"/>
     </dmn:informationRequirement>
-    <dmn:informationRequirement>
-      <dmn:requiredInput href="#id_interval"></dmn:requiredInput>
+    <dmn:informationRequirement id="_1FC35E4E-827E-49CA-BF4D-99076E856CF9">
+      <dmn:requiredInput href="#id_interval"/>
     </dmn:informationRequirement>
-    <dmn:informationRequirement>
-      <dmn:requiredInput href="#id_rangnummer"></dmn:requiredInput>
-    </dmn:informationRequirement>
-    <dmn:informationRequirement>
-      <dmn:requiredInput href="#id_toelichting"></dmn:requiredInput>
-    </dmn:informationRequirement>
-    <dmn:decisionTable id="ddt_PNEU" hitPolicy="ANY" preferredOrientation="Rule-as-Row" outputLabel="PNEU">
-      <dmn:input label="component">
-        <dmn:inputExpression>
+    <dmn:decisionTable id="ddt_PNEU" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row" outputLabel="PNEU">
+      <dmn:input id="_3FE89BA9-BA6F-4FE1-9F42-9A1EBAACF2F2">
+        <dmn:inputExpression id="_1A8E1EDA-7F3A-4C24-9BAD-DFC98B7E39B0" typeRef="dt.Component">
           <dmn:text>component</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input label="uitvoerdatum">
-        <dmn:inputExpression>
+      <dmn:input id="_C0759D24-5651-4075-ACA4-E6281377640F">
+        <dmn:inputExpression id="_9220D20D-B574-473F-82F4-DBAAB027CA01" typeRef="date">
           <dmn:text>uitvoerdatum</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input label="leeftijd in dagen">
-        <dmn:inputExpression>
+      <dmn:input id="_73DFB8F6-B58F-4D9E-87FE-CDED75218893">
+        <dmn:inputExpression id="_59B442A1-946D-4CCC-8653-30BF2A693BFD" typeRef="number">
           <dmn:text>leeftijd in dagen</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input label="hoogste rangnummer">
-        <dmn:inputExpression>
+      <dmn:input id="_A39F7D09-165E-440A-BC82-E67718CDB85D">
+        <dmn:inputExpression id="_2B46914E-8325-4FB1-B2D1-00FD312FA2E0" typeRef="number">
           <dmn:text>hoogste rangnummer</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input label="hoogste leeftijd">
-        <dmn:inputExpression>
+      <dmn:input id="_F1545EC1-A868-4B13-BC12-7F6F574AB495">
+        <dmn:inputExpression id="_FECE9BE6-7E0D-4705-9D28-EB47A71D239A" typeRef="number">
           <dmn:text>hoogste leeftijd</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input label="interval">
-        <dmn:inputExpression>
+      <dmn:input id="_8DF49940-150B-47AA-8EB6-F7B67249BCFE">
+        <dmn:inputExpression id="_7A2D617D-DBFD-4E5D-ADBD-EBA2D90AE6E3" typeRef="number">
           <dmn:text>interval</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input label="rangnummer">
-        <dmn:inputExpression>
-          <dmn:text>rangnummer</dmn:text>
-        </dmn:inputExpression>
-      </dmn:input>
-      <dmn:input label="toelichting">
-        <dmn:inputExpression>
-          <dmn:text>toelichting</dmn:text>
-        </dmn:inputExpression>
-      </dmn:input>
-      <dmn:output></dmn:output>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:output id="_C028E67D-90E2-4535-9FB7-B7A38D6C3412" name="rangnummer" typeRef="number"/>
+      <dmn:output id="_2AC436AE-2C0B-4067-9FD9-820E6A9C20D0" name="vaccinatieToestand" typeRef="dt.ValidatieResultaat"/>
+      <dmn:output id="_F10D6F2B-026A-478B-ACA4-F2B86F6A206E" name="toelichting" typeRef="string"/>
+      <dmn:annotation name=""/>
+      <dmn:rule id="_2AD8B211-95CF-4ACC-B5C4-5E6BFAE4D451">
+        <dmn:inputEntry id="_9A8CB5FC-CAF7-4961-8016-CF28BB196CF3">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_E6CC05E6-CFFD-4CDD-A437-EF51D5E62998">
           <dmn:text>&lt; 2009-01-01</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_CBF16D78-30B7-4B10-8C45-C8D04C472A03">
           <dmn:text>[731 .. 6939)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_9C3A9A67-7808-41B1-8FC6-419A454BC6C8">
           <dmn:text>null</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_BF309EFB-4798-49E6-AB2A-5767B381F76B">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_B94DAF66-516B-4770-A6BD-699CBA08888B">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_732D5857-D83E-4210-8FD7-A4E7B92D5003">
           <dmn:text>4</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_7C20FD4A-10A5-487D-93D9-05D73DF22208">
           <dmn:text>"Volledig afgesloten"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_EE14C901-C662-4FBC-8024-971549366738">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_E571CCC1-16AF-4A54-A441-6CAFA41F107A">
+        <dmn:inputEntry id="_9B45C2CE-315A-4A90-8B31-C0C5E99E4098">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_CA000AD3-AEFE-4116-838D-0C0822B8487F">
           <dmn:text>&lt; 2009-01-01</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_546C963C-90AC-464B-B491-0879D176D747">
           <dmn:text>[731 .. 6939)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_50BB0914-7E4A-4CFF-BBD7-62DE0E537D6F">
           <dmn:text>[1 .. 3]</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_7A3FBEDF-705C-4284-B139-789A9C8CA145">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_C2F00DFD-1CBB-493F-9FDF-A2427D062EB5">
           <dmn:text>&gt;= 1</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_79603851-DD03-4709-BF96-834900C1C1D0">
           <dmn:text>4</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E477D65D-7E1E-4D51-8C46-1F42712A2190">
           <dmn:text>"Volledig afgesloten"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_D862C293-FE81-4BA3-A3A6-0C91868587B4">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_3E470985-DA75-43F7-8D57-859208FBC8D9">
+        <dmn:inputEntry id="_FF8F525B-5A3E-45CB-BA43-033EC2EE0FD8">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_DD6B2F07-23A2-4C29-8CE7-9A1CDCED47AB">
           <dmn:text>&lt; 2009-01-01</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_651DE2A9-93E1-44B7-A63B-587D8E113E6D">
           <dmn:text>&gt;= 6939</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_7F6C22C7-7342-4EA6-BA09-8E1B5A9EAA35">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_3577593D-88BB-43D6-9260-2180EA72D91E">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_E73085F7-780A-403A-8F3D-99F7968B288B">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>"te oud"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
+        <dmn:outputEntry id="_6885C3DC-AC77-4636-86F6-306C6AC612E2">
+          <dmn:text/>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_390B8371-AE0E-424D-A009-330C22596469">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_38D18AE3-ED22-4013-8CDB-C292CD791629">
+          <dmn:text>"te oud"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_477B1093-61D9-447C-9592-0098D83BAD98">
+        <dmn:inputEntry id="_90D097C6-2694-4B6C-98B9-5FA8E1E763C1">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_511F9753-1CA9-4F30-AA61-6B01BF641D70">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_E51540FC-9B4D-43F2-8A76-2B1EAD18F863">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_9C50E373-86B1-4D3E-A880-9615EA88DC7F">
           <dmn:text>&gt;= 4</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_A3A8CB44-BA02-4273-88D9-503C2419FCB0">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_6BD36AA5-DC06-4DBC-B39C-0F252338C5E4">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>"reeds volledig afgesloten"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
+        <dmn:outputEntry id="_1A4FC7B0-8587-46A7-8AEA-9BDAF601AEEA">
+          <dmn:text/>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_14EC8E48-58F4-419F-AC81-8453DF9EDC72">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_D99C1E48-2BD3-4125-A078-05B2859D5E15">
+          <dmn:text>"reeds volledig afgesloten"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_D8FD9461-9497-4D97-B277-A5B68B5817DD">
+        <dmn:inputEntry id="_0336B962-3DB7-43B0-8693-58A04A5F1592">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_B136C731-4EAF-4A39-94BE-5C1D588F4140">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_BF2817A3-06DA-4148-8E5F-91C83B040CC5">
           <dmn:text>[0 .. 28)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_819F5C53-6EB4-4D88-A0F1-14F7E772CE3E">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_559FD208-3002-4CF2-BE92-A52698CC4ABC">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_7C4F73AB-3B27-4612-9881-806DAEB04C30">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>"te jong gevaccineerd"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
+        <dmn:outputEntry id="_39642FF7-96DE-4D3D-BACE-9A15F92478AD">
+          <dmn:text/>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_AEF5464C-A507-44EA-9F17-2CCF1EA680CC">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_21757222-48A6-4094-8EFA-AE1596E8A687">
+          <dmn:text>"te jong gevaccineerd"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_E3D3C20E-B712-4577-A49D-41C7BA906391">
+        <dmn:inputEntry id="_2809DA2E-94C0-4632-B4F0-B0AFD5D543BB">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_8036B37B-9E95-43FD-8586-177969D65782">
           <dmn:text>&lt; 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_6C27CACE-D68F-4930-9537-6BB26BCA9313">
           <dmn:text>[28 .. 214)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_5B85032A-0E9A-4568-AB10-EE88AE7C79E6">
           <dmn:text>null</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_1A2ED3B7-69FD-46CD-91AB-B8D564586A11">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_52BC4ED4-5FA3-4DC8-8D12-6B1CA6D945C1">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_99B45808-CD19-4798-8B07-00FFFFE70DD9">
           <dmn:text>1</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_61EA480A-DF72-4D82-99BE-4B598AA2B282">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_5867AF02-A7C3-48D4-A85A-E1A4BF6DEAEE">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_97CA557E-6186-4527-8760-E219F6E200B2">
+        <dmn:inputEntry id="_6240819A-3E76-472E-A8B1-71F808DC9618">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_4077DD58-DF28-4EC7-A870-60300E4030FC">
           <dmn:text>&gt;= 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_157FAB11-3562-47E4-92D9-97D5CAF16CE9">
           <dmn:text>[28 .. 365)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_DC9C87DB-6DD0-4018-9242-F60836FF4BA7">
           <dmn:text>null</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_523B4B68-4BF9-47AB-8C98-437680414C41">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_EE0CAA57-3683-4137-BD69-2FE6350265B5">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_13479BBD-9BA0-4BA3-AAE6-1CF3229A38DB">
           <dmn:text>1</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_42991121-FC60-4B62-8FF0-5BD722D91FF6">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_0AD909A2-6BBA-40AA-B4D3-8395852686D6">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_F42D4AEC-669B-4632-AD9C-7DE18D213B3C">
+        <dmn:inputEntry id="_1043D619-0F7C-4DB8-8287-BBD2F33EA1AB">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_6E805DD0-989B-443F-ADF2-89C250E84F20">
           <dmn:text>&lt; 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_CD4C64E0-003B-4D41-A6E1-862E463B4EF1">
           <dmn:text>[214 .. 365)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_AB329AAE-F4A2-483E-A7D5-B62ED36CA050">
           <dmn:text>null</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_41473705-66BB-4863-B0A9-091A26574F51">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_A5C442B2-EB5C-4480-A249-F5DA60DC3D54">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_F9F25ADF-0EFC-417B-ACFF-398FC5105930">
           <dmn:text>2</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_02B77185-8C71-420F-A9E7-AC3D42B0D5D8">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_F0996790-281A-4373-BC58-6254FF8E6952">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_8E36CE76-6754-4C4D-99FE-990F63914387">
+        <dmn:inputEntry id="_DFA4A660-C1BC-467A-8A23-39C7EB1916E7">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_5BE8BE9E-FCC9-4530-B33C-DF1781FAF2D4">
           <dmn:text>&lt; 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_6DAF9C73-119D-45C1-8C74-AE2794EFD545">
           <dmn:text>[365 .. 731)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_84BE8ACA-43B3-411B-897E-86084934FEE3">
           <dmn:text>null</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_43C56BD9-0A95-4B77-A522-8530DD1DAC6C">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_789E3264-A9D3-41C4-929B-D3BCBF89193F">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_BBE864E9-DCA1-476F-B4B3-028EF9E14147">
           <dmn:text>3</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_9C65F467-8CBA-4F3A-9CED-8D254A073182">
           <dmn:text>"Primaire serie"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_61806DE5-E716-485A-910F-1A03C44628A5">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_A378831C-3EF5-45BF-A542-9C13CE438ABF">
+        <dmn:inputEntry id="_26A9A757-3C25-4061-8AB8-653ACF75F64C">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_00349A9B-7A7F-4F89-AFCB-F93AC4819DED">
           <dmn:text>&gt;= 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_43D09C8B-5B3F-4950-B035-2AF5614D78C0">
           <dmn:text>[365 .. 731)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_2677DA37-4CA8-439B-ACD7-8394974AFDDF">
           <dmn:text>null</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_7AF4F2C5-72AE-42E2-A6F2-42ABE3E305B8">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_8774B811-B722-478C-A693-5C7DAE93A167">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_0368D3EB-38CD-481C-85D5-BB6FC996AB9A">
           <dmn:text>3</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_39C9C35A-F878-4F7E-A200-3B03058E67DB">
           <dmn:text>"Primaire serie"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_A594C5D9-2BA2-4F08-BCC0-2872710E6467">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_CF0B0244-DFD3-4232-941D-AE18F2DAE903">
+        <dmn:inputEntry id="_EAB28EF5-1AEC-442B-B637-1E1DE748B9F0">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_E9D51958-5ABD-4563-BA17-89DE6E04B30B">
           <dmn:text>&lt; 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_825C2C97-FA73-44F1-8F5D-C59E10EBFD9A">
           <dmn:text>[28 .. 731)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_790491A1-53A0-4CC3-939E-BE744D98D54A">
           <dmn:text>1</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_876A9BD7-5A5D-4CE4-B858-E0ABF20FAF39">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_0BA59A56-BA94-4C5E-B144-8948BF3D61DE">
           <dmn:text>(0 .. 14)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>"te kort interval"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
+        <dmn:outputEntry id="_2562F962-2D1A-48A0-B265-2A8B5261A7DB">
+          <dmn:text/>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_C5C675A8-329A-4132-9E41-B3FB19FA756A">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_45C82CCB-87DD-4BBE-BB20-2142FCCBA1E3">
+          <dmn:text>"te kort interval"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_61849756-2B39-44F8-8120-3BC73129E53B">
+        <dmn:inputEntry id="_84A387DD-FAAF-4811-B592-A0DBF54CC825">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_936E191C-9514-4AB3-88D3-732A75E81652">
           <dmn:text>&lt; 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_5E5C235D-FBEA-46E8-B44C-E52DECBC0863">
           <dmn:text>[28 .. 731)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_CC56C8D6-FE4D-4592-90C0-9DA020CCA8B0">
           <dmn:text>1</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_02778482-C681-4AC8-91EC-DF9B2080494B">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_B5C9CCD1-8B9C-4554-8CF2-1E6BA89694F9">
           <dmn:text>&gt;= 14</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_88C8587B-DE39-499D-B5A8-2D1D2CB0ACE1">
           <dmn:text>2</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_4DBE0162-4014-47B3-A257-A3971DA858DF">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_17CBFAD4-9507-4D24-AEFE-FFCD697F1783">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_4217E436-C06D-4B9C-877F-BF7A32D8A858">
+        <dmn:inputEntry id="_5CB47809-ADA7-4BD8-B69B-3A837C9C5865">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_A9A6E97E-B95A-4C33-BD3C-DBB87F44E1B7">
           <dmn:text>&gt;= 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_8F20D422-1DD7-4DC9-89A1-AB8760DE5CFC">
           <dmn:text>[28 .. 731)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_82263633-1B0F-4585-9EF6-478657A4F3AE">
           <dmn:text>1</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_705E826C-2833-4E43-A7B8-18453C61579F">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_70CA1885-9F38-4969-9D2B-A6AC5A113F91">
           <dmn:text>(0 .. 42)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>"te kort interval"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
+        <dmn:outputEntry id="_E7F675B7-9049-44EF-9F37-7A95081D966F">
+          <dmn:text/>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_8C4E76C4-6031-401F-B0DD-81AEFA2AD89A">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_437170F2-5B79-4245-BF85-A665114A0B9F">
+          <dmn:text>"te kort interval"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_3E6448C9-9A8C-4C61-B84F-2D88CB8A946D">
+        <dmn:inputEntry id="_13B4610C-5C40-4C49-A28D-438438AAEFEE">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_7EAEB2F7-29D6-4752-83B3-2CC6CCB6EC83">
           <dmn:text>&gt;= 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_CE2CF986-50CE-4D34-84EB-39D506ED4E6E">
           <dmn:text>[28 .. 731)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_352FE69A-6B59-4B3D-B7E1-E0B6BE2EC093">
           <dmn:text>1</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_A5BAB230-1F87-440D-9AB9-980331A838D7">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_550B5038-4B7B-49DD-B796-51DEB68BE638">
           <dmn:text>&gt;= 42</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_A91DBA44-7AA5-4B62-A1E2-808D6D8FF5AF">
           <dmn:text>3</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E212BFC1-C9B2-42B6-9911-109689461C91">
           <dmn:text>"Primaire serie"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_25F8406A-A33A-4626-8BDA-050774C0299E">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_690984B6-CB6F-41E9-9D0A-D8F694EB7A84">
+        <dmn:inputEntry id="_1D5C7A59-636E-4B89-A37C-B66F7C163519">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_1D9F2880-6789-4E52-94C7-2587168CBD05">
           <dmn:text>&lt; 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_69D476B7-6368-4364-9417-C212D7A396F7">
           <dmn:text>[28 .. 731)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_F02A850B-1266-4683-9285-86BD0CA13FB5">
           <dmn:text>2</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_B23C273E-1FEB-49D6-A5D0-EE57A3877CB7">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_78AE4500-C612-48AA-A39E-58119A410342">
           <dmn:text>(0 .. 14)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>"te kort interval"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
+        <dmn:outputEntry id="_29E3860E-DAF3-4F54-81CB-F978AA6E4A33">
+          <dmn:text/>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_003B1147-DCCD-4B04-ABD3-357A3A4EAEA7">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E38C958B-E9CA-452F-B609-67597553783A">
+          <dmn:text>"te kort interval"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_DAFCE10A-FA72-44C7-8F48-26B04300607C">
+        <dmn:inputEntry id="_C162026F-B424-4A76-9D8F-A62D55A23673">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_353CE0EE-EE22-4B6A-89A1-2532BF2BCD62">
           <dmn:text>&lt; 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_DCB11912-CD3A-4BD8-91D8-FD0E83589030">
           <dmn:text>[28 .. 731)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_3E47CC51-8A06-4C45-B6B1-0B73D4621713">
           <dmn:text>2</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_309FC77C-5372-4022-9231-5F29ECC72610">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_5F6995BA-2C19-4C4C-A79B-E289F5FEAC28">
           <dmn:text>&gt;= 14</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_38D048A6-41D6-45DC-B668-7393FDF8D2E2">
           <dmn:text>3</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_EBEFC4D9-C2D9-4985-947B-61A1A3A3C156">
           <dmn:text>"Primaire serie"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_E842E237-483B-4DC7-8EBA-441BF9057A04">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_12F0219A-90D0-41E7-9630-DA62CCCE5869">
+        <dmn:inputEntry id="_47F67D4C-5A07-468D-8258-7E1112DC2BFF">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_02438C2B-3191-4201-B578-7029466B4F2A">
           <dmn:text>&lt; 2020-01-01</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_95B0F24D-B726-47D0-9F90-3DF8ED8CC735">
           <dmn:text>[28 .. 731)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_2580D203-56C1-443B-8056-306F7216ADD2">
           <dmn:text>3</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_B0885524-0E6A-41B1-9AEA-0380E8A44944">
           <dmn:text>&lt; 365</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_B755F63D-43B5-4C9C-B2A1-0AA87DB11B7E">
           <dmn:text>(0 .. 119)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>"te kort interval"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
+        <dmn:outputEntry id="_8D0410FF-D9CF-403C-98B4-DCDC818FC553">
+          <dmn:text/>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_098A30EB-A9B3-44D0-B541-FD8CF6CC1335">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_04D6146C-B060-461D-9EA1-FC5C8B219A0F">
+          <dmn:text>"te kort interval"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_06A75045-24DF-4285-9E99-BDFB5A1BE707">
+        <dmn:inputEntry id="_D9856793-4B03-4B8D-8866-123AFA46DE80">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_98A189BD-B061-47FC-88F1-9BA1C1F2B6D7">
           <dmn:text>&lt; 2020-01-01</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_92111189-85ED-4E04-AEE9-C89706C59F92">
           <dmn:text>[28 .. 731)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_A52CAAC7-8462-464B-B95C-15DEBEB08063">
           <dmn:text>3</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_48AD9EDE-A030-47DB-8A61-23BD1382ACBB">
           <dmn:text>&lt; 365</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_ACE1F309-7622-48C5-A0BC-D7A991DB7EBB">
           <dmn:text>&gt;= 119</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_84FCED45-C30F-4CA6-8C62-C3E0CBD4BCBB">
           <dmn:text>4</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_84E3021B-FC8D-4225-BB48-3C9AF2F07858">
           <dmn:text>"Volledig afgesloten"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_70119BA4-57C7-49DC-8393-D9D6B32D659B">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_2A1FDE28-E0E1-4D64-A12E-F20AE6557AB2">
+        <dmn:inputEntry id="_B86F6800-70D5-4333-8E06-EA90374EF667">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_8E52654E-943C-4E4E-A300-6BBF067CFD08">
           <dmn:text>&gt;= 2020-01-01</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_54352728-327C-46DC-90F7-C9C4756F5193">
           <dmn:text>[28 .. 731)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_6E60D3CD-E30E-4DB1-A4A6-2898A828BB45">
           <dmn:text>3</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_3BCEA67E-C2B6-41F5-9371-6D0E771B9D23">
           <dmn:text>&lt; 365</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_42F826A9-6AA5-463B-B762-2B5DB7DAAB71">
           <dmn:text>(0 .. 150)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>"te kort interval"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
+        <dmn:outputEntry id="_1F8DB6DA-7955-410C-BBCA-2E7805F3570B">
+          <dmn:text/>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_3886C29B-10BC-468B-937B-9A025D1E89EF">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_C4DCC508-CFE6-4E2E-AF1E-354C3A856EDB">
+          <dmn:text>"te kort interval"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_6FD2B7F3-B855-47B4-B455-2E50B584DC68">
+        <dmn:inputEntry id="_B01D7026-7FFE-4A81-9BCC-4F97E68CA4BB">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_825844EA-0D43-435F-8E13-816C42CCB475">
           <dmn:text>&gt;= 2020-01-01</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_E421F395-82DC-41B1-BFBD-C074E5E2A743">
           <dmn:text>[28 .. 731)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_E5BB0645-9CE3-4E41-982F-BF0FD52797C3">
           <dmn:text>3</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_A0FA5880-D83C-4DAD-9116-355B4CBEB07D">
           <dmn:text>&lt; 365</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_BCB9BAEC-EF3F-44A3-BA25-F1127846EE49">
           <dmn:text>&gt;= 150</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_F369F95A-B777-40D2-B89B-3846F6D4ABE3">
           <dmn:text>4</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_B6F1841C-D36A-4FEB-990C-C849BE65C333">
           <dmn:text>"Volledig afgesloten"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_FCACF77A-55EC-4EE3-A30C-A9DC0EE3B125">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_8C1D1186-B508-447D-A6C6-60E9233576A8">
+        <dmn:inputEntry id="_9E8365F5-821D-49A4-9471-BA56E75DF970">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_CB65B9D6-F164-4615-9991-74DC57192A49">
           <dmn:text>&gt;= 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_E34FFC59-DFD1-40A1-97D6-651C026E860E">
           <dmn:text>[28 .. 824)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_BE3E612D-E7C3-4604-BA36-2A8D372BBD24">
           <dmn:text>3</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_63716900-CA34-4435-AD2D-4CE8F9F2142C">
           <dmn:text>&gt;= 365</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_C752436F-FAD1-4808-AB4D-3AA7CEB772A8">
           <dmn:text>(0 .. 56)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>"te kort interval"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
+        <dmn:outputEntry id="_F3FEE484-B840-4144-A252-E0C9A919E2CD">
+          <dmn:text/>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_02FFFBDE-E1D2-4EC0-8784-775417E1DCBA">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_96F45C21-9013-493D-BF23-7B7BF7182EEB">
+          <dmn:text>"te kort interval"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_1B750928-5910-4275-8C9C-25C2319AA3AC">
+        <dmn:inputEntry id="_C3202C07-79BB-4746-9F4A-5090F61FB9CC">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_16F7C15A-750A-40F4-A9CA-81B82AC82DD8">
           <dmn:text>&gt;= 2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_69106873-C66F-44BA-B640-8FA12A3FC7B1">
           <dmn:text>[28 .. 824)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_774B0455-861A-442D-8D27-6D88757CCD18">
           <dmn:text>3</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_410AFEDB-30F6-4C55-B945-A30A3FB7E4F9">
           <dmn:text>&gt;= 365</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_8D71579D-AD57-4CB5-B0FF-0C93FFFA34EA">
           <dmn:text>&gt;= 56</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:outputEntry id="_9A0C7859-3433-4357-9D9E-26CEE1BAA65D">
           <dmn:text>4</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_251F8509-F764-4484-8BF2-E427ED845E33">
           <dmn:text>"Volledig afgesloten"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_DBD13B9B-30FE-4991-96A0-7CFFFF3101BA">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_EF73297C-B3BA-4074-A3FD-C76E4E09E04C">
+        <dmn:inputEntry id="_C3363E85-3DE8-4A9C-84C3-0F05C1A5D532">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_2175A2B7-5D7A-427B-8B9E-5C10C9EA100B">
           <dmn:text>[2009-01-01 .. 2013-11-27)</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_6FCBDEF7-35DF-452B-B588-8A741ADFCFBB">
           <dmn:text>&gt;= 731</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_72CB8FC7-3C41-4EC9-9E30-6613D4FD9E5C">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_24F105EF-77C0-4667-9072-B5C147C8C0DD">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_0240C827-5BE8-40D5-ABDB-FCBB5B8B8C73">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>"te oud"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
+        <dmn:outputEntry id="_18C6D160-BB21-4D6F-8A15-027986B98D19">
+          <dmn:text/>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_B3B2A051-8A6C-4DFE-9E6B-B692A9D4B47D">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8CFE7083-EA70-45A7-89A6-93097B338503">
+          <dmn:text>"te oud"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_5A40125D-404D-43D2-839D-3D6A5CA52817">
+        <dmn:inputEntry id="_D7127F2A-D2B6-4752-A334-A6F7E2FFEE72">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_96E7DFDD-4590-4208-B480-4F56645454C1">
           <dmn:text>&gt;=2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_11F63E6B-89D3-450C-8838-907D81FD6635">
           <dmn:text>&gt;= 731</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_DCC378B9-05ED-4D89-976C-6759CA3C57BF">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_DABC369A-710B-420A-8BF5-39932945E33E">
           <dmn:text>&lt; 365</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_D4855E23-2E34-4C9D-9B4B-5F98FDE0F6E0">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>"te oud"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
+        <dmn:outputEntry id="_061F184C-E24B-48DC-9D0C-31D2E62DC2B2">
+          <dmn:text/>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_6C4CE990-A1E4-4F40-865F-006645204FD2">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8AC9C067-5D0B-4E80-B341-1711636794DE">
+          <dmn:text>"te oud"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule>
-        <dmn:inputEntry>
+      <dmn:rule id="_8033785E-909E-46EF-B521-8E635BA585F7">
+        <dmn:inputEntry id="_5B8497B7-3A61-42C6-BCBE-1189DE2BFB71">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_48D382C0-3D01-44F8-ADDB-F8C8BF132DD6">
           <dmn:text>&gt;=2013-11-27</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_70864284-4E48-46BD-B915-540491638652">
           <dmn:text>&gt;= 824</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_98ECFDEF-E149-42A9-8675-361CF204B246">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_825D2EFB-000F-4C58-8C30-3F551873DA5A">
           <dmn:text>&gt;= 365</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
+        <dmn:inputEntry id="_92CD9691-AC86-4737-9EE1-6357F9E9DBC7">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>null</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry>
-          <dmn:text>"te oud"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry>
-          <dmn:text>-</dmn:text>
+        <dmn:outputEntry id="_5B60DB7A-C9D3-4B01-831A-B6C2AC77C291">
+          <dmn:text/>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_DD0DAAC1-826A-46C9-AF39-676E35B26EA5">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_4AA33DC7-09BE-493B-A53A-34C4AB6137D9">
+          <dmn:text>"te oud"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_479689FE-5E41-41C6-9B67-868AE311206E" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="ddt_PNEU">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>237</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_089F429B-59DF-4D32-83E3-DFE8693A11D3" dmnElementRef="_089F429B-59DF-4D32-83E3-DFE8693A11D3" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="563" y="51" width="200" height="200"/>
+        <dmndi:DMNLabel/>
+        <dmndi:DMNDecisionServiceDividerLine>
+          <di:waypoint x="563" y="174"/>
+          <di:waypoint x="763" y="174"/>
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-id_component" dmnElementRef="id_component" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="240" y="41" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-id_uitvoerdatum" dmnElementRef="id_uitvoerdatum" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="240" y="103" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-id_leeftijd_32in_32dagen" dmnElementRef="id_leeftijd_32in_32dagen" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="240" y="165" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-id_hoogste_32rangnummer" dmnElementRef="id_hoogste_32rangnummer" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="240" y="227" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-id_hoogste_32leeftijd" dmnElementRef="id_hoogste_32leeftijd" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="240" y="289" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-id_interval" dmnElementRef="id_interval" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="240" y="351" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-d_PNEU" dmnElementRef="d_PNEU" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="613" y="103" width="120" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_98B07E74-61D8-43DB-A9B7-AEBF1B3AA44C" dmnElementRef="_98B07E74-61D8-43DB-A9B7-AEBF1B3AA44C">
+        <di:waypoint x="290" y="66"/>
+        <di:waypoint x="673" y="128"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_FA8C8F73-8C72-4DE6-A49B-6B16C3567CBE" dmnElementRef="_FA8C8F73-8C72-4DE6-A49B-6B16C3567CBE">
+        <di:waypoint x="290" y="128"/>
+        <di:waypoint x="673" y="128"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_00C0E0E6-A043-4039-B20F-5F69BA3DDEC8" dmnElementRef="_00C0E0E6-A043-4039-B20F-5F69BA3DDEC8">
+        <di:waypoint x="290" y="190"/>
+        <di:waypoint x="673" y="128"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_018A131C-CFBC-4367-B3F1-C9E4109039B9" dmnElementRef="_018A131C-CFBC-4367-B3F1-C9E4109039B9">
+        <di:waypoint x="290" y="252"/>
+        <di:waypoint x="673" y="128"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_9974A915-739A-4CD0-AC0E-619671E7C1D9" dmnElementRef="_9974A915-739A-4CD0-AC0E-619671E7C1D9">
+        <di:waypoint x="290" y="314"/>
+        <di:waypoint x="673" y="128"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_1FC35E4E-827E-49CA-BF4D-99076E856CF9" dmnElementRef="_1FC35E4E-827E-49CA-BF4D-99076E856CF9">
+        <di:waypoint x="290" y="376"/>
+        <di:waypoint x="673" y="128"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
 </dmn:definitions>

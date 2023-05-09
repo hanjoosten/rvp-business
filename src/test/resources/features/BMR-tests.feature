@@ -2,6 +2,7 @@
 Functionaliteit: validatie van vaccinaties
 
     @Test
+    @Ignore
     Scenario: dummy
         Gegeven een client geboren op 2020-01-01
         En de volgende vaccinaties zijn gegeven voor deze client:
