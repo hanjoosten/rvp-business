@@ -41,9 +41,9 @@
     <dmn:extensionElements/>
     <dmn:variable id="idvar_interval" name="interval" typeRef="number"/>
   </dmn:inputData>
-  <dmn:decision id="d_RangnummerHPV" name="Rangnummer HPV kanker">
+  <dmn:decision id="d_RangnummerHPV" name="validatie resultaat HPV kanker">
     <dmn:extensionElements/>
-    <dmn:variable id="dvar_RangnummerHPV" name="Rangnummer HPV kanker" typeRef="dt.ValidatieResultaat"/>
+    <dmn:variable id="dvar_RangnummerHPV" name="validatie resultaat HPV kanker" typeRef="dt.ValidatieResultaat"/>
     <dmn:informationRequirement id="_B5E8B36D-A4E7-4BCF-BF91-19A8844386C9">
       <dmn:requiredInput href="#id_vaccinatie_46uitvoerdatum"/>
     </dmn:informationRequirement>
@@ -439,9 +439,9 @@
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
-  <dmn:decision id="d_RangnummerBMR" name="Rangnummer BMR">
+  <dmn:decision id="d_RangnummerBMR" name="validatie resultaat BMR">
     <dmn:extensionElements/>
-    <dmn:variable id="dvar_RangnummerBMR" name="Rangnummer BMR" typeRef="dt.ValidatieResultaat"/>
+    <dmn:variable id="dvar_RangnummerBMR" name="validatie resultaat BMR" typeRef="dt.ValidatieResultaat"/>
     <dmn:informationRequirement id="_CDA8996B-2421-4AE0-85F4-BD98A45C966C">
       <dmn:requiredInput href="#id_component"/>
     </dmn:informationRequirement>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_386BF0A1-3E1D-4ABF-8738-570B8A4865C0" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" xmlns:included2="xls2dmn_f5c71aba-ee0d-43ac-ab84-5e891f98efbf" id="_D61D4968-96B4-4DDB-899D-42962BFD6B93" name="rb__ValidatieResultaat" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_386BF0A1-3E1D-4ABF-8738-570B8A4865C0">
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_386BF0A1-3E1D-4ABF-8738-570B8A4865C0" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" xmlns:included2="xls2dmn_f5c71aba-ee0d-43ac-ab84-5e891f98efbf" xmlns:included3="xls2dmn_877a9246-d4c8-4762-8457-e23b17dc67a8" id="_D61D4968-96B4-4DDB-899D-42962BFD6B93" name="rb__ValidatieResultaat" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_386BF0A1-3E1D-4ABF-8738-570B8A4865C0">
   <dmn:extensionElements/>
   <dmn:import id="_45CF5B00-6841-49D8-8854-C535D28D3133" name="dt" namespace="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" locationURI="dt_datatypes.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
   <dmn:import id="_8443EB33-47EB-4F32-AD9A-DB56E75243CA" name="bmrhvp" namespace="xls2dmn_f5c71aba-ee0d-43ac-ab84-5e891f98efbf" locationURI="rangnummerBMR_HVP.xlsx.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
-  <dmn:decisionService id="_6697E923-1090-4895-ACE3-9FD8BE799E53" name="rangnummerService">
+  <dmn:import id="_2C4DDEE8-3124-4B12-B5A1-207C0C7CAA58" name="pneu" namespace="xls2dmn_877a9246-d4c8-4762-8457-e23b17dc67a8" locationURI="rangnummerPNEU.xlsx.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:decisionService id="_6697E923-1090-4895-ACE3-9FD8BE799E53" name="validatieService">
     <dmn:extensionElements/>
-    <dmn:variable id="_C35E7108-4381-4ACC-8AEC-AFAFE703337C" name="rangnummerService" typeRef="dt.ValidatieResultaat"/>
+    <dmn:variable id="_C35E7108-4381-4ACC-8AEC-AFAFE703337C" name="validatieService" typeRef="dt.ValidatieResultaat"/>
     <dmn:outputDecision href="#_21F9B76B-83ED-4DC9-A8FE-635053922DDB"/>
     <dmn:inputData href="#_2F828FF6-1339-4E60-869F-7548F94B1C53"/>
     <dmn:inputData href="#_5E65582C-32B1-43C6-B1B4-CD65D3C53F10"/>
@@ -13,10 +14,11 @@
     <dmn:inputData href="#_68BD7C1F-D3D3-40B0-B05B-806185ABE486"/>
     <dmn:inputData href="#_F6D74810-59CF-4A9F-8FE6-75830D4D90BA"/>
     <dmn:inputData href="#_0C9EB35D-3017-440B-BD7C-0A1899896E79"/>
+    <dmn:inputData href="#_8ECDC27D-F588-4C8C-8DFF-75AA1FD76703"/>
   </dmn:decisionService>
-  <dmn:decision id="_21F9B76B-83ED-4DC9-A8FE-635053922DDB" name="Rangnummer">
+  <dmn:decision id="_21F9B76B-83ED-4DC9-A8FE-635053922DDB" name="validatie resultaat">
     <dmn:extensionElements/>
-    <dmn:variable id="_A6E44A87-1822-42A3-9FFD-A7026D3D9F3B" name="Rangnummer" typeRef="dt.ValidatieResultaat"/>
+    <dmn:variable id="_A6E44A87-1822-42A3-9FFD-A7026D3D9F3B" name="validatie resultaat" typeRef="dt.ValidatieResultaat"/>
     <dmn:informationRequirement id="_E22507E6-8379-4F7E-BD30-239CA6A68087">
       <dmn:requiredInput href="#_5E65582C-32B1-43C6-B1B4-CD65D3C53F10"/>
     </dmn:informationRequirement>
@@ -35,11 +37,17 @@
     <dmn:informationRequirement id="_3292B4F6-3C57-47C0-A861-C3B78791EDF6">
       <dmn:requiredInput href="#_0C9EB35D-3017-440B-BD7C-0A1899896E79"/>
     </dmn:informationRequirement>
+    <dmn:informationRequirement id="_64C9FCEF-EC34-4494-8838-E9442FBC73EA">
+      <dmn:requiredInput href="#_8ECDC27D-F588-4C8C-8DFF-75AA1FD76703"/>
+    </dmn:informationRequirement>
     <dmn:knowledgeRequirement id="_90225757-A60F-471B-AC33-8ADBE5A47A11">
       <dmn:requiredKnowledge href="xls2dmn_f5c71aba-ee0d-43ac-ab84-5e891f98efbf#_A3CB8E2C-F3AE-4D6B-9269-06D6783B6A7D"/>
     </dmn:knowledgeRequirement>
     <dmn:knowledgeRequirement id="_A69C9C72-0FA8-4C75-80D4-97AEEA1D280D">
       <dmn:requiredKnowledge href="xls2dmn_f5c71aba-ee0d-43ac-ab84-5e891f98efbf#_AB27F5B5-8FE8-46BB-B455-0258FDACF308"/>
+    </dmn:knowledgeRequirement>
+    <dmn:knowledgeRequirement id="_DFACE86E-E11B-4D61-9993-F810604EB508">
+      <dmn:requiredKnowledge href="xls2dmn_877a9246-d4c8-4762-8457-e23b17dc67a8#_EE22C92D-EDD4-4EA7-8FC6-36A12C93C5F8"/>
     </dmn:knowledgeRequirement>
     <dmn:decisionTable id="_817D2BFA-65EA-4A40-B5E2-16FE67AF303E" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_5F0379F4-6578-470C-AED6-7E9ACE761F35">
@@ -71,6 +79,17 @@
           <dmn:text/>
         </dmn:annotationEntry>
       </dmn:rule>
+      <dmn:rule id="_42BB3F29-A06F-433C-86D7-823A25C8E59A">
+        <dmn:inputEntry id="_05C6536B-D332-44C7-8449-F42C0A2EDFC7">
+          <dmn:text>"Pneumokokkenziekte"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_464B3F41-86FF-4872-BB79-3CB4ED4F7F53">
+          <dmn:text>pneu.PNEUService(component,hoogste leeftijd, hoogste rangnummer, interval, leeftijd in dagen, uitvoerdatum)</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
   <dmn:inputData id="_5E65582C-32B1-43C6-B1B4-CD65D3C53F10" name="component">
@@ -97,9 +116,9 @@
     <dmn:extensionElements/>
     <dmn:variable id="_16EA6E66-30EC-4586-BA5C-ABF2CE194715" name="infectieziekte" typeRef="dt.Infectieziekte"/>
   </dmn:inputData>
-  <dmn:businessKnowledgeModel id="_AB8743CF-48FD-4359-AB66-E4806F378D26" name="bepaal rangnummer">
+  <dmn:businessKnowledgeModel id="_AB8743CF-48FD-4359-AB66-E4806F378D26" name="valideren vaccinatiecomponent">
     <dmn:extensionElements/>
-    <dmn:variable id="_B34FD879-88C0-4C6B-9B3F-B7788666002D" name="bepaal rangnummer" typeRef="dt.ValidatieResultaat"/>
+    <dmn:variable id="_B34FD879-88C0-4C6B-9B3F-B7788666002D" name="valideren vaccinatiecomponent" typeRef="dt.ValidatieResultaat"/>
     <dmn:encapsulatedLogic id="_A9893621-24B9-47E0-AE18-2DF152400ECC" kind="FEEL">
       <dmn:formalParameter id="_189F1162-E777-4FE0-B5E2-FCF21EEA8B7A" name="component" typeRef="dt.Component"/>
       <dmn:formalParameter id="_026E1151-0D01-4747-9B66-017D047D2A9D" name="hoogste rangnummer" typeRef="number"/>
@@ -107,14 +126,19 @@
       <dmn:formalParameter id="_3FD8CA1B-1B2E-49C9-8A0B-2843713AC120" name="infectieziekte" typeRef="dt.Infectieziekte"/>
       <dmn:formalParameter id="_15FF619C-D6B5-4AB8-B925-C786E5A25F5D" name="leeftijd in dagen" typeRef="number"/>
       <dmn:formalParameter id="_1C24933F-85B0-4706-9DB1-5CE47BD7F256" name="uitvoerdatum" typeRef="date"/>
+      <dmn:formalParameter id="_13555192-F9EC-402B-A12F-A8241DCBBF34" name="hoogste leeftijd" typeRef="number"/>
       <dmn:literalExpression id="_02C7F5FD-25C8-4321-AA28-7D82158FA17B">
-        <dmn:text>rangnummerService(leeftijd in dagen,component,hoogste rangnummer,infectieziekte,interval,uitvoerdatum)</dmn:text>
+        <dmn:text>validatieService(leeftijd in dagen,component,hoogste rangnummer,infectieziekte,interval,uitvoerdatum,hoogste leeftijd)</dmn:text>
       </dmn:literalExpression>
     </dmn:encapsulatedLogic>
     <dmn:knowledgeRequirement id="_0486603C-BC20-49BF-9C16-C1C110D30C05">
       <dmn:requiredKnowledge href="#_6697E923-1090-4895-ACE3-9FD8BE799E53"/>
     </dmn:knowledgeRequirement>
   </dmn:businessKnowledgeModel>
+  <dmn:inputData id="_8ECDC27D-F588-4C8C-8DFF-75AA1FD76703" name="hoogste leeftijd">
+    <dmn:extensionElements/>
+    <dmn:variable id="_2475B5F9-1CF7-436D-A957-E29202193090" name="hoogste leeftijd" typeRef="number"/>
+  </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_68A71BAE-308C-4E86-9983-F5D8F4E796EF" name="DRG">
       <di:extension>
@@ -126,7 +150,7 @@
             <kie:width>100</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_02C7F5FD-25C8-4321-AA28-7D82158FA17B">
-            <kie:width>888</kie:width>
+            <kie:width>1299</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_A9893621-24B9-47E0-AE18-2DF152400ECC">
             <kie:width>50</kie:width>
@@ -171,6 +195,19 @@
         <dmndi:DMNDecisionServiceDividerLine>
           <di:waypoint x="674" y="254"/>
           <di:waypoint x="874" y="254"/>
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_EE22C92D-EDD4-4EA7-8FC6-36A12C93C5F8" dmnElementRef="included3:_EE22C92D-EDD4-4EA7-8FC6-36A12C93C5F8" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="974" y="425" width="268" height="100"/>
+        <dmndi:DMNLabel/>
+        <dmndi:DMNDecisionServiceDividerLine>
+          <di:waypoint x="974" y="475"/>
+          <di:waypoint x="1242" y="475"/>
         </dmndi:DMNDecisionServiceDividerLine>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_21F9B76B-83ED-4DC9-A8FE-635053922DDB" dmnElementRef="_21F9B76B-83ED-4DC9-A8FE-635053922DDB" isCollapsed="false">
@@ -242,7 +279,16 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="723" y="37" width="100" height="50"/>
+        <dc:Bounds x="701" y="37" width="153" height="51"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_8ECDC27D-F588-4C8C-8DFF-75AA1FD76703" dmnElementRef="_8ECDC27D-F588-4C8C-8DFF-75AA1FD76703" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="405" y="643" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_E22507E6-8379-4F7E-BD30-239CA6A68087" dmnElementRef="_E22507E6-8379-4F7E-BD30-239CA6A68087">
@@ -269,6 +315,10 @@
         <di:waypoint x="455" y="590"/>
         <di:waypoint x="774" y="205"/>
       </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_64C9FCEF-EC34-4494-8838-E9442FBC73EA" dmnElementRef="_64C9FCEF-EC34-4494-8838-E9442FBC73EA">
+        <di:waypoint x="455" y="668"/>
+        <di:waypoint x="774" y="205"/>
+      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_90225757-A60F-471B-AC33-8ADBE5A47A11" dmnElementRef="_90225757-A60F-471B-AC33-8ADBE5A47A11">
         <di:waypoint x="1106" y="335"/>
         <di:waypoint x="774" y="205"/>
@@ -277,9 +327,13 @@
         <di:waypoint x="1068.5" y="205"/>
         <di:waypoint x="774" y="205"/>
       </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_DFACE86E-E11B-4D61-9993-F810604EB508" dmnElementRef="_DFACE86E-E11B-4D61-9993-F810604EB508">
+        <di:waypoint x="1108" y="475"/>
+        <di:waypoint x="774" y="205"/>
+      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_0486603C-BC20-49BF-9C16-C1C110D30C05" dmnElementRef="_0486603C-BC20-49BF-9C16-C1C110D30C05">
         <di:waypoint x="774" y="229"/>
-        <di:waypoint x="773" y="62"/>
+        <di:waypoint x="777.5" y="62.5"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
