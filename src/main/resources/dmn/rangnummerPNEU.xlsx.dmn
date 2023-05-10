@@ -98,7 +98,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_E6CC05E6-CFFD-4CDD-A437-EF51D5E62998">
-          <dmn:text>&lt; 2009-01-01</dmn:text>
+          <dmn:text>&lt; "2009-01-01"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_CBF16D78-30B7-4B10-8C45-C8D04C472A03">
           <dmn:text>[731 .. 6939)</dmn:text>
@@ -130,7 +130,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_CA000AD3-AEFE-4116-838D-0C0822B8487F">
-          <dmn:text>&lt; 2009-01-01</dmn:text>
+          <dmn:text>&lt; "2009-01-01"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_546C963C-90AC-464B-B491-0879D176D747">
           <dmn:text>[731 .. 6939)</dmn:text>
@@ -162,7 +162,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_DD6B2F07-23A2-4C29-8CE7-9A1CDCED47AB">
-          <dmn:text>&lt; 2009-01-01</dmn:text>
+          <dmn:text>&lt; "2009-01-01"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_651DE2A9-93E1-44B7-A63B-587D8E113E6D">
           <dmn:text>&gt;= 6939</dmn:text>
@@ -258,7 +258,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_8036B37B-9E95-43FD-8586-177969D65782">
-          <dmn:text>&lt; 2013-11-27</dmn:text>
+          <dmn:text>&lt; "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_6C27CACE-D68F-4930-9537-6BB26BCA9313">
           <dmn:text>[28 .. 214)</dmn:text>
@@ -290,7 +290,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_4077DD58-DF28-4EC7-A870-60300E4030FC">
-          <dmn:text>&gt;= 2013-11-27</dmn:text>
+          <dmn:text>&gt;= "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_157FAB11-3562-47E4-92D9-97D5CAF16CE9">
           <dmn:text>[28 .. 365)</dmn:text>
@@ -322,7 +322,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_6E805DD0-989B-443F-ADF2-89C250E84F20">
-          <dmn:text>&lt; 2013-11-27</dmn:text>
+          <dmn:text>&lt; "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_CD4C64E0-003B-4D41-A6E1-862E463B4EF1">
           <dmn:text>[214 .. 365)</dmn:text>
@@ -354,7 +354,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_5BE8BE9E-FCC9-4530-B33C-DF1781FAF2D4">
-          <dmn:text>&lt; 2013-11-27</dmn:text>
+          <dmn:text>&lt; "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_6DAF9C73-119D-45C1-8C74-AE2794EFD545">
           <dmn:text>[365 .. 731)</dmn:text>
@@ -386,7 +386,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_00349A9B-7A7F-4F89-AFCB-F93AC4819DED">
-          <dmn:text>&gt;= 2013-11-27</dmn:text>
+          <dmn:text>&gt;= "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_43D09C8B-5B3F-4950-B035-2AF5614D78C0">
           <dmn:text>[365 .. 731)</dmn:text>
@@ -418,7 +418,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_E9D51958-5ABD-4563-BA17-89DE6E04B30B">
-          <dmn:text>&lt; 2013-11-27</dmn:text>
+          <dmn:text>&lt; "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_825C2C97-FA73-44F1-8F5D-C59E10EBFD9A">
           <dmn:text>[28 .. 731)</dmn:text>
@@ -450,7 +450,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_936E191C-9514-4AB3-88D3-732A75E81652">
-          <dmn:text>&lt; 2013-11-27</dmn:text>
+          <dmn:text>&lt; "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_5E5C235D-FBEA-46E8-B44C-E52DECBC0863">
           <dmn:text>[28 .. 731)</dmn:text>
@@ -482,7 +482,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_A9A6E97E-B95A-4C33-BD3C-DBB87F44E1B7">
-          <dmn:text>&gt;= 2013-11-27</dmn:text>
+          <dmn:text>&gt;= "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_8F20D422-1DD7-4DC9-89A1-AB8760DE5CFC">
           <dmn:text>[28 .. 731)</dmn:text>
@@ -514,7 +514,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_7EAEB2F7-29D6-4752-83B3-2CC6CCB6EC83">
-          <dmn:text>&gt;= 2013-11-27</dmn:text>
+          <dmn:text>&gt;= "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_CE2CF986-50CE-4D34-84EB-39D506ED4E6E">
           <dmn:text>[28 .. 731)</dmn:text>
@@ -546,7 +546,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_1D9F2880-6789-4E52-94C7-2587168CBD05">
-          <dmn:text>&lt; 2013-11-27</dmn:text>
+          <dmn:text>&lt; "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_69D476B7-6368-4364-9417-C212D7A396F7">
           <dmn:text>[28 .. 731)</dmn:text>
@@ -578,7 +578,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_353CE0EE-EE22-4B6A-89A1-2532BF2BCD62">
-          <dmn:text>&lt; 2013-11-27</dmn:text>
+          <dmn:text>&lt; "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_DCB11912-CD3A-4BD8-91D8-FD0E83589030">
           <dmn:text>[28 .. 731)</dmn:text>
@@ -610,7 +610,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_02438C2B-3191-4201-B578-7029466B4F2A">
-          <dmn:text>&lt; 2020-01-01</dmn:text>
+          <dmn:text>&lt; "2020-01-01"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_95B0F24D-B726-47D0-9F90-3DF8ED8CC735">
           <dmn:text>[28 .. 731)</dmn:text>
@@ -642,7 +642,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_98A189BD-B061-47FC-88F1-9BA1C1F2B6D7">
-          <dmn:text>&lt; 2020-01-01</dmn:text>
+          <dmn:text>&lt; "2020-01-01"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_92111189-85ED-4E04-AEE9-C89706C59F92">
           <dmn:text>[28 .. 731)</dmn:text>
@@ -674,7 +674,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_8E52654E-943C-4E4E-A300-6BBF067CFD08">
-          <dmn:text>&gt;= 2020-01-01</dmn:text>
+          <dmn:text>&gt;= "2020-01-01"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_54352728-327C-46DC-90F7-C9C4756F5193">
           <dmn:text>[28 .. 731)</dmn:text>
@@ -706,7 +706,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_825844EA-0D43-435F-8E13-816C42CCB475">
-          <dmn:text>&gt;= 2020-01-01</dmn:text>
+          <dmn:text>&gt;= "2020-01-01"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_E421F395-82DC-41B1-BFBD-C074E5E2A743">
           <dmn:text>[28 .. 731)</dmn:text>
@@ -738,7 +738,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_CB65B9D6-F164-4615-9991-74DC57192A49">
-          <dmn:text>&gt;= 2013-11-27</dmn:text>
+          <dmn:text>&gt;= "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_E34FFC59-DFD1-40A1-97D6-651C026E860E">
           <dmn:text>[28 .. 824)</dmn:text>
@@ -770,7 +770,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_16F7C15A-750A-40F4-A9CA-81B82AC82DD8">
-          <dmn:text>&gt;= 2013-11-27</dmn:text>
+          <dmn:text>&gt;= "2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_69106873-C66F-44BA-B640-8FA12A3FC7B1">
           <dmn:text>[28 .. 824)</dmn:text>
@@ -802,7 +802,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_2175A2B7-5D7A-427B-8B9E-5C10C9EA100B">
-          <dmn:text>[2009-01-01 .. 2013-11-27)</dmn:text>
+          <dmn:text>["2009-01-01" .. "2013-11-27")</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_6FCBDEF7-35DF-452B-B588-8A741ADFCFBB">
           <dmn:text>&gt;= 731</dmn:text>
@@ -834,7 +834,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_96E7DFDD-4590-4208-B480-4F56645454C1">
-          <dmn:text>&gt;=2013-11-27</dmn:text>
+          <dmn:text>&gt;="2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_11F63E6B-89D3-450C-8838-907D81FD6635">
           <dmn:text>&gt;= 731</dmn:text>
@@ -866,7 +866,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_48D382C0-3D01-44F8-ADDB-F8C8BF132DD6">
-          <dmn:text>&gt;=2013-11-27</dmn:text>
+          <dmn:text>&gt;="2013-11-27"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_70864284-4E48-46BD-B915-540491638652">
           <dmn:text>&gt;= 824</dmn:text>
@@ -902,8 +902,8 @@
           <kie:ComponentWidths dmnElementRef="ddt_PNEU">
             <kie:width>50</kie:width>
             <kie:width>100</kie:width>
-            <kie:width>100</kie:width>
-            <kie:width>100</kie:width>
+            <kie:width>131</kie:width>
+            <kie:width>125</kie:width>
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
