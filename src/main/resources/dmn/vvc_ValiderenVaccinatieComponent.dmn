@@ -82,7 +82,7 @@
       <dmn:contextEntry>
         <dmn:variable id="_B283613F-8259-427C-B8B0-F68B556B8654" name="leeftijdInDagen" typeRef="number"/>
         <dmn:literalExpression id="_CEA1CD48-07A9-4486-B579-6C6C742556C4">
-          <dmn:text>leeftijd in dagen</dmn:text>
+          <dmn:text>leeftijd dagen</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
       <dmn:contextEntry>
@@ -122,6 +122,9 @@
     </dmn:informationRequirement>
     <dmn:informationRequirement id="_604FA017-1C48-407F-B6A0-1A4C74A32EA2">
       <dmn:requiredDecision href="#_42DB9DD4-66FF-482E-A0EC-D5DCCEB0C23F"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_4F3D1AD0-9BF0-44C6-AFD3-4F3980206013">
+      <dmn:requiredInput href="#_543417EE-C99A-4F21-B75E-FC61EBFF371B"/>
     </dmn:informationRequirement>
     <dmn:knowledgeRequirement id="_45864789-7280-4977-8269-D25D1E092CED">
       <dmn:requiredKnowledge href="https://kiegroup.org/dmn/_386BF0A1-3E1D-4ABF-8738-570B8A4865C0#_AB8743CF-48FD-4359-AB66-E4806F378D26"/>
@@ -199,8 +202,8 @@
             <dmn:inputEntry id="_C3288F9C-9A7D-47D4-BE4D-C4F51CE93A1E">
               <dmn:text>false</dmn:text>
             </dmn:inputEntry>
-            <dmn:outputEntry id="_0FA39C2B-1606-4264-B1AA-DE1C3461BF9C">
-              <dmn:text>rb.valideren vaccinatiecomponent(component, hoogste rangnummer, interval,infectieziekte, leeftijd in dagen, uitvoerdatum, hoogste leeftijd)</dmn:text>
+            <dmn:outputEntry id="_2D2A9C5D-50A3-4C8A-AF86-57CCE904A5C3">
+              <dmn:text>rb.valideren vaccinatiecomponent(component, hoogste rangnummer, interval,infectieziekte, leeftijd dagen, uitvoerdatum, hoogste leeftijd,client)</dmn:text>
             </dmn:outputEntry>
             <dmn:annotationEntry>
               <dmn:text/>
@@ -248,9 +251,9 @@
       <dmn:text>vaccinatie component.vaccinatie.uitvoerdatum</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
-  <dmn:decision id="_159AC1FC-313C-4D99-8D21-EBEA754239FE" name="leeftijd in dagen">
+  <dmn:decision id="_159AC1FC-313C-4D99-8D21-EBEA754239FE" name="leeftijd dagen">
     <dmn:extensionElements/>
-    <dmn:variable id="_977F316C-88F6-4D7B-A65D-90041113B89A" name="leeftijd in dagen" typeRef="number"/>
+    <dmn:variable id="_977F316C-88F6-4D7B-A65D-90041113B89A" name="leeftijd dagen" typeRef="number"/>
     <dmn:informationRequirement id="_FA101373-2125-4335-B1D9-3F27948547B1">
       <dmn:requiredInput href="#_543417EE-C99A-4F21-B75E-FC61EBFF371B"/>
     </dmn:informationRequirement>
@@ -867,6 +870,11 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_45864789-7280-4977-8269-D25D1E092CED" dmnElementRef="_45864789-7280-4977-8269-D25D1E092CED">
         <di:waypoint x="1077" y="448.3421052631579"/>
+        <di:waypoint x="633" y="304"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_4F3D1AD0-9BF0-44C6-AFD3-4F3980206013" dmnElementRef="_4F3D1AD0-9BF0-44C6-AFD3-4F3980206013">
+        <di:waypoint x="1087" y="198.68421052631578"/>
+        <di:waypoint x="773" y="242"/>
         <di:waypoint x="633" y="304"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_3F9AACAF-CC79-46F0-ACF5-FC8465334273" dmnElementRef="_3F9AACAF-CC79-46F0-ACF5-FC8465334273">

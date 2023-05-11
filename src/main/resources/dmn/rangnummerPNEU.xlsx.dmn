@@ -4,7 +4,7 @@
   <dmn:import id="_B7F7D420-E907-4705-9424-387AA64DEC96" name="dt" namespace="https://kiegroup.org/dmn/_A8B013F2-B746-4574-A64F-A4F1C6DD8D49" locationURI="dt_datatypes.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
   <dmn:decisionService id="_089F429B-59DF-4D32-83E3-DFE8693A11D3" name="PneuService">
     <dmn:extensionElements/>
-    <dmn:variable id="_E9408BF6-3778-4A5A-AF96-E1307D92A237" name="PneuService"/>
+    <dmn:variable id="_E9408BF6-3778-4A5A-AF96-E1307D92A237" name="PneuService" typeRef="dt.ValidatieResultaat"/>
     <dmn:outputDecision href="#d_PNEU"/>
     <dmn:inputData href="#id_component"/>
     <dmn:inputData href="#id_hoogste_32leeftijd"/>
@@ -21,9 +21,9 @@
     <dmn:extensionElements/>
     <dmn:variable id="idvar_uitvoerdatum" name="uitvoerdatum" typeRef="date"/>
   </dmn:inputData>
-  <dmn:inputData id="id_leeftijd_32in_32dagen" name="leeftijd in dagen">
+  <dmn:inputData id="id_leeftijd_32in_32dagen" name="leeftijd dagen">
     <dmn:extensionElements/>
-    <dmn:variable id="idvar_leeftijd_32in_32dagen" name="leeftijd in dagen" typeRef="number"/>
+    <dmn:variable id="idvar_leeftijd_32in_32dagen" name="leeftijd dagen" typeRef="number"/>
   </dmn:inputData>
   <dmn:inputData id="id_hoogste_32rangnummer" name="hoogste rangnummer">
     <dmn:extensionElements/>
@@ -71,7 +71,7 @@
       </dmn:input>
       <dmn:input id="_73DFB8F6-B58F-4D9E-87FE-CDED75218893">
         <dmn:inputExpression id="_59B442A1-946D-4CCC-8653-30BF2A693BFD" typeRef="number">
-          <dmn:text>leeftijd in dagen</dmn:text>
+          <dmn:text>leeftijd dagen</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:input id="_A39F7D09-165E-440A-BC82-E67718CDB85D">
@@ -90,7 +90,7 @@
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_C028E67D-90E2-4535-9FB7-B7A38D6C3412" name="rangnummer" typeRef="number"/>
-      <dmn:output id="_2AC436AE-2C0B-4067-9FD9-820E6A9C20D0" name="vaccinatieToestand" typeRef="dt.ValidatieResultaat"/>
+      <dmn:output id="_2AC436AE-2C0B-4067-9FD9-820E6A9C20D0" name="vaccinatieToestand" typeRef="dt.VaccinatieToestand"/>
       <dmn:output id="_F10D6F2B-026A-478B-ACA4-F2B86F6A206E" name="toelichting" typeRef="string"/>
       <dmn:annotation name=""/>
       <dmn:rule id="_2AD8B211-95CF-4ACC-B5C4-5E6BFAE4D451">
@@ -801,8 +801,8 @@
         <dmn:inputEntry id="_C3363E85-3DE8-4A9C-84C3-0F05C1A5D532">
           <dmn:text>"Pneu"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_2175A2B7-5D7A-427B-8B9E-5C10C9EA100B">
-          <dmn:text>["2009-01-01" .. "2013-11-27")</dmn:text>
+        <dmn:inputEntry id="_2A7B5E63-A603-40C6-BF58-3540508567AA">
+          <dmn:text>[date("2009-01-01") .. date("2013-11-27"))</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_6FCBDEF7-35DF-452B-B588-8A741ADFCFBB">
           <dmn:text>&gt;= 731</dmn:text>
@@ -902,7 +902,7 @@
           <kie:ComponentWidths dmnElementRef="ddt_PNEU">
             <kie:width>50</kie:width>
             <kie:width>100</kie:width>
-            <kie:width>131</kie:width>
+            <kie:width>472</kie:width>
             <kie:width>125</kie:width>
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
