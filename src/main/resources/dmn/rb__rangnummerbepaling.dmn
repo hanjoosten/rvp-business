@@ -10,6 +10,7 @@
     <dmn:variable id="_C35E7108-4381-4ACC-8AEC-AFAFE703337C" name="validatieService" typeRef="dt.ValidatieResultaat"/>
     <dmn:outputDecision href="#_21F9B76B-83ED-4DC9-A8FE-635053922DDB"/>
     <dmn:encapsulatedDecision href="#_8F6CDB15-C9CC-4B4C-A553-98CEA4C6F456"/>
+    <dmn:encapsulatedDecision href="#_6C2FEF12-0A94-4595-8280-D36CBC11EF95"/>
     <dmn:inputData href="#_2F828FF6-1339-4E60-869F-7548F94B1C53"/>
     <dmn:inputData href="#_5E65582C-32B1-43C6-B1B4-CD65D3C53F10"/>
     <dmn:inputData href="#_22835DBE-8B7D-4CCC-A2BD-289FF5B975B9"/>
@@ -45,6 +46,9 @@
     </dmn:informationRequirement>
     <dmn:informationRequirement id="_3741DC18-709F-403E-B9ED-C96278F9E78D">
       <dmn:requiredDecision href="#_8F6CDB15-C9CC-4B4C-A553-98CEA4C6F456"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_6FEBCCEB-34EC-4C32-8F56-A5045891F779">
+      <dmn:requiredDecision href="#_6C2FEF12-0A94-4595-8280-D36CBC11EF95"/>
     </dmn:informationRequirement>
     <dmn:knowledgeRequirement id="_90225757-A60F-471B-AC33-8ADBE5A47A11">
       <dmn:requiredKnowledge href="xls2dmn_f5c71aba-ee0d-43ac-ab84-5e891f98efbf#_A3CB8E2C-F3AE-4D6B-9269-06D6783B6A7D"/>
@@ -138,6 +142,17 @@
           <dmn:text/>
         </dmn:annotationEntry>
       </dmn:rule>
+      <dmn:rule id="_7EACDBFE-DA43-44B2-B3C5-C9B249507BFB">
+        <dmn:inputEntry id="_4FCD9E01-08D1-4689-923C-2E460D9020F7">
+          <dmn:text>"Kinkhoest"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_5E48465E-E33A-4508-8473-487B27AFB8AF">
+          <dmn:text>niet geïmplementeerd</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
   <dmn:inputData id="_5E65582C-32B1-43C6-B1B4-CD65D3C53F10" name="component">
@@ -202,6 +217,21 @@
       <dmn:text>list contains(client.indicaties,"DKTP 3-5-11")</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
+  <dmn:decision id="_6C2FEF12-0A94-4595-8280-D36CBC11EF95" name="niet geïmplementeerd">
+    <dmn:extensionElements/>
+    <dmn:variable id="_007BF151-D1B6-4B58-A2FD-E5E321DEBF06" name="niet geïmplementeerd" typeRef="dt.ValidatieResultaat"/>
+    <dmn:informationRequirement id="_DBFD2CE0-65A5-4A22-A89F-3A0778DD9A2F">
+      <dmn:requiredInput href="#_68BD7C1F-D3D3-40B0-B05B-806185ABE486"/>
+    </dmn:informationRequirement>
+    <dmn:context id="_4D4CDF2B-F0B4-4347-BD05-B477D8D310A4">
+      <dmn:contextEntry>
+        <dmn:variable id="_008C8358-E8EB-4FD2-A85D-0609329F43B0" name="toelichting" typeRef="string"/>
+        <dmn:literalExpression id="_E1726DF3-0731-442D-8F26-2799AE0795C0">
+          <dmn:text>infectieziekte + " is nog niet geïmplementeerd."</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+    </dmn:context>
+  </dmn:decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_68A71BAE-308C-4E86-9983-F5D8F4E796EF" name="DRG">
       <di:extension>
@@ -222,6 +252,8 @@
           <kie:ComponentWidths dmnElementRef="_87D51D6E-9489-47BC-A62A-EF385D6E263A">
             <kie:width>672</kie:width>
           </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_4D4CDF2B-F0B4-4347-BD05-B477D8D310A4"/>
+          <kie:ComponentWidths dmnElementRef="_E1726DF3-0731-442D-8F26-2799AE0795C0"/>
         </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="dmnshape-drg-_A3CB8E2C-F3AE-4D6B-9269-06D6783B6A7D" dmnElementRef="included2:_A3CB8E2C-F3AE-4D6B-9269-06D6783B6A7D" isCollapsed="false">
@@ -414,6 +446,15 @@
         <dc:Bounds x="637" y="404" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_6C2FEF12-0A94-4595-8280-D36CBC11EF95" dmnElementRef="_6C2FEF12-0A94-4595-8280-D36CBC11EF95" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="760" y="404" width="138" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_E22507E6-8379-4F7E-BD30-239CA6A68087" dmnElementRef="_E22507E6-8379-4F7E-BD30-239CA6A68087">
         <di:waypoint x="455" y="204"/>
         <di:waypoint x="756" y="204"/>
@@ -442,6 +483,14 @@
         <di:waypoint x="455" y="668"/>
         <di:waypoint x="756" y="204"/>
       </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_3741DC18-709F-403E-B9ED-C96278F9E78D" dmnElementRef="_3741DC18-709F-403E-B9ED-C96278F9E78D">
+        <di:waypoint x="687" y="429"/>
+        <di:waypoint x="756" y="204"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_6FEBCCEB-34EC-4C32-8F56-A5045891F779" dmnElementRef="_6FEBCCEB-34EC-4C32-8F56-A5045891F779">
+        <di:waypoint x="829" y="429"/>
+        <di:waypoint x="756" y="204"/>
+      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_90225757-A60F-471B-AC33-8ADBE5A47A11" dmnElementRef="_90225757-A60F-471B-AC33-8ADBE5A47A11">
         <di:waypoint x="1099" y="216"/>
         <di:waypoint x="756" y="204"/>
@@ -466,10 +515,6 @@
         <di:waypoint x="1084.5" y="586"/>
         <di:waypoint x="756" y="204"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="dmnedge-drg-_3741DC18-709F-403E-B9ED-C96278F9E78D" dmnElementRef="_3741DC18-709F-403E-B9ED-C96278F9E78D">
-        <di:waypoint x="687" y="429"/>
-        <di:waypoint x="756" y="204"/>
-      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_0486603C-BC20-49BF-9C16-C1C110D30C05" dmnElementRef="_0486603C-BC20-49BF-9C16-C1C110D30C05">
         <di:waypoint x="756" y="303"/>
         <di:waypoint x="777.5" y="62.5"/>
@@ -477,6 +522,10 @@
       <dmndi:DMNEdge id="dmnedge-drg-_C36F189C-4083-4863-8D39-3B41476A9FB1" dmnElementRef="_C36F189C-4083-4863-8D39-3B41476A9FB1">
         <di:waypoint x="454.5981308411215" y="746"/>
         <di:waypoint x="687" y="429"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_DBFD2CE0-65A5-4A22-A89F-3A0778DD9A2F" dmnElementRef="_DBFD2CE0-65A5-4A22-A89F-3A0778DD9A2F">
+        <di:waypoint x="455" y="436"/>
+        <di:waypoint x="829" y="429"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>

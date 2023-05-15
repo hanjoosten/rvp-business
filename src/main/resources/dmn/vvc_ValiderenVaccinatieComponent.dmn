@@ -326,7 +326,7 @@
     <dmn:informationRequirement id="_6F19F618-83C8-43E3-ACC3-547272A97781">
       <dmn:requiredDecision href="#_E92278EE-87DE-4E4F-9606-2578A69811ED"/>
     </dmn:informationRequirement>
-    <dmn:decisionTable id="_9CD1F94C-7028-4C4F-BB2F-DFBD9E820F1B" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+    <dmn:decisionTable id="_9CD1F94C-7028-4C4F-BB2F-DFBD9E820F1B" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
       <dmn:input id="_23939285-1650-4AEF-94DA-FEA5DD0B71B7">
         <dmn:inputExpression id="_6E4856B3-EEAF-459E-B7C2-595A08021240" typeRef="dt.Infectieziekte">
           <dmn:text>infectieziekte</dmn:text>
@@ -406,6 +406,28 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_E430DCC5-0E4C-4D26-A28C-68897DDEF9BE">
           <dmn:text>["R"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_10AD3780-4224-4FCE-9BED-306DBC9E2C42">
+        <dmn:inputEntry id="_BBDCF521-D264-4106-895E-9F017E1867DD">
+          <dmn:text>"Tetanus"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_C4559012-8093-4AEB-B479-350CA6D3EC84">
+          <dmn:text>["T", "T booster"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_E1C55C86-625B-40B5-A33E-A97EF7FF8013">
+        <dmn:inputEntry id="_19C2BAD5-3D93-4C47-93CB-339EEDB591B3">
+          <dmn:text>"Polio"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_53100868-65CC-4001-8228-6C38200E5BEA">
+          <dmn:text>["P", "IPV", "OPV", "P booster"]</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -868,13 +890,13 @@
         <di:waypoint x="807" y="385"/>
         <di:waypoint x="633" y="304"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="dmnedge-drg-_45864789-7280-4977-8269-D25D1E092CED" dmnElementRef="_45864789-7280-4977-8269-D25D1E092CED">
-        <di:waypoint x="1077" y="448.3421052631579"/>
-        <di:waypoint x="633" y="304"/>
-      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_4F3D1AD0-9BF0-44C6-AFD3-4F3980206013" dmnElementRef="_4F3D1AD0-9BF0-44C6-AFD3-4F3980206013">
         <di:waypoint x="1087" y="198.68421052631578"/>
         <di:waypoint x="773" y="242"/>
+        <di:waypoint x="633" y="304"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_45864789-7280-4977-8269-D25D1E092CED" dmnElementRef="_45864789-7280-4977-8269-D25D1E092CED">
+        <di:waypoint x="1077" y="448.3421052631579"/>
         <di:waypoint x="633" y="304"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_3F9AACAF-CC79-46F0-ACF5-FC8465334273" dmnElementRef="_3F9AACAF-CC79-46F0-ACF5-FC8465334273">

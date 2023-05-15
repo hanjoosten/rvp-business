@@ -1214,8 +1214,8 @@
         <dmn:inputEntry id="_EF068C04-E270-4B5D-8409-507958CB0A71">
           <dmn:text>"P", "IPV", "OPV"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_C80A587E-582E-4382-BC6D-047CA6095D50">
-          <dmn:text>["2013-08-01" .. "2020-01-01")</dmn:text>
+        <dmn:inputEntry id="_6D692A9E-FAFD-42D5-BB04-004F535644F8">
+          <dmn:text>[date("2013-08-01") .. date("2020-01-01"))</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_33463220-40B9-4E3C-81B9-B224FDEF8D47">
           <dmn:text>false</dmn:text>
@@ -1358,8 +1358,8 @@
         <dmn:inputEntry id="_FE5669E9-C087-49F7-AA26-B629C9CD5282">
           <dmn:text>"P", "IPV", "OPV", "P booster"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_F8E72483-2D14-4364-88BD-0031DDA3DE8B">
-          <dmn:text>["2013-08-01" .. "2020-01-01")</dmn:text>
+        <dmn:inputEntry id="_5270629C-3ADA-4873-9FFC-7421F03980AE">
+          <dmn:text>[date("2013-08-01") .. date("2020-01-01"))</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_EE47A3DD-3405-4770-B635-890792F2C33F">
           <dmn:text>false</dmn:text>
@@ -2997,8 +2997,8 @@
         <dmn:inputEntry id="_97B540B1-0F2C-481D-B9F7-26057339C063">
           <dmn:text>"D"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_8FA53DB7-0732-48D9-A127-451E02C1BD64">
-          <dmn:text>["2013-08-01" .. "2020-01-01")</dmn:text>
+        <dmn:inputEntry id="_D1CA4366-A110-4369-B418-19180490F120">
+          <dmn:text>[date("2013-08-01") .. date("2020-01-01"))</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_3E405999-2F54-4F81-9312-A86F23B25358">
           <dmn:text>false</dmn:text>
@@ -3143,8 +3143,8 @@
         <dmn:inputEntry id="_763848BF-275E-43A6-AA28-B8F1F16ED0D4">
           <dmn:text>"D", "D booster"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_CF05DB11-9196-4F95-A33C-F54D81EC051A">
-          <dmn:text>["2013-08-01" .. "2020-01-01")</dmn:text>
+        <dmn:inputEntry id="_9A22131F-BEDD-4122-98E5-EC7B8A796E01">
+          <dmn:text>[date("2013-08-01") .. date("2020-01-01"))</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_2E407EDF-C159-4ED4-91F8-149BACE54869">
           <dmn:text>false</dmn:text>
@@ -4792,8 +4792,8 @@
         <dmn:inputEntry id="_7D84A14F-9DAE-4A8B-9662-51937657A4C3">
           <dmn:text>"T"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_D545AB53-474E-47FC-B8EA-AB86BB8C031A">
-          <dmn:text>["2013-08-01" .. "2020-01-01")</dmn:text>
+        <dmn:inputEntry id="_CEADDBAE-74FA-4B0E-805A-0A37DD06BE6B">
+          <dmn:text>[date("2013-08-01") .. date("2020-01-01"))</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_A6297D29-F85F-4149-A7B3-2552026E4E4B">
           <dmn:text>false</dmn:text>
@@ -4938,8 +4938,8 @@
         <dmn:inputEntry id="_94665BDD-789B-4277-B5E8-A3CAD3680AEC">
           <dmn:text>"T", "T booster"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_8183DB37-127B-4770-9C4A-BDB3F1D72F52">
-          <dmn:text>["2013-08-01" .. "2020-01-01")</dmn:text>
+        <dmn:inputEntry id="_B2F1293C-528F-424A-B95A-1005F864994A">
+          <dmn:text>[date("2013-08-01") .. date("2020-01-01"))</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_48393D8B-0ECC-4071-BAD8-E6DC3DCAF5D8">
           <dmn:text>false</dmn:text>
@@ -5448,7 +5448,7 @@
           <kie:ComponentWidths dmnElementRef="ddt_ValidatieResultaatTetanus">
             <kie:width>50</kie:width>
             <kie:width>158</kie:width>
-            <kie:width>100</kie:width>
+            <kie:width>151</kie:width>
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
@@ -5467,11 +5467,11 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="840" y="63" width="200" height="178"/>
+        <dc:Bounds x="840" y="63" width="194" height="157"/>
         <dmndi:DMNLabel/>
         <dmndi:DMNDecisionServiceDividerLine>
           <di:waypoint x="840" y="170"/>
-          <di:waypoint x="1040" y="170"/>
+          <di:waypoint x="1034" y="170"/>
         </dmndi:DMNDecisionServiceDividerLine>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_36F4240F-7192-4D53-A14E-C6DD013D485B" dmnElementRef="_36F4240F-7192-4D53-A14E-C6DD013D485B" isCollapsed="false">
