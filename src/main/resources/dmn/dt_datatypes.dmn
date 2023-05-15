@@ -5,7 +5,7 @@
     <dmn:itemComponent id="_C23CECF7-1A49-4517-8FF1-954BA6D0466C" name="onbeschermdDatum" isCollection="false">
       <dmn:typeRef>date</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_C395179A-371C-4634-AFEC-FCBE641C9A70" name="indicaties" isCollection="false">
+    <dmn:itemComponent id="_C395179A-371C-4634-AFEC-FCBE641C9A70" name="indicaties" isCollection="true">
       <dmn:typeRef>Indicatie</dmn:typeRef>
     </dmn:itemComponent>
     <dmn:itemComponent id="_E610A31A-54CB-4DF9-A8EF-2538523F8C90" name="geboortedatum" isCollection="false">
