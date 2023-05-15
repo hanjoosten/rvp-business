@@ -5,7 +5,7 @@
   <dmn:decisionService id="_A3CB8E2C-F3AE-4D6B-9269-06D6783B6A7D" name="BofMazelenRodehondService">
     <dmn:extensionElements/>
     <dmn:variable id="_91C568B6-A9E2-4A9F-8787-1E7B85D451D4" name="BofMazelenRodehondService" typeRef="number"/>
-    <dmn:outputDecision href="#d_RangnummerBMR"/>
+    <dmn:outputDecision href="#d_ValidatieResultaatBMR"/>
     <dmn:inputData href="#id_leeftijd_32in_32dagen"/>
     <dmn:inputData href="#id_component"/>
     <dmn:inputData href="#id_hoogste_32rangnummer"/>
@@ -14,7 +14,7 @@
   <dmn:decisionService id="_AB27F5B5-8FE8-46BB-B455-0258FDACF308" name="HPVKankerService">
     <dmn:extensionElements/>
     <dmn:variable id="_5B778539-320B-4911-858D-4CDFC8898BC7" name="HPVKankerService" typeRef="number"/>
-    <dmn:outputDecision href="#d_RangnummerHPV"/>
+    <dmn:outputDecision href="#d_ValidatieResultaatHPV"/>
     <dmn:inputData href="#id_leeftijd_32in_32dagen"/>
     <dmn:inputData href="#id_component"/>
     <dmn:inputData href="#id_hoogste_32rangnummer"/>
@@ -29,9 +29,9 @@
     <dmn:extensionElements/>
     <dmn:variable id="idvar_vaccinatie_46uitvoerdatum" name="uitvoerdatum" typeRef="date"/>
   </dmn:inputData>
-  <dmn:inputData id="id_leeftijd_32in_32dagen" name="leeftijd in dagen">
+  <dmn:inputData id="id_leeftijd_32in_32dagen" name="leeftijd dagen">
     <dmn:extensionElements/>
-    <dmn:variable id="idvar_leeftijd_32in_32dagen" name="leeftijd in dagen" typeRef="number"/>
+    <dmn:variable id="idvar_leeftijd_32in_32dagen" name="leeftijd dagen" typeRef="number"/>
   </dmn:inputData>
   <dmn:inputData id="id_hoogste_32rangnummer" name="hoogste rangnummer">
     <dmn:extensionElements/>
@@ -41,9 +41,9 @@
     <dmn:extensionElements/>
     <dmn:variable id="idvar_interval" name="interval" typeRef="number"/>
   </dmn:inputData>
-  <dmn:decision id="d_RangnummerHPV" name="Rangnummer HPV kanker">
+  <dmn:decision id="d_ValidatieResultaatHPV" name="validatie resultaat HPV kanker">
     <dmn:extensionElements/>
-    <dmn:variable id="dvar_RangnummerHPV" name="Rangnummer HPV kanker" typeRef="dt.ValidatieResultaat"/>
+    <dmn:variable id="dvar_ValidatieResultaatHPV" name="validatie resultaat HPV kanker" typeRef="dt.ValidatieResultaat"/>
     <dmn:informationRequirement id="_B5E8B36D-A4E7-4BCF-BF91-19A8844386C9">
       <dmn:requiredInput href="#id_vaccinatie_46uitvoerdatum"/>
     </dmn:informationRequirement>
@@ -59,7 +59,7 @@
     <dmn:informationRequirement id="_93BD63CD-F001-4496-AA0B-17DCA5810407">
       <dmn:requiredInput href="#id_component"/>
     </dmn:informationRequirement>
-    <dmn:decisionTable id="ddt_RangnummerHPV" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row" outputLabel="RangnummerHPV">
+    <dmn:decisionTable id="ddt_ValidatieResultaatHPV" hitPolicy="ANY" preferredOrientation="Rule-as-Row" outputLabel="ValidatieResultaatHPV">
       <dmn:input id="_FAFDF375-9BAA-47C5-BCFB-E5BE38D54CD0">
         <dmn:inputExpression id="_CA76634D-4A0D-400E-A81B-B6C650DA76AD" typeRef="dt.Component">
           <dmn:text>component</dmn:text>
@@ -72,7 +72,7 @@
       </dmn:input>
       <dmn:input id="_8AA18F74-CAB4-44AE-839B-746BD2431072">
         <dmn:inputExpression id="_3E7EE018-AA09-416F-85C4-69C864E8D014" typeRef="number">
-          <dmn:text>leeftijd in dagen</dmn:text>
+          <dmn:text>leeftijd dagen</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:input id="_BC76A1D8-3696-4234-B14C-72F083E75F4B">
@@ -439,9 +439,9 @@
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
-  <dmn:decision id="d_RangnummerBMR" name="Rangnummer BMR">
+  <dmn:decision id="d_ValidatieResultaatBMR" name="validatie resultaat BMR">
     <dmn:extensionElements/>
-    <dmn:variable id="dvar_RangnummerBMR" name="Rangnummer BMR" typeRef="dt.ValidatieResultaat"/>
+    <dmn:variable id="dvar_ValidatieResultaatBMR" name="validatie resultaat BMR" typeRef="dt.ValidatieResultaat"/>
     <dmn:informationRequirement id="_CDA8996B-2421-4AE0-85F4-BD98A45C966C">
       <dmn:requiredInput href="#id_component"/>
     </dmn:informationRequirement>
@@ -454,7 +454,7 @@
     <dmn:informationRequirement id="_CAAEF4F1-982F-490F-A57D-8F620B7A6258">
       <dmn:requiredInput href="#id_hoogste_32rangnummer"/>
     </dmn:informationRequirement>
-    <dmn:decisionTable id="ddt_RangnummerBMR" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row" outputLabel="RangnummerBMR">
+    <dmn:decisionTable id="ddt_ValidatieResultaatBMR" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row" outputLabel="RangnummerBMR">
       <dmn:input id="_C8991878-9B96-4323-AC98-251086739C78">
         <dmn:inputExpression id="_CCAAFEF2-DF62-49B3-A21B-D682993784AD" typeRef="dt.Component">
           <dmn:text>component</dmn:text>
@@ -462,7 +462,7 @@
       </dmn:input>
       <dmn:input id="_BFCC3416-3545-46A9-90B6-26577E8933AC">
         <dmn:inputExpression id="_E1B4FC3D-DE1C-4E9E-BCC2-92C9C7BD8814" typeRef="number">
-          <dmn:text>leeftijd in dagen</dmn:text>
+          <dmn:text>leeftijd dagen</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:input id="_688193CD-DAD7-4800-988D-DECD0EA98F3B">
@@ -550,8 +550,8 @@
         <dmn:outputEntry id="_A803CDB3-4EAE-499C-AFD1-D58BD66442BE">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_1EA7208A-F227-44C3-A017-CB2057D3EA9D">
-          <dmn:text/>
+        <dmn:outputEntry id="_95ED7B58-581A-4E84-AACE-EB7ACB721C43">
+          <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -576,8 +576,8 @@
         <dmn:outputEntry id="_102A9288-87B7-4F33-A769-DFBB8551F034">
           <dmn:text>null</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_932BB47B-596C-482A-BAEB-842B0322F10A">
-          <dmn:text/>
+        <dmn:outputEntry id="_98EA5FA2-AEDF-4C3D-8450-DCF693B37074">
+          <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -628,8 +628,8 @@
         <dmn:outputEntry id="_E1ACC7BF-36DB-40CD-AE25-06C2ACA36A4C">
           <dmn:text>"Basisimmuun"</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_09EEB1F8-6FA7-415D-ABC4-7192F9A943CB">
-          <dmn:text/>
+        <dmn:outputEntry id="_42F64B62-75DE-433B-807F-5D6ADA21D5A1">
+          <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -680,8 +680,8 @@
         <dmn:outputEntry id="_61D008B8-2EFD-4DFB-B148-AA4CC85C44F3">
           <dmn:text>"Basisimmuun"</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_CAB70209-D763-4CD9-A699-415D731D56C9">
-          <dmn:text/>
+        <dmn:outputEntry id="_461E45AD-93A1-4C09-8176-B1E100C5DD8E">
+          <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -732,8 +732,8 @@
         <dmn:outputEntry id="_65A3AA9B-A958-41FD-9F06-0CB033E73E76">
           <dmn:text>"Volledig afgesloten"</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_F2031F50-1C7F-4EF3-9E13-B5744397AF47">
-          <dmn:text/>
+        <dmn:outputEntry id="_81D44438-632B-4B00-A016-997A7AE28BB2">
+          <dmn:text>null</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -797,7 +797,7 @@
     <dmndi:DMNDiagram id="_55E3F8A9-8F4B-432F-AE14-D963B54FD8BC" name="DRG">
       <di:extension>
         <kie:ComponentsWidthsExtension>
-          <kie:ComponentWidths dmnElementRef="ddt_RangnummerHPV">
+          <kie:ComponentWidths dmnElementRef="ddt_ValidatieResultaatHPV">
             <kie:width>50</kie:width>
             <kie:width>100</kie:width>
             <kie:width>134</kie:width>
@@ -809,14 +809,14 @@
             <kie:width>380</kie:width>
             <kie:width>158</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="ddt_RangnummerBMR">
+          <kie:ComponentWidths dmnElementRef="ddt_ValidatieResultaatBMR">
             <kie:width>50</kie:width>
-            <kie:width>100</kie:width>
+            <kie:width>113</kie:width>
             <kie:width>116</kie:width>
             <kie:width>154</kie:width>
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
-            <kie:width>175</kie:width>
+            <kie:width>184</kie:width>
             <kie:width>233</kie:width>
             <kie:width>136</kie:width>
           </kie:ComponentWidths>
@@ -893,7 +893,7 @@
         <dc:Bounds x="572" y="315.3421052631579" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-drg-d_RangnummerHPV" dmnElementRef="d_RangnummerHPV" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-drg-d_ValidatieResultaatHPV" dmnElementRef="d_ValidatieResultaatHPV" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
@@ -902,7 +902,7 @@
         <dc:Bounds x="804" y="165" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-drg-d_RangnummerBMR" dmnElementRef="d_RangnummerBMR" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-drg-d_ValidatieResultaatBMR" dmnElementRef="d_ValidatieResultaatBMR" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
