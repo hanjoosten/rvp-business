@@ -798,6 +798,166 @@
       <dmn:requiredKnowledge href="#_40B062D1-DB24-4667-A1A0-EE77AE909EB9"/>
     </dmn:knowledgeRequirement>
   </dmn:businessKnowledgeModel>
+  <dmn:decision id="_7216826B-F07A-402D-B8F6-B19AD12D8D90" name="Tabel Infectieziekte Component">
+    <dmn:extensionElements/>
+    <dmn:variable id="_656AFEA0-A5B0-48EA-8D32-D39138AB1430" name="Tabel Infectieziekte Component" typeRef="Any"/>
+    <dmn:relation id="_F56A58A0-D8AB-4F73-AEE3-A6CAB2E53838">
+      <dmn:column id="_E5F39CCE-7B67-4B66-9619-305CB4E442F4" name="infectieziekte" typeRef="dt.Infectieziekte"/>
+      <dmn:column id="_5E410C8B-05A0-4D53-ACBC-80CC129D73E3" name="component" typeRef="dt.Componenten"/>
+      <dmn:row id="_6426D698-353D-4EB8-8D98-AD9EA4230951">
+        <dmn:literalExpression id="_DE9DFBFB-A211-4BA3-950E-DAF70820509F">
+          <dmn:text>"Bacillus Calmette-Guérin"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_3FF9CB97-153E-4F83-A513-CE1722B4F4E7">
+          <dmn:text>["BCG"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_368C560A-6898-49EF-B576-868C0A2FD0E5">
+        <dmn:literalExpression id="_00AED544-B24B-4CE6-ACC4-50227EEBE7FE">
+          <dmn:text>"Bof"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_2F81E260-3692-4AC2-9B45-0FF3C5035E8E">
+          <dmn:text>["B"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_B4B8E33C-3451-4A77-8539-6906ACFF0F86">
+        <dmn:literalExpression id="_3B1FAD7B-9C3D-4AE6-B428-FD2E87A810CF">
+          <dmn:text>"Difterie"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_550B9823-4BCF-49FB-96BE-1279419DF238">
+          <dmn:text>["D","D booster"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_C05A9914-166C-4619-805C-B0D1439D4F00">
+        <dmn:literalExpression id="_768171F4-4934-4BD4-AEF2-AD979A1326A1">
+          <dmn:text>"Hepatitis A"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_8AD5FD30-1862-4EF6-9D16-F4EDF10CB122">
+          <dmn:text>["HepA"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_B63695BA-505E-492A-B7D7-C32EA78D2EB3">
+        <dmn:literalExpression id="_500A4B30-3AA6-4FB6-BABF-F1752A0650F5">
+          <dmn:text>"Hepatitis B"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_F6775C46-22C6-461B-AF5D-7D9B9E78FF7E">
+          <dmn:text>["HepB"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_4C1CAA91-E268-4ED4-9765-09DDC90C1169">
+        <dmn:literalExpression id="_59FCA551-6F79-49AC-B90D-0499B87644C8">
+          <dmn:text>"Hepatitis B Immunoglobuline"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_8F147C7D-BB69-4438-AB27-17E960992FFE">
+          <dmn:text>["HBIg"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_F8E10432-1281-456F-BF23-AC169801E4B6">
+        <dmn:literalExpression id="_C5D11D78-8A87-4A00-976F-A34E178CB164">
+          <dmn:text>"HiB-ziekten"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_AB542E64-F411-4984-85D1-2C10633720BE">
+          <dmn:text>["Hib"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_4F222767-C1A1-499D-AE79-E0DCB463C220">
+        <dmn:literalExpression id="_1D5F9F8D-4A84-449E-8D28-11EB457EBA62">
+          <dmn:text>"HPV-kanker"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_3A7BA849-E8D4-4958-A917-60ADC441F7E8">
+          <dmn:text>["HPV"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_EA525C4A-E552-45EA-A687-A3C2D8BAA588">
+        <dmn:literalExpression id="_5F20B048-C018-44ED-BBA4-AE50B05376EB">
+          <dmn:text>"Kinkhoest"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_720BBB09-01C6-4CFD-BCE8-229F229B6AAF">
+          <dmn:text>["aK","K","K booster"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_89762742-FDAF-426D-8369-ADF171CCEAFA">
+        <dmn:literalExpression id="_2C945CAA-3B1A-48C9-B106-5C213F86C420">
+          <dmn:text>"Mazelen"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_27BE5E72-9385-44ED-9F58-413C358F5314">
+          <dmn:text>["M"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_21331961-5396-40F1-BCFE-1CAE17EBA77D">
+        <dmn:literalExpression id="_60E37379-4527-45C4-9184-55A31BBA6C4C">
+          <dmn:text>"Meningokokkenziekte C"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_49B0CD78-FD11-4711-9517-72EF7D1D1101">
+          <dmn:text>["MenC"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_CBE9429C-486F-4196-8E72-281D21ECEBE6">
+        <dmn:literalExpression id="_9825BDC8-95DB-4418-B468-97ABC7927B8C">
+          <dmn:text>"Meningokokkenziekte Y"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_540489D9-7D22-45D7-9289-F826F4E91BF3">
+          <dmn:text>["MenACWY"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_B10EF95A-49F3-486F-94E6-C52AA059FFD0">
+        <dmn:literalExpression id="_3AE704E5-FA20-49F7-A0F6-D76E19BC4414">
+          <dmn:text>"Pneumokokkenziekte"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_5355269A-DE81-442A-A061-FDF69FE99882">
+          <dmn:text>["Pneu"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_2E311F3E-9592-4207-A6F8-59CB4E0C094C">
+        <dmn:literalExpression id="_00B5421F-CA10-4ECC-95F7-595CB7424D61">
+          <dmn:text>"Polio"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_CA429D94-9F98-4CDD-B56A-498264B592C0">
+          <dmn:text>["IPV","OPV","P","P booster"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_A9F350AF-461E-48B9-9036-986D819FE3C8">
+        <dmn:literalExpression id="_DB96249A-4C71-4CCF-B4CE-B642F99ED91A">
+          <dmn:text>"Rodehond"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_5F0BC707-1639-45F3-8D39-8461B49A95A7">
+          <dmn:text>["R"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_0FA07513-E9F7-4A84-85ED-E8D5BCD8E15B">
+        <dmn:literalExpression id="_0A8FF367-E826-437E-8018-37C03F5735E4">
+          <dmn:text>"Rotavirus"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_8D1D8EF1-5DE2-4255-B8AD-4BD9BEDEBB98">
+          <dmn:text>["Rota"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_3CBBAC4E-4A25-43CB-B074-3DFBCA915E83">
+        <dmn:literalExpression id="_DDECCECC-8A0F-4163-9170-0BD5DAB87FEF">
+          <dmn:text>"SARS-CoV-2"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_42DA803E-F7CF-41C0-A94C-18CFC7A95133">
+          <dmn:text>["COVID"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_8F6211BF-46FB-45C9-9BC7-413C20C57C12">
+        <dmn:literalExpression id="_D8CE5B87-AAC2-40F9-A920-561AAEB286CD">
+          <dmn:text>"Tetanus"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_61564CCE-6D03-4549-BBA9-73BBBA7E8A75">
+          <dmn:text>["T","T booster"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+      <dmn:row id="_D6C20AC9-9312-495A-849B-5D355EFF5728">
+        <dmn:literalExpression id="_CB7CF91B-0E89-4CC8-916D-0C2280E57B8E">
+          <dmn:text>"Waterpokken"</dmn:text>
+        </dmn:literalExpression>
+        <dmn:literalExpression id="_5E19681D-D7D4-4CD5-9B19-27CBA9346389">
+          <dmn:text>["Waterpokken"]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:row>
+    </dmn:relation>
+  </dmn:decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_7B729624-D3E3-45DC-923D-74CE2E2087E2" name="DRG">
       <di:extension>
@@ -863,6 +1023,49 @@
             <kie:width>50</kie:width>
             <kie:width>1050</kie:width>
           </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_F56A58A0-D8AB-4F73-AEE3-A6CAB2E53838">
+            <kie:width>50</kie:width>
+            <kie:width>247</kie:width>
+            <kie:width>260</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_DE9DFBFB-A211-4BA3-950E-DAF70820509F"/>
+          <kie:ComponentWidths dmnElementRef="_3FF9CB97-153E-4F83-A513-CE1722B4F4E7"/>
+          <kie:ComponentWidths dmnElementRef="_00AED544-B24B-4CE6-ACC4-50227EEBE7FE"/>
+          <kie:ComponentWidths dmnElementRef="_2F81E260-3692-4AC2-9B45-0FF3C5035E8E"/>
+          <kie:ComponentWidths dmnElementRef="_3B1FAD7B-9C3D-4AE6-B428-FD2E87A810CF"/>
+          <kie:ComponentWidths dmnElementRef="_550B9823-4BCF-49FB-96BE-1279419DF238"/>
+          <kie:ComponentWidths dmnElementRef="_768171F4-4934-4BD4-AEF2-AD979A1326A1"/>
+          <kie:ComponentWidths dmnElementRef="_8AD5FD30-1862-4EF6-9D16-F4EDF10CB122"/>
+          <kie:ComponentWidths dmnElementRef="_500A4B30-3AA6-4FB6-BABF-F1752A0650F5"/>
+          <kie:ComponentWidths dmnElementRef="_F6775C46-22C6-461B-AF5D-7D9B9E78FF7E"/>
+          <kie:ComponentWidths dmnElementRef="_59FCA551-6F79-49AC-B90D-0499B87644C8"/>
+          <kie:ComponentWidths dmnElementRef="_8F147C7D-BB69-4438-AB27-17E960992FFE"/>
+          <kie:ComponentWidths dmnElementRef="_C5D11D78-8A87-4A00-976F-A34E178CB164"/>
+          <kie:ComponentWidths dmnElementRef="_AB542E64-F411-4984-85D1-2C10633720BE"/>
+          <kie:ComponentWidths dmnElementRef="_1D5F9F8D-4A84-449E-8D28-11EB457EBA62"/>
+          <kie:ComponentWidths dmnElementRef="_3A7BA849-E8D4-4958-A917-60ADC441F7E8"/>
+          <kie:ComponentWidths dmnElementRef="_5F20B048-C018-44ED-BBA4-AE50B05376EB"/>
+          <kie:ComponentWidths dmnElementRef="_720BBB09-01C6-4CFD-BCE8-229F229B6AAF"/>
+          <kie:ComponentWidths dmnElementRef="_2C945CAA-3B1A-48C9-B106-5C213F86C420"/>
+          <kie:ComponentWidths dmnElementRef="_27BE5E72-9385-44ED-9F58-413C358F5314"/>
+          <kie:ComponentWidths dmnElementRef="_60E37379-4527-45C4-9184-55A31BBA6C4C"/>
+          <kie:ComponentWidths dmnElementRef="_49B0CD78-FD11-4711-9517-72EF7D1D1101"/>
+          <kie:ComponentWidths dmnElementRef="_9825BDC8-95DB-4418-B468-97ABC7927B8C"/>
+          <kie:ComponentWidths dmnElementRef="_540489D9-7D22-45D7-9289-F826F4E91BF3"/>
+          <kie:ComponentWidths dmnElementRef="_3AE704E5-FA20-49F7-A0F6-D76E19BC4414"/>
+          <kie:ComponentWidths dmnElementRef="_5355269A-DE81-442A-A061-FDF69FE99882"/>
+          <kie:ComponentWidths dmnElementRef="_00B5421F-CA10-4ECC-95F7-595CB7424D61"/>
+          <kie:ComponentWidths dmnElementRef="_CA429D94-9F98-4CDD-B56A-498264B592C0"/>
+          <kie:ComponentWidths dmnElementRef="_DB96249A-4C71-4CCF-B4CE-B642F99ED91A"/>
+          <kie:ComponentWidths dmnElementRef="_5F0BC707-1639-45F3-8D39-8461B49A95A7"/>
+          <kie:ComponentWidths dmnElementRef="_0A8FF367-E826-437E-8018-37C03F5735E4"/>
+          <kie:ComponentWidths dmnElementRef="_8D1D8EF1-5DE2-4255-B8AD-4BD9BEDEBB98"/>
+          <kie:ComponentWidths dmnElementRef="_DDECCECC-8A0F-4163-9170-0BD5DAB87FEF"/>
+          <kie:ComponentWidths dmnElementRef="_42DA803E-F7CF-41C0-A94C-18CFC7A95133"/>
+          <kie:ComponentWidths dmnElementRef="_D8CE5B87-AAC2-40F9-A920-561AAEB286CD"/>
+          <kie:ComponentWidths dmnElementRef="_61564CCE-6D03-4549-BBA9-73BBBA7E8A75"/>
+          <kie:ComponentWidths dmnElementRef="_CB7CF91B-0E89-4CC8-916D-0C2280E57B8E"/>
+          <kie:ComponentWidths dmnElementRef="_5E19681D-D7D4-4CD5-9B19-27CBA9346389"/>
         </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="dmnshape-drg-_40B062D1-DB24-4667-A1A0-EE77AE909EB9" dmnElementRef="_40B062D1-DB24-4667-A1A0-EE77AE909EB9" isCollapsed="false">
@@ -961,6 +1164,15 @@
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
         <dc:Bounds x="518" y="48" width="182" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_7216826B-F07A-402D-B8F6-B19AD12D8D90" dmnElementRef="_7216826B-F07A-402D-B8F6-B19AD12D8D90" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1111.9999999999998" y="101" width="114" height="73.99999999999999"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_5D91714B-A069-4B36-849D-B4C3E4E3A160" dmnElementRef="_5D91714B-A069-4B36-849D-B4C3E4E3A160">
