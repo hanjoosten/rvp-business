@@ -143,7 +143,7 @@
       <dmn:requiredKnowledge href="xls2dmn_8c91f710-98c5-4fac-867d-b88403a6a018#_043ABE6B-C428-4B83-A492-3040F51817EF"/>
     </dmn:knowledgeRequirement>
     <dmn:literalExpression id="_9D434754-4F8A-4C3E-9377-FB443CB685B3">
-      <dmn:text>flatten(for v in vaccinaties return stm.split vaccinatie(v))</dmn:text>
+      <dmn:text>flatten(for v in vaccinaties return stm.split vaccinSoort(v))</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmndi:DMNDI>
