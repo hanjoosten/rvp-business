@@ -326,114 +326,12 @@
     <dmn:informationRequirement id="_6F19F618-83C8-43E3-ACC3-547272A97781">
       <dmn:requiredDecision href="#_E92278EE-87DE-4E4F-9606-2578A69811ED"/>
     </dmn:informationRequirement>
-    <dmn:decisionTable id="_9CD1F94C-7028-4C4F-BB2F-DFBD9E820F1B" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
-      <dmn:input id="_23939285-1650-4AEF-94DA-FEA5DD0B71B7">
-        <dmn:inputExpression id="_6E4856B3-EEAF-459E-B7C2-595A08021240" typeRef="dt.Infectieziekte">
-          <dmn:text>infectieziekte</dmn:text>
-        </dmn:inputExpression>
-      </dmn:input>
-      <dmn:output id="_93631F2E-6EED-47ED-8BFF-F47253A1191A"/>
-      <dmn:annotation name="annotation-1"/>
-      <dmn:rule id="_76DA5C6D-6DD8-4E08-8551-73680B09CC4C">
-        <dmn:inputEntry id="_B713F2FA-42B2-4131-801E-F5F7C6CD6D79">
-          <dmn:text>"Bof"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_0D9AC6A7-A1E7-4638-A3DA-BE1315CC28F8">
-          <dmn:text>["B"]</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_8405D7D1-07ED-493F-BCA2-E437AEDDAE16">
-        <dmn:inputEntry id="_505045D9-7A30-4425-BB11-73BF8871CDC1">
-          <dmn:text>"Difterie"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_FAC1BB6D-793F-4886-BBF7-DA5DE7FBA85D">
-          <dmn:text>["D", "D booster"]</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_67DD7F9B-B8FC-4580-ADCB-3F4EC2277B7B">
-        <dmn:inputEntry id="_AA380E49-2C99-41B6-9BE1-589B4F3FC515">
-          <dmn:text>"HPV-kanker"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_93F9F5F2-8A21-49EB-AD2E-85998AF15D22">
-          <dmn:text>["HPV"]</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_51D8B9EB-F097-403C-B195-EE57119235A3">
-        <dmn:inputEntry id="_7B18FC69-15F3-4353-BA45-27C0FB1C989E">
-          <dmn:text>"Kinkhoest"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_01FDED08-FEA1-4592-9585-AE3591AED443">
-          <dmn:text>["aK", "K", "K booster"]</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_6942DEFB-FFA6-4F68-ABDD-1C746CFB1979">
-        <dmn:inputEntry id="_021552BC-CAC0-4511-8106-D8D29B3E2448">
-          <dmn:text>"Mazelen"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_88E681BC-B1C2-4249-8518-53E47F23F29A">
-          <dmn:text>["M"]</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_94153A76-810D-4FB8-BD73-8C29B5466572">
-        <dmn:inputEntry id="_BADB4A27-E583-494C-AA4D-809DFF42024F">
-          <dmn:text>"Pneumokokkenziekte"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_91F39A59-E0B5-4BAA-9A1D-C04350DFED73">
-          <dmn:text>["Pneu"]</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_83298E85-F13E-46FC-BF63-96D43791C463">
-        <dmn:inputEntry id="_87A70FF4-DA75-4ACA-8144-9DD47722E727">
-          <dmn:text>"Rodehond"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_E430DCC5-0E4C-4D26-A28C-68897DDEF9BE">
-          <dmn:text>["R"]</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_10AD3780-4224-4FCE-9BED-306DBC9E2C42">
-        <dmn:inputEntry id="_BBDCF521-D264-4106-895E-9F017E1867DD">
-          <dmn:text>"Tetanus"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_C4559012-8093-4AEB-B479-350CA6D3EC84">
-          <dmn:text>["T", "T booster"]</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_E1C55C86-625B-40B5-A33E-A97EF7FF8013">
-        <dmn:inputEntry id="_19C2BAD5-3D93-4C47-93CB-339EEDB591B3">
-          <dmn:text>"Polio"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_53100868-65CC-4001-8228-6C38200E5BEA">
-          <dmn:text>["P", "IPV", "OPV", "P booster"]</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-    </dmn:decisionTable>
+    <dmn:knowledgeRequirement id="_E18009B5-C97A-49CF-B988-B014BD5C345A">
+      <dmn:requiredKnowledge href="xls2dmn_8c91f710-98c5-4fac-867d-b88403a6a018#_83FB3966-7B4A-440F-AC72-778F6A38F71C"/>
+    </dmn:knowledgeRequirement>
+    <dmn:literalExpression id="_726F671C-C0E8-40A5-B4AF-F27AACB0B80D">
+      <dmn:text>stm.componenten van infectieziekte("Pneu")</dmn:text>
+    </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_DB15608C-417E-4B6E-A635-CC6BE2BA1185" name="recentste geldige">
     <dmn:extensionElements/>
@@ -583,11 +481,8 @@
           <kie:ComponentWidths dmnElementRef="_FB6AE51D-55F1-4EF9-A54A-D4D5F2F789FC">
             <kie:width>797</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_9CD1F94C-7028-4C4F-BB2F-DFBD9E820F1B">
-            <kie:width>50</kie:width>
-            <kie:width>242</kie:width>
-            <kie:width>382</kie:width>
-            <kie:width>100</kie:width>
+          <kie:ComponentWidths dmnElementRef="_726F671C-C0E8-40A5-B4AF-F27AACB0B80D">
+            <kie:width>929</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_E08EE1B9-988E-4F1B-8A4F-EE0DC11E50C8">
             <kie:width>50</kie:width>
@@ -825,6 +720,15 @@
         <dc:Bounds x="757" y="385" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_83FB3966-7B4A-440F-AC72-778F6A38F71C" dmnElementRef="included2:_83FB3966-7B4A-440F-AC72-778F6A38F71C" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="97.59813084112147" y="534.3421052631579" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_BF1B1961-7057-4906-BF95-A2F4C42EFB2B" dmnElementRef="_BF1B1961-7057-4906-BF95-A2F4C42EFB2B">
         <di:waypoint x="761" y="306"/>
         <di:waypoint x="633.25" y="222"/>
@@ -958,6 +862,10 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_6F19F618-83C8-43E3-ACC3-547272A97781" dmnElementRef="_6F19F618-83C8-43E3-ACC3-547272A97781">
         <di:waypoint x="563.25" y="408.00000000000006"/>
+        <di:waypoint x="481.25" y="698"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_E18009B5-C97A-49CF-B988-B014BD5C345A" dmnElementRef="_E18009B5-C97A-49CF-B988-B014BD5C345A">
+        <di:waypoint x="147.59813084112147" y="559.3421052631579"/>
         <di:waypoint x="481.25" y="698"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_95A3BB6B-7BC6-43BB-ABF3-A85155D110CE" dmnElementRef="_95A3BB6B-7BC6-43BB-ABF3-A85155D110CE">

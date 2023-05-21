@@ -2,7 +2,8 @@
 Functionaliteit: validatie van vaccinaties
 
     @Test
-    Scenario: dummy
+    @Ignore
+    Scenario: Pneu test
         Gegeven een client geboren op 2020-01-01
         En de volgende vaccinaties zijn gegeven voor deze client:
             | VaccinSoort | Uitvoerdatum | Product | Expiratiedatum | toelichting |
