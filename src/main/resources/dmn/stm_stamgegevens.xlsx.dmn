@@ -51,7 +51,7 @@
         <dmn:contextEntry>
           <dmn:variable id="_9B38D443-3E49-494A-BEB7-BC53F385945E" name="componenten" typeRef="dt.Componenten"/>
           <dmn:literalExpression id="_E2DE5E35-2E5F-42A0-810C-64A2A093CD1B">
-            <dmn:text>stamgegevensService("B","Bof",vaccinsoort).componenten bij vaccinSoort</dmn:text>
+            <dmn:text>stamgegevensService(null,null,vaccinsoort).componenten bij vaccinSoort</dmn:text>
           </dmn:literalExpression>
         </dmn:contextEntry>
         <dmn:contextEntry>
@@ -655,7 +655,7 @@
     <dmn:encapsulatedLogic id="_86C7EC11-05EC-412B-A9FE-7AC304F8DF86" kind="FEEL">
       <dmn:formalParameter id="_422F325A-118A-47ED-ADE1-E9CA13486AF3" name="infectieziekte" typeRef="dt.Infectieziekte"/>
       <dmn:literalExpression id="_87216B89-2E8B-4F20-A2F7-63C8ECF6D640">
-        <dmn:text>stamgegevensService(null,infectieziekte,null).componenten bij vaccinSoort</dmn:text>
+        <dmn:text>stamgegevensService(null,infectieziekte,null).componenten bij vaccinSoort </dmn:text>
       </dmn:literalExpression>
     </dmn:encapsulatedLogic>
     <dmn:knowledgeRequirement id="_32F656AF-8421-463F-9720-32DEC052A060">
@@ -764,7 +764,7 @@
           <kie:ComponentWidths dmnElementRef="_8751DBF0-2A51-4E50-B603-80430FF48BB9">
             <kie:width>50</kie:width>
             <kie:width>166</kie:width>
-            <kie:width>150</kie:width>
+            <kie:width>437</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_189FE703-23B0-4D9B-9498-625A2B7B354E"/>
           <kie:ComponentWidths dmnElementRef="_385969D0-F2AD-4415-B008-BD9B04999613"/>
@@ -850,7 +850,7 @@
             <kie:width>666</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_87216B89-2E8B-4F20-A2F7-63C8ECF6D640">
-            <kie:width>1063</kie:width>
+            <kie:width>150</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_86C7EC11-05EC-412B-A9FE-7AC304F8DF86">
             <kie:width>50</kie:width>
@@ -976,7 +976,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="319.5981308411215" y="85" width="156" height="58"/>
+        <dc:Bounds x="319.5981308411215" y="86" width="156" height="58"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_560AF160-C101-490C-A626-8C33BB021F58" dmnElementRef="_560AF160-C101-490C-A626-8C33BB021F58">
@@ -1021,7 +1021,7 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_32F656AF-8421-463F-9720-32DEC052A060" dmnElementRef="_32F656AF-8421-463F-9720-32DEC052A060">
         <di:waypoint x="681" y="425.5"/>
-        <di:waypoint x="397.5981308411215" y="114"/>
+        <di:waypoint x="397.5981308411215" y="115"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
