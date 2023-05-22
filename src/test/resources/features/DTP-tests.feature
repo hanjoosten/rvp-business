@@ -6,6 +6,6 @@ Functionaliteit: validatie van vaccinaties
         Gegeven een client geboren op 2020-01-01
         En de volgende vaccinaties zijn gegeven voor deze client:
             | VaccinSoort | Uitvoerdatum | Product | Expiratiedatum | toelichting |
-            | D           | 2020-02-02   | null    | 2025-01-01     | te jong     |
+            | DTP         | 2020-02-02   | null    | 2025-01-01     | valide      |
         Als deze vaccinaties worden gevalideerd
-        Dan verwacht ik 1 vaccinatiecomponenten
+        Dan verwacht ik 3 vaccinatiecomponenten
