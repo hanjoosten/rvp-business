@@ -28,61 +28,55 @@
     <dmn:variable id="_34A7B43A-E0F7-4CA1-856D-9820D102CDD7" name="bepaal Infectieziekte" typeRef="dt.Infectieziekte"/>
     <dmn:encapsulatedLogic id="_234F11FC-077A-473C-BD90-442EA8DE7E1F" kind="FEEL">
       <dmn:formalParameter id="_82310D02-C401-43DE-B6B8-8F783D85FC3C" name="component" typeRef="dt.Component"/>
-      <dmn:literalExpression id="_9F45E446-7A7D-4153-A0F2-8C8C9F689579">
-        <dmn:text>stamgegevensService(component,null,null).beschermtTegen</dmn:text>
-      </dmn:literalExpression>
+      <dmn:context id="_2A2FF416-6F29-4A08-AE4D-43A3575E146E">
+        <dmn:contextEntry>
+          <dmn:variable id="_4710F97E-A69B-446E-AE91-5DD6B9166C47" name="aanroep" typeRef="Any"/>
+          <dmn:invocation id="_065F0696-627D-4E0D-8AAB-0F821911F5CC">
+            <dmn:literalExpression id="_27BBFB8F-8763-4F15-AF3F-68DC558FB121">
+              <dmn:text>stamgegevensService</dmn:text>
+            </dmn:literalExpression>
+            <dmn:binding>
+              <dmn:parameter id="_3AD94E1E-C39C-40C6-BC81-6F7025EDB222" name="component" typeRef="dt.Component"/>
+              <dmn:literalExpression id="_9DC82C25-50D5-4EC6-B8AC-30F5B4FAAC19">
+                <dmn:text>component</dmn:text>
+              </dmn:literalExpression>
+            </dmn:binding>
+          </dmn:invocation>
+        </dmn:contextEntry>
+        <dmn:contextEntry>
+          <dmn:literalExpression id="_0159F809-5640-49B2-A578-C8291700E6FC">
+            <dmn:text>aanroep.beschermtTegen</dmn:text>
+          </dmn:literalExpression>
+        </dmn:contextEntry>
+      </dmn:context>
     </dmn:encapsulatedLogic>
     <dmn:knowledgeRequirement id="_560AF160-C101-490C-A626-8C33BB021F58">
       <dmn:requiredKnowledge href="#_11AC0701-AA5F-4106-87ED-CE1915750D12"/>
     </dmn:knowledgeRequirement>
   </dmn:businessKnowledgeModel>
-  <dmn:businessKnowledgeModel id="_043ABE6B-C428-4B83-A492-3040F51817EF" name="split vaccinSoort">
+  <dmn:businessKnowledgeModel id="_043ABE6B-C428-4B83-A492-3040F51817EF" name="componenten van vaccinSoort">
     <dmn:extensionElements/>
-    <dmn:variable id="_47E40374-C948-4F62-83F7-1F9D82F5B5DF" name="split vaccinSoort" typeRef="dt.VaccinatieComponenten"/>
+    <dmn:variable id="_47E40374-C948-4F62-83F7-1F9D82F5B5DF" name="componenten van vaccinSoort" typeRef="dt.Componenten"/>
     <dmn:encapsulatedLogic id="_4FB5CC8E-3700-452D-A888-D2A67C6B6835" kind="FEEL">
-      <dmn:formalParameter id="_541A4DDF-B306-448C-AC34-A809BA30753A" name="vacc" typeRef="dt.Vaccinatie"/>
+      <dmn:formalParameter id="_541A4DDF-B306-448C-AC34-A809BA30753A" name="vaccinsoort" typeRef="dt.VaccinSoort"/>
       <dmn:context id="_EF97B5B8-29C7-442A-9707-24B48CB51F9A">
         <dmn:contextEntry>
-          <dmn:variable id="_015F457F-62D3-4C60-B1E2-6E08885B68FC" name="vaccinsoort" typeRef="dt.VaccinSoort"/>
-          <dmn:literalExpression id="_32F3F36A-6427-4C7F-8C31-B77E5835A619">
-            <dmn:text>vacc.vaccinSoort</dmn:text>
-          </dmn:literalExpression>
-        </dmn:contextEntry>
-        <dmn:contextEntry>
-          <dmn:variable id="_9B38D443-3E49-494A-BEB7-BC53F385945E" name="componenten" typeRef="dt.Componenten"/>
-          <dmn:literalExpression id="_E2DE5E35-2E5F-42A0-810C-64A2A093CD1B">
-            <dmn:text>stamgegevensService(null,null,vaccinsoort).componenten bij vaccinSoort</dmn:text>
-          </dmn:literalExpression>
-        </dmn:contextEntry>
-        <dmn:contextEntry>
-          <dmn:variable id="_56EF7965-D5FD-4D14-99FF-5FBE80272A8E" name="maakVC" typeRef="dt.VaccinatieComponent"/>
-          <dmn:functionDefinition id="_09583784-F59A-4B6A-A53A-5B0F68660E48" kind="FEEL">
-            <dmn:formalParameter id="_5BC06F4E-AE0B-4ED2-9849-04A3294CE209" name="comp" typeRef="dt.Component"/>
-            <dmn:context id="_F9C97DC7-88D2-4BE4-86F8-1599C6273B06">
-              <dmn:contextEntry>
-                <dmn:variable id="_EFBA47C0-410E-4B02-9A3D-736CA4BB1D45" name="vaccinatie" typeRef="dt.Vaccinatie"/>
-                <dmn:literalExpression id="_E9EDE329-F3F6-4C94-912B-28FC5FB43629">
-                  <dmn:text>vacc</dmn:text>
-                </dmn:literalExpression>
-              </dmn:contextEntry>
-              <dmn:contextEntry>
-                <dmn:variable id="_9E1D835C-13B9-48EB-9C7C-8A94A1435FB5" name="component" typeRef="dt.Component"/>
-                <dmn:literalExpression id="_77C50F84-5074-41EE-915C-AC8578B33ACB">
-                  <dmn:text>comp</dmn:text>
-                </dmn:literalExpression>
-              </dmn:contextEntry>
-            </dmn:context>
-          </dmn:functionDefinition>
-        </dmn:contextEntry>
-        <dmn:contextEntry>
-          <dmn:variable id="_C6FE5535-910C-4EE2-8289-1B11A15BEF4A" name="vaccinatieComponenten" typeRef="dt.VaccinatieComponenten"/>
-          <dmn:literalExpression id="_D2047CD9-B8F3-4645-968A-372E3D892D4E">
-            <dmn:text>for component in componenten return maakVC(component)</dmn:text>
-          </dmn:literalExpression>
+          <dmn:variable id="_8A5E8408-F6A2-4063-BE16-34A548D2B0F0" name="aanroep" typeRef="Any"/>
+          <dmn:invocation id="_A8D13E31-69A4-4F0E-BF71-86DF4E2558BC">
+            <dmn:literalExpression id="_0D87671D-5616-4C93-9443-8ED0FAEA894C">
+              <dmn:text>stamgegevensService</dmn:text>
+            </dmn:literalExpression>
+            <dmn:binding>
+              <dmn:parameter id="_82AA71DF-4EAE-446A-A192-53EFDCDC3BA3" name="vaccinSoort" typeRef="dt.VaccinSoort"/>
+              <dmn:literalExpression id="_48D2E334-E11C-436D-B118-952A6D08334F">
+                <dmn:text>vaccinsoort</dmn:text>
+              </dmn:literalExpression>
+            </dmn:binding>
+          </dmn:invocation>
         </dmn:contextEntry>
         <dmn:contextEntry>
           <dmn:literalExpression id="_6D01CAE0-910F-4F1D-9D3C-7525C316AE2A">
-            <dmn:text>vaccinatieComponenten</dmn:text>
+            <dmn:text>aanroep.componenten bij vaccinSoort</dmn:text>
           </dmn:literalExpression>
         </dmn:contextEntry>
       </dmn:context>
@@ -646,7 +640,7 @@
       <dmn:requiredDecision href="#_37766ECB-24FE-40A5-ADDA-EB798AE78A82"/>
     </dmn:informationRequirement>
     <dmn:literalExpression id="_3408C218-0648-4BE4-95CA-A4C31DC6F9D1">
-      <dmn:text>Tabel VaccinSoort Component[VaccinSoort = vaccinSoort].Componenten</dmn:text>
+      <dmn:text>flatten(Tabel VaccinSoort Component[VaccinSoort = vaccinSoort].Componenten)</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:businessKnowledgeModel id="_83FB3966-7B4A-440F-AC72-778F6A38F71C" name="componenten van infectieziekte">
@@ -654,9 +648,27 @@
     <dmn:variable id="_9BF2D1D0-302C-4799-8F7E-14DC2A864BE7" name="componenten van infectieziekte" typeRef="dt.Componenten"/>
     <dmn:encapsulatedLogic id="_86C7EC11-05EC-412B-A9FE-7AC304F8DF86" kind="FEEL">
       <dmn:formalParameter id="_422F325A-118A-47ED-ADE1-E9CA13486AF3" name="infectieziekte" typeRef="dt.Infectieziekte"/>
-      <dmn:literalExpression id="_87216B89-2E8B-4F20-A2F7-63C8ECF6D640">
-        <dmn:text>stamgegevensService(null,infectieziekte,null).componenten bij vaccinSoort </dmn:text>
-      </dmn:literalExpression>
+      <dmn:context id="_DA84D19B-BFD0-4A97-9E46-E9C5210326DC">
+        <dmn:contextEntry>
+          <dmn:variable id="_B2759C31-BC9E-4F82-A99C-29FEFF0F0770" name="aanroep" typeRef="Any"/>
+          <dmn:invocation id="_F2664935-2031-42E8-82F2-11FD08024967">
+            <dmn:literalExpression id="_37B15979-1BFD-46FF-A637-1B581DCEC7BC">
+              <dmn:text>stamgegevensService</dmn:text>
+            </dmn:literalExpression>
+            <dmn:binding>
+              <dmn:parameter id="_E1D51596-C60D-44F4-A291-25D190233995" name="infectieziekte" typeRef="dt.Infectieziekte"/>
+              <dmn:literalExpression id="_366F9E4B-B2A1-4998-8735-134276121C24">
+                <dmn:text>infectieziekte</dmn:text>
+              </dmn:literalExpression>
+            </dmn:binding>
+          </dmn:invocation>
+        </dmn:contextEntry>
+        <dmn:contextEntry>
+          <dmn:literalExpression id="_351007BF-384C-46AC-8A8D-A7171A5F8744">
+            <dmn:text>aanroep.componenten bij infectieziekte</dmn:text>
+          </dmn:literalExpression>
+        </dmn:contextEntry>
+      </dmn:context>
     </dmn:encapsulatedLogic>
     <dmn:knowledgeRequirement id="_32F656AF-8421-463F-9720-32DEC052A060">
       <dmn:requiredKnowledge href="#_11AC0701-AA5F-4106-87ED-CE1915750D12"/>
@@ -666,9 +678,15 @@
     <dmndi:DMNDiagram id="_7B729624-D3E3-45DC-923D-74CE2E2087E2" name="DRG">
       <di:extension>
         <kie:ComponentsWidthsExtension>
-          <kie:ComponentWidths dmnElementRef="_9F45E446-7A7D-4153-A0F2-8C8C9F689579">
-            <kie:width>561</kie:width>
+          <kie:ComponentWidths dmnElementRef="_2A2FF416-6F29-4A08-AE4D-43A3575E146E">
+            <kie:width>50</kie:width>
           </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_065F0696-627D-4E0D-8AAB-0F821911F5CC">
+            <kie:width>50</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_27BBFB8F-8763-4F15-AF3F-68DC558FB121"/>
+          <kie:ComponentWidths dmnElementRef="_9DC82C25-50D5-4EC6-B8AC-30F5B4FAAC19"/>
+          <kie:ComponentWidths dmnElementRef="_0159F809-5640-49B2-A578-C8291700E6FC"/>
           <kie:ComponentWidths dmnElementRef="_234F11FC-077A-473C-BD90-442EA8DE7E1F">
             <kie:width>50</kie:width>
             <kie:width>561</kie:width>
@@ -678,30 +696,11 @@
             <kie:width>182</kie:width>
             <kie:width>798</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_32F3F36A-6427-4C7F-8C31-B77E5835A619">
-            <kie:width>798</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_E2DE5E35-2E5F-42A0-810C-64A2A093CD1B">
-            <kie:width>798</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_09583784-F59A-4B6A-A53A-5B0F68660E48">
+          <kie:ComponentWidths dmnElementRef="_A8D13E31-69A4-4F0E-BF71-86DF4E2558BC">
             <kie:width>50</kie:width>
-            <kie:width>728</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_F9C97DC7-88D2-4BE4-86F8-1599C6273B06">
-            <kie:width>50</kie:width>
-            <kie:width>100</kie:width>
-            <kie:width>558</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_E9EDE329-F3F6-4C94-912B-28FC5FB43629">
-            <kie:width>558</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_77C50F84-5074-41EE-915C-AC8578B33ACB">
-            <kie:width>558</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_D2047CD9-B8F3-4645-968A-372E3D892D4E">
-            <kie:width>798</kie:width>
-          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_0D87671D-5616-4C93-9443-8ED0FAEA894C"/>
+          <kie:ComponentWidths dmnElementRef="_48D2E334-E11C-436D-B118-952A6D08334F"/>
           <kie:ComponentWidths dmnElementRef="_6D01CAE0-910F-4F1D-9D3C-7525C316AE2A">
             <kie:width>798</kie:width>
           </kie:ComponentWidths>
@@ -849,8 +848,16 @@
           <kie:ComponentWidths dmnElementRef="_3408C218-0648-4BE4-95CA-A4C31DC6F9D1">
             <kie:width>666</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_87216B89-2E8B-4F20-A2F7-63C8ECF6D640">
-            <kie:width>150</kie:width>
+          <kie:ComponentWidths dmnElementRef="_DA84D19B-BFD0-4A97-9E46-E9C5210326DC">
+            <kie:width>50</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_F2664935-2031-42E8-82F2-11FD08024967">
+            <kie:width>50</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_37B15979-1BFD-46FF-A637-1B581DCEC7BC"/>
+          <kie:ComponentWidths dmnElementRef="_366F9E4B-B2A1-4998-8735-134276121C24"/>
+          <kie:ComponentWidths dmnElementRef="_351007BF-384C-46AC-8A8D-A7171A5F8744">
+            <kie:width>401</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_86C7EC11-05EC-412B-A9FE-7AC304F8DF86">
             <kie:width>50</kie:width>
@@ -904,7 +911,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="791.4485981308411" y="85.6842105263158" width="182" height="50"/>
+        <dc:Bounds x="793" y="85.6842105263158" width="182" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_7216826B-F07A-402D-B8F6-B19AD12D8D90" dmnElementRef="_7216826B-F07A-402D-B8F6-B19AD12D8D90" isCollapsed="false">
@@ -985,7 +992,7 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_DA2DD8FC-3ECB-4D27-B1A0-02D32011DEE3" dmnElementRef="_DA2DD8FC-3ECB-4D27-B1A0-02D32011DEE3">
         <di:waypoint x="681" y="425.5"/>
-        <di:waypoint x="882.4485981308411" y="110.68421052631578"/>
+        <di:waypoint x="884" y="110.68421052631578"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_15D0C8C4-3176-4F70-AC9D-5DD908DEBAD1" dmnElementRef="_15D0C8C4-3176-4F70-AC9D-5DD908DEBAD1">
         <di:waypoint x="451" y="484"/>
