@@ -164,18 +164,6 @@
                 <dmn:text>vaccinatie.vaccinSoort</dmn:text>
               </dmn:literalExpression>
             </dmn:binding>
-            <dmn:binding>
-              <dmn:parameter id="_8546B19A-00EF-44A5-B810-03247FB3CFA1" name="infectieziekte" typeRef="dt.Infectieziekte"/>
-              <dmn:literalExpression id="_03CF8FB1-C9AC-475E-8147-AD5702347CD5">
-                <dmn:text>"Bof"</dmn:text>
-              </dmn:literalExpression>
-            </dmn:binding>
-            <dmn:binding>
-              <dmn:parameter id="_19E66924-DCE0-4358-967C-9DE5396BB449" name="component" typeRef="dt.Component"/>
-              <dmn:literalExpression id="_E8808A0F-CAE7-4167-B126-9878655F4E08">
-                <dmn:text>"B"</dmn:text>
-              </dmn:literalExpression>
-            </dmn:binding>
           </dmn:invocation>
         </dmn:contextEntry>
         <dmn:contextEntry>
@@ -272,8 +260,6 @@
           <kie:ComponentWidths dmnElementRef="_704D1733-5FB2-4AE1-A79A-20F07E4E955C">
             <kie:width>100</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_03CF8FB1-C9AC-475E-8147-AD5702347CD5"/>
-          <kie:ComponentWidths dmnElementRef="_E8808A0F-CAE7-4167-B126-9878655F4E08"/>
           <kie:ComponentWidths dmnElementRef="_8E186393-89FD-4999-9B59-DAE247C8A353">
             <kie:width>50</kie:width>
           </kie:ComponentWidths>
