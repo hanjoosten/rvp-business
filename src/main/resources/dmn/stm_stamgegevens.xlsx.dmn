@@ -9,7 +9,7 @@
     <dmn:outputDecision href="#_E2B2ABB5-025E-4C1F-9A3D-2D7DCEB28B16"/>
     <dmn:outputDecision href="#_D2FF1A28-69B8-4088-B6AB-31C8F8050C4B"/>
     <dmn:outputDecision href="#_7BFDE02B-2156-4851-BDD4-78ECB4CFEAC4"/>
-    <dmn:encapsulatedDecision href="#_37766ECB-24FE-40A5-ADDA-EB798AE78A82"/>
+    <dmn:outputDecision href="#_37766ECB-24FE-40A5-ADDA-EB798AE78A82"/>
     <dmn:inputDecision href="#_7216826B-F07A-402D-B8F6-B19AD12D8D90"/>
     <dmn:inputData href="#id_Component"/>
     <dmn:inputData href="#_92BC504A-119C-48DF-8FD5-265BCC232278"/>
@@ -58,7 +58,7 @@
     <dmn:extensionElements/>
     <dmn:variable id="_47E40374-C948-4F62-83F7-1F9D82F5B5DF" name="componenten van vaccinSoort" typeRef="dt.Componenten"/>
     <dmn:encapsulatedLogic id="_4FB5CC8E-3700-452D-A888-D2A67C6B6835" kind="FEEL">
-      <dmn:formalParameter id="_541A4DDF-B306-448C-AC34-A809BA30753A" name="vaccinsoort" typeRef="dt.VaccinSoort"/>
+      <dmn:formalParameter id="_541A4DDF-B306-448C-AC34-A809BA30753A" name="vaccinSoort" typeRef="dt.VaccinSoort"/>
       <dmn:context id="_EF97B5B8-29C7-442A-9707-24B48CB51F9A">
         <dmn:contextEntry>
           <dmn:variable id="_8A5E8408-F6A2-4063-BE16-34A548D2B0F0" name="aanroep" typeRef="Any"/>
@@ -69,7 +69,7 @@
             <dmn:binding>
               <dmn:parameter id="_82AA71DF-4EAE-446A-A192-53EFDCDC3BA3" name="vaccinSoort" typeRef="dt.VaccinSoort"/>
               <dmn:literalExpression id="_48D2E334-E11C-436D-B118-952A6D08334F">
-                <dmn:text>vaccinsoort</dmn:text>
+                <dmn:text>vaccinSoort</dmn:text>
               </dmn:literalExpression>
             </dmn:binding>
           </dmn:invocation>
@@ -275,7 +275,7 @@
       <dmn:requiredInput href="#_92BC504A-119C-48DF-8FD5-265BCC232278"/>
     </dmn:informationRequirement>
     <dmn:literalExpression id="_094E910B-FA07-4EE7-84ED-EC9BF75EECBC">
-      <dmn:text>Tabel Infectieziekte Component[Infectieziekte = infectieziekte][1].Componenten</dmn:text>
+      <dmn:text>if infectieziekte = null then [] else Tabel Infectieziekte Component[Infectieziekte = infectieziekte][1].Componenten</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_D2FF1A28-69B8-4088-B6AB-31C8F8050C4B" name="alle componenten">
@@ -459,8 +459,7 @@
           <dmn:text>"HBIg"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_EFAAE197-70EC-498C-8F2C-30FAFD542D81">
-          <dmn:text>["HBIg"]
-</dmn:text>
+          <dmn:text>["HBIg"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_3DF90EF1-E717-4D3F-B470-EDBDC334AEC2">
@@ -468,8 +467,7 @@
           <dmn:text>"Hep A"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_129484A5-FBA7-40E8-95FD-09CED70C6D86">
-          <dmn:text>["Hep A"]
-</dmn:text>
+          <dmn:text>["Hep A"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_8582F1D0-9DF3-4EF0-B89A-52C5ADC672C2">
@@ -501,8 +499,7 @@
           <dmn:text>"HPV"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_C289FFF4-DC38-4070-AD0F-8C65C716DE8E">
-          <dmn:text>["HPV"]
-</dmn:text>
+          <dmn:text>["HPV"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_7A9CC28D-F19E-4731-8A35-1A54678EF4F3">
@@ -510,8 +507,7 @@
           <dmn:text>"IPV"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_1D2B9AD0-D21F-48BA-AC5A-7A49D627BAF5">
-          <dmn:text>["IPV"]
-</dmn:text>
+          <dmn:text>["IPV"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_69BA27C0-A2FF-4456-96B6-4B3B98E2AF61">
@@ -519,8 +515,7 @@
           <dmn:text>"K"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_BD59F0AB-86ED-4546-9E5D-53AF1628818C">
-          <dmn:text>["K"]
-</dmn:text>
+          <dmn:text>["K"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_F54E96DE-06A4-4C63-ADD4-F8ECC95C9454">
@@ -528,8 +523,7 @@
           <dmn:text>"M"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_D05BB75D-5F7F-4AD4-BC56-4EF3D0021CCC">
-          <dmn:text>["M"]
-</dmn:text>
+          <dmn:text>["M"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_C83D57B5-CB03-4592-84D7-6A2B6AAEA0B3">
@@ -537,8 +531,7 @@
           <dmn:text>"MenACWY"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_4BEB3772-FA78-41FA-91CC-E13A938C6024">
-          <dmn:text>["MenACWY"]
-</dmn:text>
+          <dmn:text>["MenACWY"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_851BA119-B8B1-48B6-8C24-CD51FEC59ACD">
@@ -554,8 +547,7 @@
           <dmn:text>"MR"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_89393A50-B07A-4B2C-9113-B3E6BC0E0E43">
-          <dmn:text>["M","R"]
-</dmn:text>
+          <dmn:text>["M","R"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_112C265F-1382-43BE-BFAB-DAEE9564F403">
@@ -563,8 +555,7 @@
           <dmn:text>"OPV"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_2387C909-B584-4B64-87D3-554CD1C651C8">
-          <dmn:text>["OPV"]
-</dmn:text>
+          <dmn:text>["OPV"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_86FDAECE-D65C-47F5-A91C-9DE8A3E7BAC7">
@@ -572,8 +563,7 @@
           <dmn:text>"P"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_DF88D2C2-CADF-4B4A-9C12-8D43F1DFCAE7">
-          <dmn:text>["P"]
-</dmn:text>
+          <dmn:text>["P"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_3DD30864-A857-4DBC-838E-BFC0E82CBB9D">
@@ -581,8 +571,7 @@
           <dmn:text>"Pneu"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_1C514255-9869-4436-8574-FE0618964537">
-          <dmn:text>["Pneu"]
-</dmn:text>
+          <dmn:text>["Pneu"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_15A23CD2-3208-44DC-98B7-2B7F43ED79AD">
@@ -590,8 +579,7 @@
           <dmn:text>"R"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_BE44872F-EED7-402F-A0C9-9078DB86D9D7">
-          <dmn:text>["R"]
-</dmn:text>
+          <dmn:text>["R"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_6154690F-202A-4803-9B49-FFA064BCEA93">
@@ -607,8 +595,7 @@
           <dmn:text>"T"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_F9D320F9-083D-4066-9583-49D9D5B3ECBA">
-          <dmn:text>["T"]
-</dmn:text>
+          <dmn:text>["T"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_94F1030B-CB30-490B-A8AF-283B913F0D01">
@@ -616,8 +603,7 @@
           <dmn:text>"TP"</dmn:text>
         </dmn:literalExpression>
         <dmn:literalExpression id="_91A5E896-8CF7-452E-93BA-891154F7327C">
-          <dmn:text>["T","P"]
-</dmn:text>
+          <dmn:text>["T","P"]</dmn:text>
         </dmn:literalExpression>
       </dmn:row>
       <dmn:row id="_97E36D0A-732D-4D44-8468-6DCF082E7DA8">
@@ -692,9 +678,15 @@
             <kie:width>182</kie:width>
             <kie:width>798</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_A8D13E31-69A4-4F0E-BF71-86DF4E2558BC"/>
+          <kie:ComponentWidths dmnElementRef="_A8D13E31-69A4-4F0E-BF71-86DF4E2558BC">
+            <kie:width>50</kie:width>
+            <kie:width>120</kie:width>
+            <kie:width>608</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_0D87671D-5616-4C93-9443-8ED0FAEA894C"/>
-          <kie:ComponentWidths dmnElementRef="_48D2E334-E11C-436D-B118-952A6D08334F"/>
+          <kie:ComponentWidths dmnElementRef="_48D2E334-E11C-436D-B118-952A6D08334F">
+            <kie:width>608</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_6D01CAE0-910F-4F1D-9D3C-7525C316AE2A">
             <kie:width>798</kie:width>
           </kie:ComponentWidths>
@@ -864,8 +856,8 @@
         <dc:Bounds x="320" y="244" width="722" height="363"/>
         <dmndi:DMNLabel/>
         <dmndi:DMNDecisionServiceDividerLine>
-          <di:waypoint x="320" y="422"/>
-          <di:waypoint x="1042" y="422"/>
+          <di:waypoint x="320" y="548"/>
+          <di:waypoint x="1042" y="548"/>
         </dmndi:DMNDecisionServiceDividerLine>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-id_VaccinSoort" dmnElementRef="id_VaccinSoort" isCollapsed="false">
