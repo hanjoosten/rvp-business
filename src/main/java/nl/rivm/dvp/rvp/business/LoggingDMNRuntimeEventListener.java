@@ -48,12 +48,13 @@ class LoggingDMNRuntimeEventListener implements DMNRuntimeEventListener {
     @Override
     public void beforeEvaluateDecision(BeforeEvaluateDecisionEvent event) {
         log("BeforeEvaluateDecisionEvent", event);
+        logInput(event.getResult());
     }
 
     @Override
     public void afterEvaluateDecision(AfterEvaluateDecisionEvent event) {
         log("AfterEvaluateDecisionEvent", event);
-        logResult(event.getResult());
+        logOutput(event.getResult());
     }
 
     @Override
@@ -92,9 +93,12 @@ class LoggingDMNRuntimeEventListener implements DMNRuntimeEventListener {
 
     }
 
-    private void logResult(DMNResult x) {
-        var noot = x.getContext();
-        LOG.info("{}", noot);
+    private void logOutput(DMNResult x) {
+        LOG.info("OUTPUT: \n{}", x.getContext());
+    }
+
+    private void logInput(DMNResult x) {
+        LOG.info("INPUT: \n{}", x.getContext());
     }
 
 }
