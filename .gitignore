@@ -8,3 +8,5 @@ images
 **/kie-dmn-xls2dmn-*.jar
 
 **/\~$*.xlsx
+
+*.log

@@ -36,21 +36,21 @@
               <dmn:text>stamgegevensService</dmn:text>
             </dmn:literalExpression>
             <dmn:binding>
-              <dmn:parameter id="_3AD94E1E-C39C-40C6-BC81-6F7025EDB222" name="component" typeRef="dt.Component"/>
-              <dmn:literalExpression id="_9DC82C25-50D5-4EC6-B8AC-30F5B4FAAC19">
-                <dmn:text>component</dmn:text>
+              <dmn:parameter id="_B2B56E10-9FF9-4A71-98D0-A001C0EC1B8E" name="infectieziekte" typeRef="dt.Infectieziekte"/>
+              <dmn:literalExpression id="_4161EE96-FAB4-4C71-AACF-E8F18BE1A8EB">
+                <dmn:text>"Bof"</dmn:text>
               </dmn:literalExpression>
             </dmn:binding>
             <dmn:binding>
-              <dmn:parameter id="_06052C93-88D6-41BD-99CD-46CC76FAEAFA" name="vaccinSoort" typeRef="dt.VaccinSoort"/>
-              <dmn:literalExpression id="_6EBC2051-095F-420D-8A4A-C4947AD18A6B">
+              <dmn:parameter id="_6BB0561E-9CDE-420D-8D05-AD670DB4F59F" name="vaccinSoort" typeRef="dt.VaccinSoort"/>
+              <dmn:literalExpression id="_C586DAEA-53BD-40B4-9D06-72585BF3F777">
                 <dmn:text>"B"</dmn:text>
               </dmn:literalExpression>
             </dmn:binding>
             <dmn:binding>
-              <dmn:parameter id="_86F98B59-DE30-4F51-A086-FAA922EBFF7C" name="infectieziekte" typeRef="dt.Infectieziekte"/>
-              <dmn:literalExpression id="_61DA6C13-AA03-43B2-9EB3-92A0B214D83D">
-                <dmn:text>"Bof"</dmn:text>
+              <dmn:parameter id="_3AD94E1E-C39C-40C6-BC81-6F7025EDB222" name="component" typeRef="dt.Component"/>
+              <dmn:literalExpression id="_9DC82C25-50D5-4EC6-B8AC-30F5B4FAAC19">
+                <dmn:text>component</dmn:text>
               </dmn:literalExpression>
             </dmn:binding>
           </dmn:invocation>
@@ -79,21 +79,21 @@
               <dmn:text>stamgegevensService</dmn:text>
             </dmn:literalExpression>
             <dmn:binding>
-              <dmn:parameter id="_82AA71DF-4EAE-446A-A192-53EFDCDC3BA3" name="vaccinSoort" typeRef="dt.VaccinSoort"/>
-              <dmn:literalExpression id="_48D2E334-E11C-436D-B118-952A6D08334F">
-                <dmn:text>vaccinSoort</dmn:text>
+              <dmn:parameter id="_8F0C7F60-0E05-4C7A-A8B9-6B1AE2F4E234" name="infectieziekte" typeRef="dt.Infectieziekte"/>
+              <dmn:literalExpression id="_39681484-1678-4F2C-9932-EB29EF0C45B9">
+                <dmn:text>"Bof"</dmn:text>
               </dmn:literalExpression>
             </dmn:binding>
             <dmn:binding>
-              <dmn:parameter id="_463912E9-AF51-4C36-8E71-ADC5157A315E" name="component" typeRef="dt.Component"/>
-              <dmn:literalExpression id="_28E63315-1E5A-461A-9659-62835FEAB673">
+              <dmn:parameter id="_34E36AC8-2776-42DF-B6E4-922D4222A526" name="component" typeRef="dt.Component"/>
+              <dmn:literalExpression id="_4B36151C-32A2-475C-AED9-FF53A14565FE">
                 <dmn:text>"B"</dmn:text>
               </dmn:literalExpression>
             </dmn:binding>
             <dmn:binding>
-              <dmn:parameter id="_4AE9A352-A322-421C-B2A0-92CC01791805" name="infectieziekte" typeRef="dt.Infectieziekte"/>
-              <dmn:literalExpression id="_2E31551F-B5BF-4348-886F-DAA985349659">
-                <dmn:text>"Bof"</dmn:text>
+              <dmn:parameter id="_82AA71DF-4EAE-446A-A192-53EFDCDC3BA3" name="vaccinSoort" typeRef="dt.VaccinSoort"/>
+              <dmn:literalExpression id="_48D2E334-E11C-436D-B118-952A6D08334F">
+                <dmn:text>vaccinSoort</dmn:text>
               </dmn:literalExpression>
             </dmn:binding>
           </dmn:invocation>
@@ -298,8 +298,8 @@
     <dmn:informationRequirement id="_942A4EDC-9A4A-45D4-B373-7994C8B36D9F">
       <dmn:requiredInput href="#_92BC504A-119C-48DF-8FD5-265BCC232278"/>
     </dmn:informationRequirement>
-    <dmn:literalExpression id="_094E910B-FA07-4EE7-84ED-EC9BF75EECBC">
-      <dmn:text>if infectieziekte = null then [] else Tabel Infectieziekte Component[Infectieziekte = infectieziekte][1].Componenten</dmn:text>
+    <dmn:literalExpression id="_2D74831B-178C-4CA8-855D-B54D1A3731AD">
+      <dmn:text>Tabel Infectieziekte Component[Infectieziekte = infectieziekte][1].Componenten</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_D2FF1A28-69B8-4088-B6AB-31C8F8050C4B" name="alle componenten">
@@ -309,7 +309,7 @@
       <dmn:requiredDecision href="#_7216826B-F07A-402D-B8F6-B19AD12D8D90"/>
     </dmn:informationRequirement>
     <dmn:literalExpression id="_F1DA368A-16C4-4465-8C3C-0EF925BB94B1">
-      <dmn:text>if Tabel Infectieziekte Component = null then [] else sort(distinct values(concatenate(Tabel Infectieziekte Component.Componenten)))</dmn:text>
+      <dmn:text>sort(distinct values(flatten(Tabel Infectieziekte Component.Componenten)))</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision id="_37766ECB-24FE-40A5-ADDA-EB798AE78A82" name="Tabel VaccinSoort Component">
@@ -666,21 +666,21 @@
               <dmn:text>stamgegevensService</dmn:text>
             </dmn:literalExpression>
             <dmn:binding>
+              <dmn:parameter id="_CC92DE51-056F-47DA-B203-464D0910691A" name="component" typeRef="dt.Component"/>
+              <dmn:literalExpression id="_15BB6F9B-71E2-42EF-8AD5-7129A3BF9025">
+                <dmn:text>"B"</dmn:text>
+              </dmn:literalExpression>
+            </dmn:binding>
+            <dmn:binding>
+              <dmn:parameter id="_63FCD27F-D400-497B-A904-4F00BC8E75A6" name="vaccinSoort" typeRef="dt.VaccinSoort"/>
+              <dmn:literalExpression id="_92B5A1AE-FD04-482D-8975-2AEE60216AAD">
+                <dmn:text>"B"</dmn:text>
+              </dmn:literalExpression>
+            </dmn:binding>
+            <dmn:binding>
               <dmn:parameter id="_E1D51596-C60D-44F4-A291-25D190233995" name="infectieziekte" typeRef="dt.Infectieziekte"/>
               <dmn:literalExpression id="_366F9E4B-B2A1-4998-8735-134276121C24">
                 <dmn:text>infectieziekte</dmn:text>
-              </dmn:literalExpression>
-            </dmn:binding>
-            <dmn:binding>
-              <dmn:parameter id="_1D5EC9D1-4AAE-4B28-962B-9ABF81C19229" name="component" typeRef="dt.Component"/>
-              <dmn:literalExpression id="_0CC5D553-8167-4222-BE4D-39E2AAC5BC88">
-                <dmn:text>"B"</dmn:text>
-              </dmn:literalExpression>
-            </dmn:binding>
-            <dmn:binding>
-              <dmn:parameter id="_8165BA21-B917-4F28-B1D2-B3F92B6328D5" name="vaccinSoort" typeRef="dt.VaccinSoort"/>
-              <dmn:literalExpression id="_87799494-96FD-403E-97C4-5415901786D4">
-                <dmn:text>"B"</dmn:text>
               </dmn:literalExpression>
             </dmn:binding>
           </dmn:invocation>
@@ -711,11 +711,11 @@
             <kie:width>181</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_27BBFB8F-8763-4F15-AF3F-68DC558FB121"/>
+          <kie:ComponentWidths dmnElementRef="_4161EE96-FAB4-4C71-AACF-E8F18BE1A8EB"/>
+          <kie:ComponentWidths dmnElementRef="_C586DAEA-53BD-40B4-9D06-72585BF3F777"/>
           <kie:ComponentWidths dmnElementRef="_9DC82C25-50D5-4EC6-B8AC-30F5B4FAAC19">
             <kie:width>181</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_6EBC2051-095F-420D-8A4A-C4947AD18A6B"/>
-          <kie:ComponentWidths dmnElementRef="_61DA6C13-AA03-43B2-9EB3-92A0B214D83D"/>
           <kie:ComponentWidths dmnElementRef="_0159F809-5640-49B2-A578-C8291700E6FC">
             <kie:width>371</kie:width>
           </kie:ComponentWidths>
@@ -734,11 +734,11 @@
             <kie:width>608</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_0D87671D-5616-4C93-9443-8ED0FAEA894C"/>
+          <kie:ComponentWidths dmnElementRef="_39681484-1678-4F2C-9932-EB29EF0C45B9"/>
+          <kie:ComponentWidths dmnElementRef="_4B36151C-32A2-475C-AED9-FF53A14565FE"/>
           <kie:ComponentWidths dmnElementRef="_48D2E334-E11C-436D-B118-952A6D08334F">
             <kie:width>608</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_28E63315-1E5A-461A-9659-62835FEAB673"/>
-          <kie:ComponentWidths dmnElementRef="_2E31551F-B5BF-4348-886F-DAA985349659"/>
           <kie:ComponentWidths dmnElementRef="_6D01CAE0-910F-4F1D-9D3C-7525C316AE2A">
             <kie:width>798</kie:width>
           </kie:ComponentWidths>
@@ -792,11 +792,11 @@
           <kie:ComponentWidths dmnElementRef="_151D009B-1AC6-4B29-9A02-8B3C831224B1">
             <kie:width>729</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_094E910B-FA07-4EE7-84ED-EC9BF75EECBC">
-            <kie:width>764</kie:width>
+          <kie:ComponentWidths dmnElementRef="_2D74831B-178C-4CA8-855D-B54D1A3731AD">
+            <kie:width>663</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_F1DA368A-16C4-4465-8C3C-0EF925BB94B1">
-            <kie:width>530</kie:width>
+            <kie:width>1181</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_8751DBF0-2A51-4E50-B603-80430FF48BB9">
             <kie:width>50</kie:width>
@@ -897,11 +897,11 @@
             <kie:width>100</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_37B15979-1BFD-46FF-A637-1B581DCEC7BC"/>
+          <kie:ComponentWidths dmnElementRef="_15BB6F9B-71E2-42EF-8AD5-7129A3BF9025"/>
+          <kie:ComponentWidths dmnElementRef="_92B5A1AE-FD04-482D-8975-2AEE60216AAD"/>
           <kie:ComponentWidths dmnElementRef="_366F9E4B-B2A1-4998-8735-134276121C24">
             <kie:width>100</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_0CC5D553-8167-4222-BE4D-39E2AAC5BC88"/>
-          <kie:ComponentWidths dmnElementRef="_87799494-96FD-403E-97C4-5415901786D4"/>
           <kie:ComponentWidths dmnElementRef="_351007BF-384C-46AC-8A8D-A7171A5F8744">
             <kie:width>290</kie:width>
           </kie:ComponentWidths>
