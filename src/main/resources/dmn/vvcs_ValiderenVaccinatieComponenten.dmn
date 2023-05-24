@@ -139,13 +139,76 @@
     <dmn:informationRequirement id="_61DC6A41-E41A-4D40-8EE8-AC9EA528378C">
       <dmn:requiredInput href="#_FF442A21-890B-4D26-BFAD-CA17665DC12E"/>
     </dmn:informationRequirement>
+    <dmn:knowledgeRequirement id="_A1814EC7-E77C-46B3-9859-0BBB5FAFCA1E">
+      <dmn:requiredKnowledge href="#_355EBB8B-DCFA-4426-ADE1-F3E249FFD790"/>
+    </dmn:knowledgeRequirement>
+    <dmn:literalExpression id="_9D434754-4F8A-4C3E-9377-FB443CB685B3">
+      <dmn:text>flatten(for v in vaccinaties return splits vaccinatie(v))</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmn:businessKnowledgeModel id="_355EBB8B-DCFA-4426-ADE1-F3E249FFD790" name="splits vaccinatie">
+    <dmn:extensionElements/>
+    <dmn:variable id="_90440AE2-0B47-4D1D-BF6E-0F5A2F838AFE" name="splits vaccinatie" typeRef="dt.VaccinatieComponenten"/>
+    <dmn:encapsulatedLogic id="_BF29F058-3028-42F6-AB0F-53EC0131996B" kind="FEEL">
+      <dmn:formalParameter id="_F3A00952-E1F9-4854-B364-B8FF5E24A033" name="vaccinatie" typeRef="dt.Vaccinatie"/>
+      <dmn:context id="_3907624D-9140-44C9-A853-EDF7010BEBD5">
+        <dmn:contextEntry>
+          <dmn:variable id="_C5A8EDD3-3741-420F-9D7C-A3DADA0B914E" name="componenten" typeRef="dt.Componenten"/>
+          <dmn:invocation id="_53ABBD7E-8CCE-47AC-AED3-6B981EFD46CE">
+            <dmn:literalExpression id="_D69786CB-F62E-4F90-B458-CEA44E91EF12">
+              <dmn:text>stm.componenten van vaccinSoort</dmn:text>
+            </dmn:literalExpression>
+            <dmn:binding>
+              <dmn:parameter id="_01287D37-D056-40D4-8EFD-C7C287A14985" name="vaccinSoort" typeRef="dt.VaccinSoort"/>
+              <dmn:literalExpression id="_704D1733-5FB2-4AE1-A79A-20F07E4E955C">
+                <dmn:text>vaccinatie.vaccinSoort</dmn:text>
+              </dmn:literalExpression>
+            </dmn:binding>
+            <dmn:binding>
+              <dmn:parameter id="_8546B19A-00EF-44A5-B810-03247FB3CFA1" name="infectieziekte" typeRef="dt.Infectieziekte"/>
+              <dmn:literalExpression id="_03CF8FB1-C9AC-475E-8147-AD5702347CD5">
+                <dmn:text>"Bof"</dmn:text>
+              </dmn:literalExpression>
+            </dmn:binding>
+            <dmn:binding>
+              <dmn:parameter id="_19E66924-DCE0-4358-967C-9DE5396BB449" name="component" typeRef="dt.Component"/>
+              <dmn:literalExpression id="_E8808A0F-CAE7-4167-B126-9878655F4E08">
+                <dmn:text>"B"</dmn:text>
+              </dmn:literalExpression>
+            </dmn:binding>
+          </dmn:invocation>
+        </dmn:contextEntry>
+        <dmn:contextEntry>
+          <dmn:variable id="_5D93C094-BEB9-41AD-8689-6A6A853646C1" name="maakVC" typeRef="dt.VaccinatieComponent"/>
+          <dmn:functionDefinition id="_8E186393-89FD-4999-9B59-DAE247C8A353" kind="FEEL">
+            <dmn:formalParameter id="_B6F75CAF-7DC5-479A-B094-1E066D1D5F49" name="comp" typeRef="dt.Component"/>
+            <dmn:context id="_CBDD50CA-F79F-4D65-B88B-075548401B78">
+              <dmn:contextEntry>
+                <dmn:variable id="_18ADEB31-458F-4795-B171-50A37FDC9D27" name="vaccinatie" typeRef="dt.Vaccinatie"/>
+                <dmn:literalExpression id="_8E231963-8EA5-47F4-8DD2-5F545B27ED54">
+                  <dmn:text>vaccinatie</dmn:text>
+                </dmn:literalExpression>
+              </dmn:contextEntry>
+              <dmn:contextEntry>
+                <dmn:variable id="_190D3135-E4E6-4B53-8D84-B80866DEAC9C" name="component" typeRef="dt.Component"/>
+                <dmn:literalExpression id="_67E35CFC-F48A-47DB-A3C8-5910E6CE9596">
+                  <dmn:text>comp</dmn:text>
+                </dmn:literalExpression>
+              </dmn:contextEntry>
+            </dmn:context>
+          </dmn:functionDefinition>
+        </dmn:contextEntry>
+        <dmn:contextEntry>
+          <dmn:literalExpression id="_0F0F099C-B5F7-438F-B122-77D1C3E02A33">
+            <dmn:text>for c in componenten return maakVC(c)</dmn:text>
+          </dmn:literalExpression>
+        </dmn:contextEntry>
+      </dmn:context>
+    </dmn:encapsulatedLogic>
     <dmn:knowledgeRequirement id="_03A63470-273A-4566-B81A-39D6CDC1CC87">
       <dmn:requiredKnowledge href="xls2dmn_8c91f710-98c5-4fac-867d-b88403a6a018#_043ABE6B-C428-4B83-A492-3040F51817EF"/>
     </dmn:knowledgeRequirement>
-    <dmn:literalExpression id="_9D434754-4F8A-4C3E-9377-FB443CB685B3">
-      <dmn:text>flatten(for v in vaccinaties return stm.split vaccinSoort(v))</dmn:text>
-    </dmn:literalExpression>
-  </dmn:decision>
+  </dmn:businessKnowledgeModel>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_F7E62DC2-1912-4AB1-A22A-198F72C9E4C3" name="DRG">
       <di:extension>
@@ -195,6 +258,34 @@
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_9D434754-4F8A-4C3E-9377-FB443CB685B3">
             <kie:width>918</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_3907624D-9140-44C9-A853-EDF7010BEBD5">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_53ABBD7E-8CCE-47AC-AED3-6B981EFD46CE">
+            <kie:width>50</kie:width>
+            <kie:width>120</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_D69786CB-F62E-4F90-B458-CEA44E91EF12"/>
+          <kie:ComponentWidths dmnElementRef="_704D1733-5FB2-4AE1-A79A-20F07E4E955C">
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_03CF8FB1-C9AC-475E-8147-AD5702347CD5"/>
+          <kie:ComponentWidths dmnElementRef="_E8808A0F-CAE7-4167-B126-9878655F4E08"/>
+          <kie:ComponentWidths dmnElementRef="_8E186393-89FD-4999-9B59-DAE247C8A353">
+            <kie:width>50</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_CBDD50CA-F79F-4D65-B88B-075548401B78">
+            <kie:width>50</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_8E231963-8EA5-47F4-8DD2-5F545B27ED54"/>
+          <kie:ComponentWidths dmnElementRef="_67E35CFC-F48A-47DB-A3C8-5910E6CE9596"/>
+          <kie:ComponentWidths dmnElementRef="_0F0F099C-B5F7-438F-B122-77D1C3E02A33"/>
+          <kie:ComponentWidths dmnElementRef="_BF29F058-3028-42F6-AB0F-53EC0131996B">
+            <kie:width>50</kie:width>
+            <kie:width>290</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
@@ -284,7 +375,16 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="586" y="412" width="157" height="50"/>
+        <dc:Bounds x="574.3995327102804" y="500" width="157" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_355EBB8B-DCFA-4426-ADE1-F3E249FFD790" dmnElementRef="_355EBB8B-DCFA-4426-ADE1-F3E249FFD790" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="603.2990654205607" y="368.3421052631579" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_3CF6BC96-9DBA-481C-AFAE-C38F53F4358D" dmnElementRef="_3CF6BC96-9DBA-481C-AFAE-C38F53F4358D">
@@ -311,9 +411,13 @@
         <di:waypoint x="430" y="426.5"/>
         <di:waypoint x="431" y="261.8571428571428"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="dmnedge-drg-_03A63470-273A-4566-B81A-39D6CDC1CC87" dmnElementRef="_03A63470-273A-4566-B81A-39D6CDC1CC87">
-        <di:waypoint x="664.5" y="437"/>
+      <dmndi:DMNEdge id="dmnedge-drg-_A1814EC7-E77C-46B3-9859-0BBB5FAFCA1E" dmnElementRef="_A1814EC7-E77C-46B3-9859-0BBB5FAFCA1E">
+        <di:waypoint x="653.2990654205607" y="393.3421052631579"/>
         <di:waypoint x="431" y="261.8571428571428"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_03A63470-273A-4566-B81A-39D6CDC1CC87" dmnElementRef="_03A63470-273A-4566-B81A-39D6CDC1CC87">
+        <di:waypoint x="652.8995327102804" y="525"/>
+        <di:waypoint x="653.2990654205607" y="393.3421052631579"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
